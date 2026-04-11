@@ -15,6 +15,10 @@ run/main_scene="uid://xcasvah72v4s"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LevelManager="*uid://b42lqinvktlkr"
+
 [debug]
 
 gdscript/warnings/standalone_expression=2
@@ -54,6 +58,10 @@ move_down={
 "deadzone": 0.2,
 "events": []
 }
+
+[layer_names]
+
+2d_physics/layer_5="consider_area"
 
 [physics]
 

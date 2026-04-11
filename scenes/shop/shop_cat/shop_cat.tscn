@@ -1,0 +1,197 @@
+[gd_scene format=4 uid="uid://c4t3k2okqyv46"]
+
+[ext_resource type="Script" uid="uid://jgchdo53weps" path="res://scenes/shop/shop_cat/shop_cat.gd" id="1_ps5xx"]
+[ext_resource type="Script" uid="uid://c36qlicgog68k" path="res://scripts/state_machine.gd" id="2_phur4"]
+[ext_resource type="Script" uid="uid://b0nvte30twhma" path="res://scenes/shop/shop_cat/state/sleep.gd" id="3_kqhiv"]
+[ext_resource type="Script" uid="uid://bbaxqoude7b1j" path="res://scenes/shop/shop_cat/state/sleep_tail_flick.gd" id="4_2xt63"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_kqhiv"]
+_data = PackedByteArray("AAADAAUAAAABAAAAgAAAAIAAAAD+AAAAUklGRvYAAABXRUJQVlA4TOoAAAAvf8AfECcgJCD8f6B56oZAgJBqWw2BAGHP/4gD8x8A4K+iAuzIdus2Fx3gYNQAWIH6L9AweW3n+RHRf0Vu2zZ2x5X+hn6DmsS2g00HEOl2wFlHD45kwTU4atPRzziaOOvIwYG4S0aHAkleh9yOfEPHf+MmbDti0wWQu47YciQNDLMGh7Yd2au4Hue4o1c2Mew47EDcJaNDgSSvQ25Hzo7zMez4b9wEswOInBwcdjSPl+R5R6/iMjuyCacDcZeMDgWSvA69mCM1O9zOeGLHv+MmmAOQ5h/wZhWXNb2qCesj7pKzgcwNvX/+8io=")
+size_override = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_hyd08"]
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6, 0.7, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 1]
+}
+
+[sub_resource type="Animation" id="Animation_2xt63"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 6, 7, 8, 9, 10, 10, 11, 11, 12, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t8swq"]
+_data = {
+&"sleep": SubResource("Animation_hyd08"),
+&"sleep_tail_flick": SubResource("Animation_2xt63")
+}
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_2xt63"]
+_data = PackedByteArray("AAADAAUAAAABAAAAYAAAAGAAAAB6AAAAUklGRnIAAABXRUJQVlA4TGUAAAAvX8AXEA8w//M///Mf8HAb2bbT7DPzY/kYUYFcAbYQIvovhTCi/2kTFp54Fo0//k1ixpwE9tgHAyvWYcMV4IZXcSvexbd5N1NzTaZkl1yCXbAEy2AZGLZeAQoNaCQgEYDAAAwAAAA=")
+size_override = Vector2(96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dnx4"]
+atlas = SubResource("PortableCompressedTexture2D_2xt63")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvyhl"]
+atlas = SubResource("PortableCompressedTexture2D_2xt63")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uij8"]
+atlas = SubResource("PortableCompressedTexture2D_2xt63")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdmby"]
+atlas = SubResource("PortableCompressedTexture2D_2xt63")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwhkq"]
+atlas = SubResource("PortableCompressedTexture2D_2xt63")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtgg3"]
+atlas = SubResource("PortableCompressedTexture2D_2xt63")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5ktm"]
+atlas = SubResource("PortableCompressedTexture2D_2xt63")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odyai"]
+atlas = SubResource("PortableCompressedTexture2D_2xt63")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dghph"]
+atlas = SubResource("PortableCompressedTexture2D_2xt63")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5t1i5"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_8dnx4")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_tvyhl")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_4uij8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdmby")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_uwhkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtgg3")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_i5ktm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odyai")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_dghph")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="ShopCat" type="Node2D" unique_id=870035451]
+script = ExtResource("1_ps5xx")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1136905835 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_phur4")
+initial_state = NodePath("Sleep")
+metadata/_custom_type_script = "uid://c36qlicgog68k"
+
+[node name="Sleep" type="Node" parent="StateMachine" unique_id=1939434317]
+script = ExtResource("3_kqhiv")
+metadata/_custom_type_script = "uid://df33pvs0aawqb"
+
+[node name="SleepTailFlick" type="Node" parent="StateMachine" unique_id=1182558321]
+script = ExtResource("4_2xt63")
+metadata/_custom_type_script = "uid://df33pvs0aawqb"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1353700180]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_kqhiv")
+hframes = 4
+vframes = 4
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": true,
+"output_section": false,
+"pending_changes": {},
+"slice_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/shop/shop_cat/shop_cat.aseprite",
+"source_uid": 113563067974390266
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4d3a5a13b6c5521c80b3b050d14d2b75"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1326747181]
+libraries/ = SubResource("AnimationLibrary_t8swq")
+
+[node name="Timer" type="Timer" parent="." unique_id=1855140763]
+
+[node name="AnimatedSpriteZZZ" type="AnimatedSprite2D" parent="." unique_id=236124629]
+texture_filter = 1
+position = Vector2(16, -25)
+sprite_frames = SubResource("SpriteFrames_5t1i5")
+autoplay = "default"
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://scenes/shop/shop_cat/zzz.aseprite",
+"source_uid": 3553373526847990905
+}
+metadata/_aseprite_wizard_source_file_hash_ = "3ea2232aabb84953a7bcb3f6349cac63"

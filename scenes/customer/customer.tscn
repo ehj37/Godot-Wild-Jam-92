@@ -7,13 +7,12 @@
 [ext_resource type="Script" uid="uid://dc4gsuy78ua15" path="res://scenes/customer/state/consider.gd" id="5_6bdyt"]
 [ext_resource type="Script" uid="uid://3lqtw13xy3rr" path="res://scenes/customer/state/sip.gd" id="6_6bdyt"]
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_k1bqq"]
-_data = PackedByteArray("AAADAAUAAAABAAAAwAAAAJAAAABCAQAAUklGRjoBAABXRUJQVlA4TC4BAAAvv8AjECcgECCcmHdlTEhApiSvLCEkIFOSV5aY/wAAOycdILeNJEmKjrGgy4Ksw4BCpf/OzSs6Jue3O4jov9m0bdy5oPYM/Kme+/J73HX6PeZ7Y9Hucd8brYxnyY0ynqa2h91jvzcTRTxbbR+9afckvO2cds/Ro5rfM+0V8qCOp8iaP0L8ZwD0OlE/Brx+vkleZ6B6fPdrfu6ruqezuCdWeU8r7xnVPbu8JxO1PVtvuj3b7zlJ3fOl5YHs0XN78ls9yJd7ze8H1SJUjg4N3S9He/Qn84EQGzD7A4/60T73Vd3Z6fZ3motFsz+Wveb2R7M33P4Y7vZw+7e9zAf36k5zMx94arRP0uzJU77pz+3JpLnMD3jMa36/P4Jmf0SVKPvpLqAW0GORKBcg/kEMAA==")
-size_override = Vector2(192, 144)
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_6bdyt"]
+_data = PackedByteArray("AAADAAUAAAABAAAA8AAAAMAAAADeAQAAUklGRtYBAABXRUJQVlA4TMoBAAAv78AvEC9AkG0zk9GP6jDXIMw22mtWMzl/jSPMNtprWBM5f46b/wAA/2tZ0gHk2nbjNpDhAqYGxgKgA2rPc4QO0n8zWT3BYOYhov+M3LYNo5wHsN4v5FfiHad8T5VmzfcU2ccWTfdU2cfOT/BU2c3zPVX26Z7uKbNPhOR7auzTV17jnifsk1uPlu5ZqadtSGn5njZsocn7RwzgKfJZnVTgfzER5c7sffbVU6OZSu67VMRynSY4rZ7yXP49veNUx5PdrHU8yTvYosU9MivtXN6z4Ly850zrXt1jTouQ4p5O67xW3dO5Zw2t43ljipVX3ROjeiT2VT7LT5RmRjkcqtjDM5yWSS09/iyx3B1McEozqZK+9k/cXbjnwj0XeSPvOI3qmXVQjy3Des7DenxUTx/WEyHYY2U8kluP0CKeFjvqXGktyngeuFa9uONCyye4QT0yrseMpu+XRwfNZIT+O73jBDscBXs2+LM9s9Ic57hZkz220F5cuIf7sz1nms/CPdyf7XGc37AH59nv6n7fsZrfsOcCPcHfhYuA/p7ukS0eOkOsPBXaPX8fWnPskWzneoe1uOHdJN2Tv8OGyu+w443pkXE9ap9Izy/iEw==")
+size_override = Vector2(240, 192)
 
 [sub_resource type="Animation" id="Animation_fd46v"]
-length = 0.1
-loop_mode = 1
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -21,10 +20,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [11, 12, 13]
 }
 
 [sub_resource type="Animation" id="Animation_k1bqq"]
@@ -44,8 +43,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_6bdyt"]
-length = 0.1
-loop_mode = 1
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -53,10 +51,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.15, 0.3, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [14, 15, 16, 17, 18, 19]
 }
 
 [sub_resource type="Animation" id="Animation_jy5aj"]
@@ -83,15 +81,39 @@ _data = {
 &"walk": SubResource("Animation_jy5aj")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6bdyt"]
+radius = 3.0
+
 [node name="Customer" type="Node2D" unique_id=2131528538]
 script = ExtResource("1_8noaa")
 
+[node name="StateMachine" type="Node" parent="." unique_id=1905611708 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_duem0")
+initial_state = NodePath("Walk")
+metadata/_custom_type_script = "uid://c36qlicgog68k"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=131256051]
+script = ExtResource("3_qqtjw")
+metadata/_custom_type_script = "uid://dl80ohfk7k1bs"
+
+[node name="Walk" type="Node" parent="StateMachine" unique_id=1213423178]
+script = ExtResource("4_k1bqq")
+metadata/_custom_type_script = "uid://dl80ohfk7k1bs"
+
+[node name="Consider" type="Node" parent="StateMachine" unique_id=374936746]
+script = ExtResource("5_6bdyt")
+metadata/_custom_type_script = "uid://dl80ohfk7k1bs"
+
+[node name="Sip" type="Node" parent="StateMachine" unique_id=1742886851]
+script = ExtResource("6_6bdyt")
+metadata/_custom_type_script = "uid://dl80ohfk7k1bs"
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=651132833]
 texture_filter = 1
-texture = SubResource("PortableCompressedTexture2D_k1bqq")
+texture = SubResource("PortableCompressedTexture2D_6bdyt")
 offset = Vector2(0, -8)
-hframes = 4
-vframes = 3
+hframes = 5
+vframes = 4
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true,
 "output_section": true,
@@ -115,28 +137,16 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://scenes/customer/frank.aseprite",
 "source_uid": 8264745580487969091
 }
-metadata/_aseprite_wizard_source_file_hash_ = "cc6fb3248cc37cb5f5b1911119aa6214"
+metadata/_aseprite_wizard_source_file_hash_ = "53d89468e64f733274e8407e64b57925"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1699484861]
 libraries/ = SubResource("AnimationLibrary_duem0")
 
-[node name="StateMachine" type="Node" parent="." unique_id=1905611708 node_paths=PackedStringArray("initial_state")]
-script = ExtResource("2_duem0")
-initial_state = NodePath("Walk")
-metadata/_custom_type_script = "uid://c36qlicgog68k"
+[node name="ConsiderAreaDetector" type="Area2D" parent="." unique_id=317799699]
+collision_layer = 0
+collision_mask = 16
 
-[node name="Idle" type="Node" parent="StateMachine" unique_id=131256051]
-script = ExtResource("3_qqtjw")
-metadata/_custom_type_script = "uid://dl80ohfk7k1bs"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConsiderAreaDetector" unique_id=545290829]
+shape = SubResource("CircleShape2D_6bdyt")
 
-[node name="Walk" type="Node" parent="StateMachine" unique_id=1213423178]
-script = ExtResource("4_k1bqq")
-metadata/_custom_type_script = "uid://dl80ohfk7k1bs"
-
-[node name="Consider" type="Node" parent="StateMachine" unique_id=374936746]
-script = ExtResource("5_6bdyt")
-metadata/_custom_type_script = "uid://dl80ohfk7k1bs"
-
-[node name="Sip" type="Node" parent="StateMachine" unique_id=1742886851]
-script = ExtResource("6_6bdyt")
-metadata/_custom_type_script = "uid://dl80ohfk7k1bs"
+[connection signal="area_entered" from="ConsiderAreaDetector" to="." method="_on_consider_area_detector_area_entered"]

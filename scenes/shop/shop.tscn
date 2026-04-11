@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://dndwr7spvj705"]
 
+[ext_resource type="PackedScene" uid="uid://c4t3k2okqyv46" path="res://scenes/shop/shop_cat/shop_cat.tscn" id="1_100s2"]
+
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_7r02r"]
-_data = PackedByteArray("AAADAAUAAAABAAAAQAEAAIAAAADEAAAAUklGRrwAAABXRUJQVlA4TLAAAAAvP8EfEDdAFmCyf/5/DuEEkwZBAEkmKa8yzjQTBJDkEdrYi2zw/AcA+F82a1WZgONIkhylb8X/ZhHvubEBBzZiDECt/8agVaMhov8TgL///z6et5Pnv//ePtROHn6Aws6XIRz4vDIYjBoEBARmFAoFMwEBgRoNGjSw0kuH3Yy4i0gd+3ZKxrLJjYlMmfCdewxWBqnMiMusOBFt5y6v4ntScHBri7YvI2bF9n7IHPj5Dg==")
+_data = PackedByteArray("AAADAAUAAAABAAAAQAEAAIAAAAB6AAAAUklGRnIAAABXRUJQVlA4TGUAAAAvP8EfEB8gECAMGrBtTiBA+F9SI8CDWDDJ33MOnfMfkH9igFVs20rue0AvIrhbFcro7ce3uzsR/Z8A+DseYG/6dYZXe5PnJwCAQ4iDRuE6luWN/g7K8zzfNoiIy9IaYqO1HO33IwA=")
 size_override = Vector2(320, 128)
 
 [node name="Shop" type="Node2D" unique_id=576003885]
@@ -31,4 +33,7 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://scenes/shop/shop.aseprite",
 "source_uid": 3352649628013489255
 }
-metadata/_aseprite_wizard_source_file_hash_ = "dd0d2c8989d68cc3485e9e6ff8f4c389"
+metadata/_aseprite_wizard_source_file_hash_ = "a1555fb7de156ee0b0cd2e4ee5cd3c29"
+
+[node name="ShopCat" parent="." unique_id=870035451 instance=ExtResource("1_100s2")]
+position = Vector2(174, -13)
