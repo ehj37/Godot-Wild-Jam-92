@@ -1,10 +1,22 @@
 [gd_scene format=4 uid="uid://bie5bavboqaus"]
 
+[ext_resource type="PackedScene" uid="uid://cjkitklspgjby" path="res://scenes/cauldron/fire_light/fire_light.tscn" id="1_8w4fm"]
+[ext_resource type="PackedScene" uid="uid://c2ruwk4txydvt" path="res://scenes/cauldron/fire_particles.tscn" id="1_u2lxt"]
+[ext_resource type="PackedScene" uid="uid://ln455l4q8ixe" path="res://scenes/cauldron/ember_particles.tscn" id="2_tvp6t"]
+
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_h46r7"]
 _data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACEAAAAUklGRnwAAABXRUJQVlA4THAAAAAvP8APECegkG0EGJ/Lr3lCAjJljA92ERIQdqgGuzz/AQBI87QHVpFttbnPwbsQAVhgUBD/sig3vf5E9H8C8CV0dm0ZMpduJBdgEaklMvciaYuMLxAUHty02rw7XrGkmIYgYEEfsyUwhmW9Z1i+ws8S")
 size_override = Vector2(64, 64)
 
 [node name="Cauldron" type="Node2D" unique_id=487662480]
+
+[node name="FireLight" parent="." unique_id=49652170 instance=ExtResource("1_8w4fm")]
+position = Vector2(0, -12)
+
+[node name="FireParticlesBack" parent="." unique_id=144084119 instance=ExtResource("1_u2lxt")]
+position = Vector2(0, 6)
+
+[node name="EmberParticlesBack" parent="." unique_id=842681694 instance=ExtResource("2_tvp6t")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=399173998]
 texture_filter = 1
@@ -31,3 +43,9 @@ metadata/_aseprite_wizard_config_ = {
 "source_uid": 6117141846458285431
 }
 metadata/_aseprite_wizard_source_file_hash_ = "d1fb0bc62f7d4e516de7d1ee30ad7449"
+
+[node name="EmberParticlesFront" parent="." unique_id=698191737 instance=ExtResource("2_tvp6t")]
+position = Vector2(0, 3)
+
+[node name="FireParticlesFront" parent="." unique_id=925899156 instance=ExtResource("1_u2lxt")]
+position = Vector2(0, 6)

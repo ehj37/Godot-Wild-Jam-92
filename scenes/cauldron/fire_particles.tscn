@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c2ruwk4txydvt"]
+
+[sub_resource type="Gradient" id="Gradient_puunx"]
+offsets = PackedFloat32Array(0, 0.98913044)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iil4y"]
+gradient = SubResource("Gradient_puunx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pewqb"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(18, 6, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -44.99999
+angle_max = 45.00001
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 25.0
+initial_velocity_max = 35.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 3.0
+color_ramp = SubResource("GradientTexture1D_iil4y")
+
+[sub_resource type="Gradient" id="Gradient_skrtw"]
+offsets = PackedFloat32Array(0.016304348, 1)
+colors = PackedColorArray(1, 0.50980395, 0, 1, 1, 0.77254903, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pewqb"]
+gradient = SubResource("Gradient_skrtw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_skrtw"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(20, 6, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -44.99999
+angle_max = 45.00001
+direction = Vector3(0, -1, 0)
+spread = 15.0
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 3.0
+color_ramp = SubResource("GradientTexture1D_pewqb")
+
+[node name="FireParticles" type="Node2D" unique_id=144084119]
+
+[node name="BackParticles" type="GPUParticles2D" parent="." unique_id=1682438097]
+amount = 32
+lifetime = 0.25
+process_material = SubResource("ParticleProcessMaterial_pewqb")
+
+[node name="FrontParticles" type="GPUParticles2D" parent="." unique_id=600809780]
+amount = 64
+lifetime = 0.2
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_skrtw")

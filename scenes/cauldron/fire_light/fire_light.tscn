@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cjkitklspgjby"]
+
+[ext_resource type="Script" uid="uid://cp8p181ekidpj" path="res://scenes/cauldron/fire_light/fire_light.gd" id="1_cc6s8"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cc6s8"]
+noise_type = 0
+frequency = 0.2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cc6s8"]
+noise = SubResource("FastNoiseLite_cc6s8")
+
+[sub_resource type="Gradient" id="Gradient_44bw6"]
+colors = PackedColorArray(0.7921569, 0.30980393, 0.18431373, 0.29411766, 0.7921569, 0.30980393, 0.18431373, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ol1ey"]
+gradient = SubResource("Gradient_44bw6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.75, 0.1)
+
+[node name="FireLight" type="Node2D" unique_id=49652170]
+script = ExtResource("1_cc6s8")
+noise_texture = SubResource("NoiseTexture2D_cc6s8")
+
+[node name="SpriteFlicker" type="Sprite2D" parent="." unique_id=1091518545]
+texture = SubResource("GradientTexture2D_ol1ey")
+
+[node name="SpriteConstant" type="Sprite2D" parent="." unique_id=610378530]
+texture = SubResource("GradientTexture2D_ol1ey")

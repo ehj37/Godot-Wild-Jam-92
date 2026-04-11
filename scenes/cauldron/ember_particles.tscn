@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ln455l4q8ixe"]
+
+[sub_resource type="Curve" id="Curve_17me4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.61637926, 0.72631574), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6grs6"]
+curve = SubResource("Curve_17me4")
+
+[sub_resource type="Gradient" id="Gradient_17me4"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6grs6"]
+gradient = SubResource("Gradient_17me4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1bvp3"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(24, 6, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, -1, 0)
+spread = 15.0
+initial_velocity_min = 10.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+color = Color(0.7921569, 0.60784316, 0.18431373, 1)
+color_ramp = SubResource("GradientTexture1D_6grs6")
+alpha_curve = SubResource("CurveTexture_6grs6")
+
+[node name="EmberParticles" type="GPUParticles2D" unique_id=842681694]
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_1bvp3")

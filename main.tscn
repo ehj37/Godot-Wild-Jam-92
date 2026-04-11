@@ -11,29 +11,6 @@
 Label/font_sizes/font_size = 6
 Label/fonts/font = ExtResource("1_ig7tw")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1bvp3"]
-particle_flag_disable_z = true
-emission_shape_scale = Vector3(15, 6, 1)
-emission_shape = 1
-emission_sphere_radius = 1.0
-direction = Vector3(0, -1, 0)
-spread = 15.0
-initial_velocity_min = 10.0
-initial_velocity_max = 25.0
-gravity = Vector3(0, 0, 0)
-color = Color(0.7921569, 0.60784316, 0.18431373, 1)
-
-[sub_resource type="Gradient" id="Gradient_lquwl"]
-colors = PackedColorArray(0.7921569, 0.30980393, 0.18431373, 0.39215687, 0.7921569, 0.30980393, 0.18431373, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7mycd"]
-gradient = SubResource("Gradient_lquwl")
-width = 128
-height = 128
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.75, 0.75)
-
 [node name="Main" type="Node2D" unique_id=1460177824]
 
 [node name="Shop" parent="." unique_id=576003885 instance=ExtResource("6_7mycd")]
@@ -92,22 +69,8 @@ offset_top = 47.0
 offset_right = 10.0
 offset_bottom = 47.0
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="ShopUI/ColorRect" unique_id=787412777]
-position = Vector2(146, 36)
-amount = 20
-process_material = SubResource("ParticleProcessMaterial_1bvp3")
-
-[node name="Sprite2D" type="Sprite2D" parent="ShopUI/ColorRect" unique_id=2053600219]
-position = Vector2(146, 21)
-texture = SubResource("GradientTexture2D_7mycd")
-
 [node name="Cauldron" parent="ShopUI/ColorRect" unique_id=487662480 instance=ExtResource("4_1bvp3")]
 position = Vector2(146, 33)
-
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="ShopUI/ColorRect" unique_id=993661394]
-position = Vector2(146, 36)
-amount = 5
-process_material = SubResource("ParticleProcessMaterial_1bvp3")
 
 [node name="Road" type="ColorRect" parent="." unique_id=1409168392]
 offset_top = 140.0
