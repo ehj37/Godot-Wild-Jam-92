@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c6h0gcpck55u3"
+path="res://.godot/imported/currency_icon.aseprite-832265c5f88ad7039c58e490dfa829c9.res"
+
+[deps]
+
+source_file="res://scenes/currency_icon/currency_icon.aseprite"
+dest_files=["res://.godot/imported/currency_icon.aseprite-832265c5f88ad7039c58e490dfa829c9.res"]
+
+[params]
+

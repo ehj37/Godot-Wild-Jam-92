@@ -1,0 +1,33 @@
+[gd_scene format=4 uid="uid://bie5bavboqaus"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_h46r7"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACEAAAAUklGRnwAAABXRUJQVlA4THAAAAAvP8APECegkG0EGJ/Lr3lCAjJljA92ERIQdqgGuzz/AQBI87QHVpFttbnPwbsQAVhgUBD/sig3vf5E9H8C8CV0dm0ZMpduJBdgEaklMvciaYuMLxAUHty02rw7XrGkmIYgYEEfsyUwhmW9Z1i+ws8S")
+size_override = Vector2(64, 64)
+
+[node name="Cauldron" type="Node2D" unique_id=487662480]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=399173998]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_h46r7")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/cauldron/cauldron.aseprite",
+"source_uid": 6117141846458285431
+}
+metadata/_aseprite_wizard_source_file_hash_ = "d1fb0bc62f7d4e516de7d1ee30ad7449"

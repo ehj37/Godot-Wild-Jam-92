@@ -1,0 +1,33 @@
+[gd_scene format=4 uid="uid://drf32pblg7ptn"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_4l4bb"]
+_data = PackedByteArray("AAADAAUAAAABAAAADQAAAAwAAABgAAAAUklGRlgAAABXRUJQVlA4TEwAAAAvDMACEB8gEEjyp9h0DYFAkr/hNAsEkvxpN3j+A/BXAaNIsp38Wo8/7f1HPwG4x3WAQTRE9D8eyXRd4DtA+3fYHUwD/Ab4DnR74pEM")
+size_override = Vector2(13, 12)
+
+[node name="CatButton" type="TextureButton" unique_id=449247657]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1055016195]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_4l4bb")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/cat_button/cat_button.aseprite",
+"source_uid": 662864928807273381
+}
+metadata/_aseprite_wizard_source_file_hash_ = "ef62aa00baecb875a2801b6d5d3099f9"

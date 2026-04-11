@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://xcasvah72v4s"]
+
+[ext_resource type="FontFile" uid="uid://dxf5bfgvayfhn" path="res://fonts/arne.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b8o7sgvhiftxy" path="res://scenes/currency_icon/currency_icon.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://drf32pblg7ptn" path="res://scenes/cat_button/cat_button.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bie5bavboqaus" path="res://scenes/cauldron/cauldron.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dbkuf67h8giki" path="res://scenes/customer/customer.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dndwr7spvj705" path="res://scenes/shop/shop.tscn" id="6_7mycd"]
+
+[sub_resource type="Theme" id="Theme_7dm0k"]
+Label/font_sizes/font_size = 6
+Label/fonts/font = ExtResource("1_ig7tw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1bvp3"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(15, 6, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, -1, 0)
+spread = 15.0
+initial_velocity_min = 10.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+color = Color(0.7921569, 0.60784316, 0.18431373, 1)
+
+[sub_resource type="Gradient" id="Gradient_lquwl"]
+colors = PackedColorArray(0.7921569, 0.30980393, 0.18431373, 0.39215687, 0.7921569, 0.30980393, 0.18431373, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7mycd"]
+gradient = SubResource("Gradient_lquwl")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.75, 0.75)
+
+[node name="Main" type="Node2D" unique_id=1460177824]
+
+[node name="Shop" parent="." unique_id=576003885 instance=ExtResource("6_7mycd")]
+position = Vector2(0, 133)
+
+[node name="ShopUI" type="Control" parent="." unique_id=455587803]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_7dm0k")
+
+[node name="ColorRect" type="ColorRect" parent="ShopUI" unique_id=140337174]
+clip_contents = true
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 56.0
+color = Color(0, 0, 0, 1)
+
+[node name="StatusLabel" type="Label" parent="ShopUI/ColorRect" unique_id=871045387]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 59.0
+offset_bottom = 28.0
+text = " 45
+TIME:1:07
+DAY 5"
+
+[node name="CurrencyIcon" parent="ShopUI/ColorRect" unique_id=998594739 instance=ExtResource("2_0xm2m")]
+position = Vector2(5, 6)
+
+[node name="InventoryLabel" type="Label" parent="ShopUI/ColorRect" unique_id=455473706]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 4.0
+offset_right = 292.0
+offset_bottom = 37.0
+text = "INVENTORY
+CUPS: 8
+COBWEBS: 7
+"
+
+[node name="UpgradesLabel" type="Label" parent="ShopUI/ColorRect" unique_id=471535274]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 39.0
+offset_right = 280.0
+offset_bottom = 45.0
+text = "UPGRADES"
+
+[node name="CatButton" parent="ShopUI/ColorRect" unique_id=449247657 instance=ExtResource("3_h2yge")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 47.0
+offset_right = 10.0
+offset_bottom = 47.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="ShopUI/ColorRect" unique_id=787412777]
+position = Vector2(146, 36)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShopUI/ColorRect" unique_id=2053600219]
+position = Vector2(146, 21)
+texture = SubResource("GradientTexture2D_7mycd")
+
+[node name="Cauldron" parent="ShopUI/ColorRect" unique_id=487662480 instance=ExtResource("4_1bvp3")]
+position = Vector2(146, 33)
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="ShopUI/ColorRect" unique_id=993661394]
+position = Vector2(146, 36)
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_1bvp3")
+
+[node name="Road" type="ColorRect" parent="." unique_id=1409168392]
+offset_top = 140.0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.3882353, 0.21960784, 0, 1)
+
+[node name="Customer" parent="." unique_id=2131528538 instance=ExtResource("5_lquwl")]
+position = Vector2(23, 160)
+
+[node name="Customer2" parent="." unique_id=282141832 instance=ExtResource("5_lquwl")]
+position = Vector2(103, 174)
+
+[node name="Customer3" parent="." unique_id=1764532006 instance=ExtResource("5_lquwl")]
+position = Vector2(220, 144)

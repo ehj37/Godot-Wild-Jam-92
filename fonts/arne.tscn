@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://42nwqp5iuk04"]
+
+[node name="Arne" type="Sprite2D" unique_id=149212298]
+texture_filter = 1
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://fonts/arne.aseprite",
+"source_uid": 5680951567303694881
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c514875855a38e071f62f9763326b8ca"
