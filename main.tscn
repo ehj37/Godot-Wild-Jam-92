@@ -80,9 +80,3 @@ color = Color(0.3882353, 0.21960784, 0, 1)
 
 [node name="Customer" parent="." unique_id=2131528538 instance=ExtResource("5_lquwl")]
 position = Vector2(23, 160)
-
-[node name="Customer2" parent="." unique_id=282141832 instance=ExtResource("5_lquwl")]
-position = Vector2(103, 174)
-
-[node name="Customer3" parent="." unique_id=1764532006 instance=ExtResource("5_lquwl")]
-position = Vector2(220, 144)
