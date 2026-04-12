@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bie5bavboqaus" path="res://scenes/cauldron/cauldron.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b86gbj1hrinun" path="res://scenes/status_widget/status_widget.tscn" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://dbkuf67h8giki" path="res://scenes/customer/customer.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://br1b6vdg4pfvk" path="res://scenes/activity_log_widget/activity_log_widget.tscn" id="6_4c57u"]
 [ext_resource type="PackedScene" uid="uid://dndwr7spvj705" path="res://scenes/shop/shop.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://48c8aljyu7hn" path="res://scenes/customer_spawner/customer_spawner.tscn" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://c1du00t7sl400" path="res://scripts/time_range.gd" id="9_kek77"]
@@ -29,52 +30,38 @@ script = ExtResource("1_272bh")
 [node name="Shop" parent="." unique_id=576003885 instance=ExtResource("6_7mycd")]
 position = Vector2(0, 128)
 
-[node name="ShopUI" type="Control" parent="." unique_id=455587803]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme = SubResource("Theme_7dm0k")
+[node name="TopBar" type="CanvasLayer" parent="." unique_id=711361258]
 
-[node name="ColorRect" type="ColorRect" parent="ShopUI" unique_id=140337174]
+[node name="ColorRect" type="ColorRect" parent="TopBar" unique_id=140337174]
 clip_contents = true
-layout_mode = 0
 offset_right = 320.0
 offset_bottom = 56.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="StatusWidget" parent="ShopUI/ColorRect" unique_id=785536209 instance=ExtResource("4_272bh")]
+[node name="StatusWidget" parent="TopBar/ColorRect" unique_id=785536209 instance=ExtResource("4_272bh")]
 
-[node name="InventoryLabel" type="Label" parent="ShopUI/ColorRect" unique_id=455473706]
-visible = false
-layout_mode = 0
-offset_left = 232.0
-offset_top = 4.0
-offset_right = 292.0
-offset_bottom = 37.0
-text = "INVENTORY
-CUPS: 8
-COBWEBS: 7
-"
-
-[node name="UpgradesLabel" type="Label" parent="ShopUI/ColorRect" unique_id=471535274]
-visible = false
-layout_mode = 0
-offset_left = 232.0
-offset_top = 39.0
-offset_right = 280.0
-offset_bottom = 45.0
-text = "UPGRADES"
-
-[node name="CatButton" parent="ShopUI/ColorRect" unique_id=449247657 instance=ExtResource("3_h2yge")]
+[node name="CatButton" parent="TopBar/ColorRect" unique_id=449247657 instance=ExtResource("3_h2yge")]
 layout_mode = 0
 offset_left = 310.0
 offset_top = 47.0
 offset_right = 310.0
 offset_bottom = 47.0
 
-[node name="Cauldron" parent="ShopUI/ColorRect" unique_id=487662480 instance=ExtResource("4_1bvp3")]
-position = Vector2(146, 33)
+[node name="Cauldron" parent="TopBar/ColorRect" unique_id=487662480 instance=ExtResource("4_1bvp3")]
+position = Vector2(93, 45)
+
+[node name="ActivityLog" type="CanvasLayer" parent="." unique_id=789801740]
+
+[node name="ActivityLogWidget" parent="ActivityLog" unique_id=853032980 instance=ExtResource("6_4c57u")]
+position = Vector2(2, 58)
+
+[node name="ShopUI" type="Control" parent="." unique_id=455587803]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_7dm0k")
 
 [node name="Road" type="ColorRect" parent="." unique_id=1409168392]
 offset_top = 132.0

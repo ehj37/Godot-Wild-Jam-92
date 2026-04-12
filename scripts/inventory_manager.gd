@@ -1,6 +1,6 @@
 extends Node
 
-signal coins_changed(new_amount: int)
+signal coins_changed(new_amount: int, delta: int)
 
 var _coins: int = 0
 
@@ -14,7 +14,7 @@ func subtract_coins(amount: int) -> void:
 		return
 
 	_coins -= amount
-	coins_changed.emit(_coins + amount, _coins)
+	coins_changed.emit(_coins, -amount)
 
 
 func add_coins(amount: int) -> void:
@@ -22,4 +22,4 @@ func add_coins(amount: int) -> void:
 		return
 
 	_coins += amount
-	coins_changed.emit(_coins)
+	coins_changed.emit(_coins, amount)

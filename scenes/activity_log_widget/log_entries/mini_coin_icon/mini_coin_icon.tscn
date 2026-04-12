@@ -1,0 +1,112 @@
+[gd_scene format=4 uid="uid://dfdmsr7q5s2fc"]
+
+[ext_resource type="Script" uid="uid://dcetjq6wfyg03" path="res://scenes/activity_log_widget/log_entries/mini_coin_icon/mini_coin_icon.gd" id="1_okgrj"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_tgspb"]
+_data = PackedByteArray("AAADAAUAAAABAAAAGAAAABIAAACgAAAAUklGRpgAAABXRUJQVlA4TIsAAAAvF0AEECegkG0E6PxNTuhUXhEyaZv6F1Gh3Q4ibZuJn69JOj6b/wBQpvnPGzCIJCkO1BngMxAUHLVnAIh/Uck9FiL6r7ZtG0aZ7PQ3GOQovHDUnaLVjhy8WC+6EgwqIF7EnT6WNf6s3/bIbRI4c6j2hbertszo5v1OjJxU6KzmznGnWMRBf6fR4xUJAA==")
+size_override = Vector2(24, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okgrj"]
+atlas = SubResource("PortableCompressedTexture2D_tgspb")
+region = Rect2(0, 0, 6, 6)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgv63"]
+atlas = SubResource("PortableCompressedTexture2D_tgspb")
+region = Rect2(6, 0, 6, 6)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0frr"]
+atlas = SubResource("PortableCompressedTexture2D_tgspb")
+region = Rect2(12, 0, 6, 6)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgflj"]
+atlas = SubResource("PortableCompressedTexture2D_tgspb")
+region = Rect2(18, 0, 6, 6)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ugsh"]
+atlas = SubResource("PortableCompressedTexture2D_tgspb")
+region = Rect2(0, 6, 6, 6)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7g16"]
+atlas = SubResource("PortableCompressedTexture2D_tgspb")
+region = Rect2(6, 6, 6, 6)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq8t0"]
+atlas = SubResource("PortableCompressedTexture2D_tgspb")
+region = Rect2(12, 6, 6, 6)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxppw"]
+atlas = SubResource("PortableCompressedTexture2D_tgspb")
+region = Rect2(18, 6, 6, 6)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xem0x"]
+atlas = SubResource("PortableCompressedTexture2D_tgspb")
+region = Rect2(0, 12, 6, 6)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfese"]
+atlas = SubResource("PortableCompressedTexture2D_tgspb")
+region = Rect2(6, 12, 6, 6)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjlhp"]
+atlas = SubResource("PortableCompressedTexture2D_tgspb")
+region = Rect2(0, 0, 6, 6)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_bewwx"]
+length = 0.275
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_okgrj"), SubResource("AtlasTexture_pgv63"), SubResource("AtlasTexture_w0frr"), SubResource("AtlasTexture_mgflj"), SubResource("AtlasTexture_3ugsh"), SubResource("AtlasTexture_a7g16"), SubResource("AtlasTexture_cq8t0"), SubResource("AtlasTexture_uxppw"), SubResource("AtlasTexture_xem0x"), SubResource("AtlasTexture_qfese"), SubResource("AtlasTexture_mjlhp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_clyjr"]
+_data = {
+&"glimmer": SubResource("Animation_bewwx")
+}
+
+[node name="MiniCoinIcon" type="TextureRect" unique_id=1193548858]
+texture_filter = 1
+texture = SubResource("AtlasTexture_okgrj")
+script = ExtResource("1_okgrj")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/activity_log_widget/log_entries/mini_coin_icon/mini_coin_icon.aseprite",
+"source_uid": 5392241859042744664
+}
+metadata/_aseprite_wizard_source_file_hash_ = "0b45562713db7e5fbffe72e367de2437"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1102378426]
+libraries/ = SubResource("AnimationLibrary_clyjr")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cba6s6yppitos" path="res://scenes/status_widget/status_widget.gd" id="1_cf5pj"]
 [ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="2_w4pks"]
-[ext_resource type="PackedScene" uid="uid://b8o7sgvhiftxy" path="res://scenes/currency_icon/coin_icon.tscn" id="3_ww05o"]
+[ext_resource type="PackedScene" uid="uid://b8o7sgvhiftxy" path="res://scenes/coin_icon/coin_icon.tscn" id="3_ww05o"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_e147w"]
 _data = PackedByteArray("AAADAAUAAAABAAAAMAAAADAAAABgAQAAUklGRlgBAABXRUJQVlA4TEwBAAAvL8ALEDegkI0kaP2NVmRRvjsRRW3bQOUPpvDO7aEmACFIeP1EMbl3mf8AQGNSrLi9/5UzuG0AN27y9lEgagSPkF6G3YeA6P7l/jNYJ5rwBBH9Z+S2bSTPadOMx/rFX0Tk7eFEVVU83K666uTjfnox15VhP+Fm7NAPYznhZj+b3QlH2n+xLyc+OFwvmEsScLj2h2F54sox8ZmLgB2C5YXN97DpZXZ4mY3NrQ5JjbRs6+Vkq72LuXIc53bVPlTuO4TaIY5hmr8ZXMRc2UxcXeTo4WuopJN/6UpGO3PCPU0uSOOFiev+TPdqgQlc3D8SwJSEaockvI+Q3B0nDBztqjMs3BpJrZ2fnnDJ4SLZqL0VOgKuXbUfxjhVDjsU6MBNB5vz8gVf4+JwPceqAhbeXo7eN8eBLjxBF57g5lcGvucKrHp9Lr2MFjxBC47cAA==")
@@ -13,7 +13,7 @@ atlas = SubResource("PortableCompressedTexture2D_e147w")
 region = Rect2(0, 0, 12, 12)
 filter_clip = true
 
-[node name="StatusWidget" type="CanvasLayer" unique_id=785536209]
+[node name="StatusWidget" type="Node2D" unique_id=1117262020]
 script = ExtResource("1_cf5pj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=518017577]

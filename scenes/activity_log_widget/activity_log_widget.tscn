@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://br1b6vdg4pfvk"]
+
+[ext_resource type="Script" uid="uid://cmec4yf7yifs8" path="res://scenes/activity_log_widget/activity_log_widget.gd" id="1_se2kx"]
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="2_o1ii2"]
+
+[node name="ActivityLogWidget" type="Node2D" unique_id=853032980]
+script = ExtResource("1_se2kx")
+
+[node name="LogEntryContainer" type="VBoxContainer" parent="." unique_id=1595586213]
+offset_right = 12.0
+offset_bottom = 36.0
+theme = ExtResource("2_o1ii2")
+theme_override_constants/separation = 1

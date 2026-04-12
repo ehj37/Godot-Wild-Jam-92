@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node2D
 
 @onready var coin_count_label: Label = $VBoxContainer/CoinContainer/CoinCountLabel
 @onready var night_number_label: Label = $VBoxContainer/NightContainer/NightNumberLabel
@@ -15,7 +15,7 @@ func _ready() -> void:
 	_on_time_changed(TimeManager.get_hour(), TimeManager.get_minute())
 
 
-func _on_coins_changed(new_amount: int) -> void:
+func _on_coins_changed(new_amount: int, _delta: int = 0) -> void:
 	coin_count_label.text = str(new_amount)
 
 
