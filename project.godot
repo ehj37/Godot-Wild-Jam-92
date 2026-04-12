@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelManager="*uid://b42lqinvktlkr"
+TimeManager="*uid://boougkwf6a136"
+InventoryManager="*uid://kkny8xuyjc5j"
 
 [debug]
 

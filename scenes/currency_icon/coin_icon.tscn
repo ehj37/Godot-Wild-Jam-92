@@ -1,0 +1,153 @@
+[gd_scene format=4 uid="uid://b8o7sgvhiftxy"]
+
+[ext_resource type="Script" uid="uid://cfb01d5f5gj5" path="res://scenes/currency_icon/coin_icon.gd" id="1_e147w"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_opib7"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAADAAAABgAQAAUklGRlgBAABXRUJQVlA4TEwBAAAvL8ALEDegkI0kaP2NVmRRvjsRRW3bQOUPpvDO7aEmACFIeP1EMbl3mf8AQGNSrLi9/5UzuG0AN27y9lEgagSPkF6G3YeA6P7l/jNYJ5rwBBH9Z+S2bSTPadOMx/rFX0Tk7eFEVVU83K666uTjfnox15VhP+Fm7NAPYznhZj+b3QlH2n+xLyc+OFwvmEsScLj2h2F54sox8ZmLgB2C5YXN97DpZXZ4mY3NrQ5JjbRs6+Vkq72LuXIc53bVPlTuO4TaIY5hmr8ZXMRc2UxcXeTo4WuopJN/6UpGO3PCPU0uSOOFiev+TPdqgQlc3D8SwJSEaockvI+Q3B0nDBztqjMs3BpJrZ2fnnDJ4SLZqL0VOgKuXbUfxjhVDjsU6MBNB5vz8gVf4+JwPceqAhbeXo7eN8eBLjxBF57g5lcGvucKrHp9Lr2MFjxBC47cAA==")
+size_override = Vector2(48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a20r0"]
+atlas = SubResource("PortableCompressedTexture2D_opib7")
+region = Rect2(0, 0, 12, 12)
+filter_clip = true
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_e147w"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAADAAAABgAQAAUklGRlgBAABXRUJQVlA4TEwBAAAvL8ALEDegkI0kaP2NVmRRvjsRRW3bQOUPpvDO7aEmACFIeP1EMbl3mf8AQGNSrLi9/5UzuG0AN27y9lEgagSPkF6G3YeA6P7l/jNYJ5rwBBH9Z+S2bSTPadOMx/rFX0Tk7eFEVVU83K666uTjfnox15VhP+Fm7NAPYznhZj+b3QlH2n+xLyc+OFwvmEsScLj2h2F54sox8ZmLgB2C5YXN97DpZXZ4mY3NrQ5JjbRs6+Vkq72LuXIc53bVPlTuO4TaIY5hmr8ZXMRc2UxcXeTo4WuopJN/6UpGO3PCPU0uSOOFiev+TPdqgQlc3D8SwJSEaockvI+Q3B0nDBztqjMs3BpJrZ2fnnDJ4SLZqL0VOgKuXbUfxjhVDjsU6MBNB5vz8gVf4+JwPceqAhbeXo7eN8eBLjxBF57g5lcGvucKrHp9Lr2MFjxBC47cAA==")
+size_override = Vector2(48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opib7"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(0, 0, 12, 12)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_e147w"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_opib7")]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b7b4"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(12, 0, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6rm2"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(24, 0, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1hl8"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(36, 0, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c62wd"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(0, 12, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fbda"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(12, 12, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bk0u"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(24, 12, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm7sl"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(36, 12, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky43h"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(0, 24, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0kl1"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(12, 24, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umn8x"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(24, 24, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obxm8"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(36, 24, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byuaj"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(0, 36, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0pq1"]
+atlas = SubResource("PortableCompressedTexture2D_e147w")
+region = Rect2(0, 0, 12, 12)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_opib7"]
+length = 0.325
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_2b7b4"), SubResource("AtlasTexture_o6rm2"), SubResource("AtlasTexture_t1hl8"), SubResource("AtlasTexture_c62wd"), SubResource("AtlasTexture_1fbda"), SubResource("AtlasTexture_1bk0u"), SubResource("AtlasTexture_jm7sl"), SubResource("AtlasTexture_ky43h"), SubResource("AtlasTexture_q0kl1"), SubResource("AtlasTexture_umn8x"), SubResource("AtlasTexture_obxm8"), SubResource("AtlasTexture_byuaj"), SubResource("AtlasTexture_y0pq1")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a20r0"]
+_data = {
+&"base": SubResource("Animation_e147w"),
+&"glimmer": SubResource("Animation_opib7")
+}
+
+[node name="CoinIcon" type="TextureRect" unique_id=1920606659]
+texture_filter = 1
+texture = SubResource("AtlasTexture_a20r0")
+script = ExtResource("1_e147w")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/currency_icon/coin_icon.aseprite",
+"source_uid": 4259528326569566655
+}
+metadata/_aseprite_wizard_source_file_hash_ = "be95c87ba9604ba1917f66d3d6543584"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=820981602]
+libraries/ = SubResource("AnimationLibrary_a20r0")
