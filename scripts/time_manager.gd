@@ -22,7 +22,7 @@ func get_hour() -> int:
 	return _hour
 
 
-func get_minnute() -> int:
+func get_minute() -> int:
 	return _minute
 
 

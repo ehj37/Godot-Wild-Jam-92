@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://48c8aljyu7hn"]
+
+[ext_resource type="Script" uid="uid://dfw2q6lfux4o7" path="res://scenes/customer_spawner/customer_spawner.gd" id="1_isuxd"]
+
+[node name="CustomerSpawner" type="Node2D" unique_id=258900163]
+script = ExtResource("1_isuxd")
+
+[node name="SpawnRollTimer" type="Timer" parent="." unique_id=1739723528]
+
+[node name="TopSpawnPoint" type="Marker2D" parent="." unique_id=815960463]
+position = Vector2(0, -20)
+
+[node name="BottomSpawnPoint" type="Marker2D" parent="." unique_id=393841214]
+position = Vector2(0, 20)
+
+[connection signal="timeout" from="SpawnRollTimer" to="." method="_on_spawn_roll_timer_timeout"]

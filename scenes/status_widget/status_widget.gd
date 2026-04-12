@@ -12,7 +12,7 @@ func _ready() -> void:
 
 	_on_coins_changed(InventoryManager.get_coins())
 	_on_night_number_changed(TimeManager.get_night_number())
-	_on_time_changed(TimeManager.get_hour(), TimeManager.get_minnute())
+	_on_time_changed(TimeManager.get_hour(), TimeManager.get_minute())
 
 
 func _on_coins_changed(new_amount: int) -> void:

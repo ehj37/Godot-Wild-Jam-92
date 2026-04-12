@@ -1,6 +1,6 @@
 extends TextureRect
 
-const TIME_BETWEEN_GLIMMERS: float = 7.5
+const TIME_BETWEEN_GLIMMERS: float = 5.0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 

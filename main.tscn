@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b86gbj1hrinun" path="res://scenes/status_widget/status_widget.tscn" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://dbkuf67h8giki" path="res://scenes/customer/customer.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dndwr7spvj705" path="res://scenes/shop/shop.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://48c8aljyu7hn" path="res://scenes/customer_spawner/customer_spawner.tscn" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://c1du00t7sl400" path="res://scripts/time_range.gd" id="9_kek77"]
 
 [sub_resource type="Theme" id="Theme_7dm0k"]
 Label/font_sizes/font_size = 6
@@ -14,6 +16,12 @@ Label/fonts/font = ExtResource("1_ig7tw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(48, 48)
+
+[sub_resource type="Resource" id="Resource_kek77"]
+script = ExtResource("9_kek77")
+starting_hour = 21
+ending_hour = 2
+metadata/_custom_type_script = "uid://c1du00t7sl400"
 
 [node name="Main" type="Node2D" unique_id=1460177824]
 script = ExtResource("1_272bh")
@@ -84,3 +92,9 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConsiderArea" unique_id=1485401662]
 shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="CustomerSpawner" parent="." unique_id=258900163 instance=ExtResource("7_5vw27")]
+position = Vector2(-42, 159)
+spawn_roll_probability = 0.8
+spawn_roll_cadence = 0.5
+time_range = SubResource("Resource_kek77")
