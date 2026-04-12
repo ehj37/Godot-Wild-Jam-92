@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cvg6vcyt5xubl"]
+
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_l30du"]
+[ext_resource type="Script" uid="uid://d0fn5sd1ybacm" path="res://scenes/recipe_widget/recipe_slot/recipe_slot.gd" id="2_c6gps"]
+[ext_resource type="Texture2D" uid="uid://d00ycbq1ddofx" path="res://scenes/recipe_widget/recipe_slot/grabber.png" id="2_y8xql"]
+[ext_resource type="PackedScene" uid="uid://btaemvjlnqh3w" path="res://scenes/pumpkin_icon/pumpkin_icon.tscn" id="3_c6gps"]
+[ext_resource type="PackedScene" uid="uid://qns2akmt2xnl" path="res://scenes/spider_icon/spider_icon.tscn" id="4_74qm3"]
+
+[sub_resource type="Gradient" id="Gradient_gl6dg"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2jiwq"]
+gradient = SubResource("Gradient_gl6dg")
+width = 4
+height = 4
+
+[node name="RecipeSlot" type="VBoxContainer" unique_id=601482140]
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 36.0
+theme = ExtResource("1_l30du")
+script = ExtResource("2_c6gps")
+
+[node name="Panel" type="Panel" parent="." unique_id=293634627]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1540740166]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -3.0
+offset_right = 19.0
+offset_bottom = 3.0
+texture = SubResource("GradientTexture2D_2jiwq")
+
+[node name="IngredientIconContainer" type="CenterContainer" parent="Panel" unique_id=1023549665]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="PumpkinIcon" parent="Panel/IngredientIconContainer" unique_id=1036038493 instance=ExtResource("3_c6gps")]
+layout_mode = 2
+
+[node name="SpiderIcon" parent="Panel/IngredientIconContainer" unique_id=1104299584 instance=ExtResource("4_74qm3")]
+layout_mode = 2
+
+[node name="QuantitySlider" type="HSlider" parent="." unique_id=1942553195]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("2_y8xql")
+theme_override_icons/grabber_highlight = ExtResource("2_y8xql")
+theme_override_icons/grabber_disabled = ExtResource("2_y8xql")
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+
+[node name="QuantityLabel" type="Label" parent="." unique_id=2070776679]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[connection signal="value_changed" from="QuantitySlider" to="." method="_on_quantity_slider_value_changed"]

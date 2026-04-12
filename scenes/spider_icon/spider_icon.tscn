@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://qns2akmt2xnl"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_6oxcf"]
+_data = PackedByteArray("AAADAAUAAAABAAAADAAAAAwAAABKAAAAUklGRkIAAABXRUJQVlA4TDUAAAAvC8ACEB8w//M///MfgFJgG0mSk3nl63y0LwkBn/xtgojof/KbjVnElwyP5nXzmrwMw2ABAAA=")
+size_override = Vector2(12, 12)
+
+[node name="SpiderIcon" type="TextureRect" unique_id=1104299584]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_6oxcf")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/spider_icon/spider_icon.aseprite",
+"source_uid": 3063871623497138367
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0ea00d7c1b9f303fbb9d9bbe9cde20"

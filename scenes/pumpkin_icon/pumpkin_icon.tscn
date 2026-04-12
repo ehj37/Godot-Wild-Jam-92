@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://btaemvjlnqh3w"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_fs2tx"]
+_data = PackedByteArray("AAADAAUAAAABAAAADAAAAAwAAABqAAAAUklGRmIAAABXRUJQVlA4TFYAAAAvC8ACECcgJCA8lP2/YQiRts38O5i2iTg9VNC2DdMLoDTGn96k+Q8Au6z+y4GCyFYiPAKADYAGP4FX/1KgGSL6PwH0vkkPM4gAxKbmTQMCvhwcGukACA==")
+size_override = Vector2(12, 12)
+
+[node name="PumpkinIcon" type="TextureRect" unique_id=1036038493]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_fs2tx")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/pumpkin_icon/pumpkin_icon.aseprite",
+"source_uid": 5114790895613463490
+}
+metadata/_aseprite_wizard_source_file_hash_ = "e1e6c2e5dda8669fce5267e8947905f7"

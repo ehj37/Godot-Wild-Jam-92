@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://ce4v4g0d4uc2u"
+path="res://.godot/imported/pumpkin_icon.aseprite-8b2f22d060021c3c98c7e57c9bf45fb3.res"
+
+[deps]
+
+source_file="res://scenes/pumpkin_icon/pumpkin_icon.aseprite"
+dest_files=["res://.godot/imported/pumpkin_icon.aseprite-8b2f22d060021c3c98c7e57c9bf45fb3.res"]
+
+[params]
+

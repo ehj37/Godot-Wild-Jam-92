@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dndwr7spvj705" path="res://scenes/shop/shop.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bt5tvcj2wdrbp" path="res://scenes/price_widget/price_widget.tscn" id="6_efxa6"]
 [ext_resource type="PackedScene" uid="uid://48c8aljyu7hn" path="res://scenes/customer_spawner/customer_spawner.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://c1cc3m0x0dym2" path="res://scenes/recipe_widget/recipe_widget.tscn" id="7_dg77c"]
+[ext_resource type="PackedScene" uid="uid://h760c5xaan4x" path="res://scenes/inventory_widget/inventory_widget.tscn" id="8_ycdy4"]
 [ext_resource type="Script" uid="uid://c1du00t7sl400" path="res://scripts/time_range.gd" id="9_kek77"]
 
 [sub_resource type="Theme" id="Theme_7dm0k"]
@@ -26,6 +28,7 @@ ending_hour = 2
 metadata/_custom_type_script = "uid://c1du00t7sl400"
 
 [node name="Main" type="Node2D" unique_id=1460177824]
+y_sort_enabled = true
 script = ExtResource("1_272bh")
 
 [node name="Shop" parent="." unique_id=576003885 instance=ExtResource("6_7mycd")]
@@ -40,6 +43,9 @@ offset_bottom = 56.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Cauldron" parent="TopBar/ColorRect" unique_id=487662480 instance=ExtResource("4_1bvp3")]
+position = Vector2(24, 53)
+
 [node name="StatusWidget" parent="TopBar/ColorRect" unique_id=785536209 instance=ExtResource("4_272bh")]
 
 [node name="CatButton" parent="TopBar/ColorRect" unique_id=449247657 instance=ExtResource("3_h2yge")]
@@ -49,11 +55,14 @@ offset_top = 47.0
 offset_right = 310.0
 offset_bottom = 47.0
 
-[node name="Cauldron" parent="TopBar/ColorRect" unique_id=487662480 instance=ExtResource("4_1bvp3")]
-position = Vector2(93, 45)
+[node name="RecipeWidget" parent="TopBar/ColorRect" unique_id=2139735939 instance=ExtResource("7_dg77c")]
+position = Vector2(67, 5)
 
 [node name="PriceWidget" parent="TopBar/ColorRect" unique_id=264271832 instance=ExtResource("6_efxa6")]
-position = Vector2(207, 3)
+position = Vector2(232, 3)
+
+[node name="InventoryWidget" parent="TopBar/ColorRect" unique_id=746615663 instance=ExtResource("8_ycdy4")]
+position = Vector2(160, 5)
 
 [node name="ActivityLog" type="CanvasLayer" parent="." unique_id=789801740]
 

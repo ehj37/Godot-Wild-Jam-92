@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelManager="*uid://b42lqinvktlkr"
+RecipeManager="*uid://c02j3u5dwvvqf"
 TimeManager="*uid://boougkwf6a136"
 InventoryManager="*uid://kkny8xuyjc5j"
 PriceManager="*uid://uydjslgka2de"

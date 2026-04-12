@@ -2,7 +2,7 @@ extends CustomerState
 
 
 func enter(_data: Dictionary = {}) -> void:
-	InventoryManager.add_coins(PriceManager.current_price)
+	InventoryManager.update_from_order()
 
 	customer.animation_player.play("sip")
 	await customer.animation_player.animation_finished

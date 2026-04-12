@@ -46,7 +46,7 @@ layout_mode = 2
 text = "0"
 
 [node name="PriceSlider" type="HSlider" parent="VBoxContainer/PriceSliderContainer" unique_id=1361338068]
-custom_minimum_size = Vector2(60, 6)
+custom_minimum_size = Vector2(40, 6)
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("5_as5tn")
 theme_override_icons/grabber_highlight = ExtResource("6_sii7i")
