@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dvk2g0qshe4js"]
+
+[ext_resource type="Script" uid="uid://by1ac0tgav74k" path="res://scenes/line_edit_restricted/line_edit_restricted.gd" id="1_7p4st"]
+
+[node name="LineEditRestricted" type="LineEdit" unique_id=670356237]
+script = ExtResource("1_7p4st")
+
+[connection signal="text_changed" from="." to="." method="_on_text_changed"]
+[connection signal="text_submitted" from="." to="." method="_on_text_submitted"]

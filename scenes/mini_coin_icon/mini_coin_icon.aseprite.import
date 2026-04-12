@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://ci3bo2s5xljfc"
+path="res://.godot/imported/mini_coin_icon.aseprite-bdbb9d7f465c052e325dcc6a82c895c9.res"
+
+[deps]
+
+source_file="res://scenes/mini_coin_icon/mini_coin_icon.aseprite"
+dest_files=["res://.godot/imported/mini_coin_icon.aseprite-bdbb9d7f465c052e325dcc6a82c895c9.res"]
+
+[params]
+

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbkuf67h8giki" path="res://scenes/customer/customer.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://br1b6vdg4pfvk" path="res://scenes/activity_log_widget/activity_log_widget.tscn" id="6_4c57u"]
 [ext_resource type="PackedScene" uid="uid://dndwr7spvj705" path="res://scenes/shop/shop.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bt5tvcj2wdrbp" path="res://scenes/price_widget/price_widget.tscn" id="6_efxa6"]
 [ext_resource type="PackedScene" uid="uid://48c8aljyu7hn" path="res://scenes/customer_spawner/customer_spawner.tscn" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://c1du00t7sl400" path="res://scripts/time_range.gd" id="9_kek77"]
 
@@ -50,6 +51,9 @@ offset_bottom = 47.0
 
 [node name="Cauldron" parent="TopBar/ColorRect" unique_id=487662480 instance=ExtResource("4_1bvp3")]
 position = Vector2(93, 45)
+
+[node name="PriceWidget" parent="TopBar/ColorRect" unique_id=264271832 instance=ExtResource("6_efxa6")]
+position = Vector2(207, 3)
 
 [node name="ActivityLog" type="CanvasLayer" parent="." unique_id=789801740]
 

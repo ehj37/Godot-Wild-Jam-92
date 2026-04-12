@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dmdlxomhb2jq6"
+path="res://.godot/imported/grabber_highlight.aseprite-7d1ac126dbc66118079df89f7bef9bfd.res"
+
+[deps]
+
+source_file="res://scenes/price_widget/grabber_highlight.aseprite"
+dest_files=["res://.godot/imported/grabber_highlight.aseprite-7d1ac126dbc66118079df89f7bef9bfd.res"]
+
+[params]
+

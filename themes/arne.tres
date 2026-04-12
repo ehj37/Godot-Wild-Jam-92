@@ -2,8 +2,27 @@
 
 [ext_resource type="FontFile" uid="uid://dxf5bfgvayfhn" path="res://fonts/arne.png" id="1_dapwq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ibkm"]
+bg_color = Color(0.84705883, 0.62352943, 0.9372549, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gc8vy"]
+bg_color = Color(0.65882355, 0.1764706, 0.8666667, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3a7w"]
+border_width_left = 5
+border_width_top = 2
+border_width_right = 5
+border_width_bottom = 2
+border_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+
 [resource]
 Button/font_sizes/font_size = 6
 Button/fonts/font = ExtResource("1_dapwq")
+HSlider/icons/grabber_disabled = null
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_1ibkm")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_gc8vy")
+HSlider/styles/slider = SubResource("StyleBoxFlat_p3a7w")
 Label/font_sizes/font_size = 6
 Label/fonts/font = ExtResource("1_dapwq")

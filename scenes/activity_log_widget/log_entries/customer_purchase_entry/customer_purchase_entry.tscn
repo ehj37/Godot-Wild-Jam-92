@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_bbiee"]
 [ext_resource type="Script" uid="uid://cm7c7yrs4og0b" path="res://scenes/activity_log_widget/log_entries/customer_purchase_entry/customer_purchase_entry.gd" id="2_yabid"]
-[ext_resource type="PackedScene" uid="uid://dfdmsr7q5s2fc" path="res://scenes/activity_log_widget/log_entries/mini_coin_icon/mini_coin_icon.tscn" id="3_72jsh"]
+[ext_resource type="PackedScene" uid="uid://dfdmsr7q5s2fc" path="res://scenes/mini_coin_icon/mini_coin_icon.tscn" id="3_72jsh"]
 
 [node name="CustomerPurchaseEntry" type="HBoxContainer" unique_id=807372519]
 theme = ExtResource("1_bbiee")

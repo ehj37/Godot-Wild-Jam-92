@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bt5tvcj2wdrbp"]
+
+[ext_resource type="Script" uid="uid://dj8l8q6nfl8tf" path="res://scenes/price_widget/price_widget.gd" id="1_pgv1o"]
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="2_rm1oa"]
+[ext_resource type="PackedScene" uid="uid://dfdmsr7q5s2fc" path="res://scenes/mini_coin_icon/mini_coin_icon.tscn" id="3_2dnoo"]
+[ext_resource type="PackedScene" uid="uid://b8o7sgvhiftxy" path="res://scenes/coin_icon/coin_icon.tscn" id="3_1840w"]
+[ext_resource type="Texture2D" uid="uid://cvy1jjmscsoyk" path="res://scenes/price_widget/grabber.png" id="5_as5tn"]
+[ext_resource type="Texture2D" uid="uid://djtiedpmrswj7" path="res://scenes/price_widget/grabber_highlight.png" id="6_sii7i"]
+
+[node name="PriceWidget" type="Node2D" unique_id=264271832]
+script = ExtResource("1_pgv1o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2054585332]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_rm1oa")
+
+[node name="PriceLabelContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1898875278]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PricePrefixLabel" type="Label" parent="VBoxContainer/PriceLabelContainer" unique_id=1131158930]
+layout_mode = 2
+text = "PRICE:"
+
+[node name="CoinIcon" parent="VBoxContainer/PriceLabelContainer" unique_id=1920606659 instance=ExtResource("3_1840w")]
+layout_mode = 2
+
+[node name="PriceAmountLabel" type="Label" parent="VBoxContainer/PriceLabelContainer" unique_id=964342396]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "5"
+
+[node name="PriceSliderContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1062330450]
+layout_mode = 2
+
+[node name="MinPriceContainer" type="HBoxContainer" parent="VBoxContainer/PriceSliderContainer" unique_id=1357301728]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MiniCoinIcon" parent="VBoxContainer/PriceSliderContainer/MinPriceContainer" unique_id=1193548858 instance=ExtResource("3_2dnoo")]
+layout_mode = 2
+
+[node name="MinPriceLabel" type="Label" parent="VBoxContainer/PriceSliderContainer/MinPriceContainer" unique_id=495350853]
+layout_mode = 2
+text = "0"
+
+[node name="PriceSlider" type="HSlider" parent="VBoxContainer/PriceSliderContainer" unique_id=1361338068]
+custom_minimum_size = Vector2(60, 6)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("5_as5tn")
+theme_override_icons/grabber_highlight = ExtResource("6_sii7i")
+max_value = 20.0
+
+[node name="MaxPriceContainer" type="HBoxContainer" parent="VBoxContainer/PriceSliderContainer" unique_id=551970227]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MiniCoinIcon" parent="VBoxContainer/PriceSliderContainer/MaxPriceContainer" unique_id=864122561 instance=ExtResource("3_2dnoo")]
+layout_mode = 2
+
+[node name="MaxPriceLabel" type="Label" parent="VBoxContainer/PriceSliderContainer/MaxPriceContainer" unique_id=1466090185]
+layout_mode = 2
+text = "20"
+
+[connection signal="value_changed" from="VBoxContainer/PriceSliderContainer/PriceSlider" to="." method="_on_price_slider_value_changed"]
