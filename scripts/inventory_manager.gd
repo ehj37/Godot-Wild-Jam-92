@@ -12,6 +12,9 @@ var _coins: int = INITIAL_COINS
 var _pumpkins: int = INITIAL_PUMPKINS
 var _spiders: int = INITIAL_SPIDERS
 
+@onready
+var _coin_add_sound_effect_config: SoundEffectConfig = preload("res://sound_effects/coin_add.tres")
+
 
 func get_ingredient_count(ingredient: RecipeManager.Ingredient) -> int:
 	match ingredient:
@@ -63,6 +66,9 @@ func get_coins() -> int:
 func change_coins(amount: int) -> void:
 	if amount == 0:
 		return
+
+	if amount > 0:
+		SoundEffectManager.play(_coin_add_sound_effect_config)
 
 	_coins += amount
 	coins_changed.emit(_coins, amount)
