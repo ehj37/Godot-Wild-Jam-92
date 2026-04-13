@@ -1,15 +1,29 @@
 extends CustomerState
 
-const ORDER_PROBABILITY: float = 1.0
+const ORDER_PROBABILITY: float = 0.9
 
 
 func enter(_data: Dictionary = {}) -> void:
 	customer.animation_player.play("consider")
 	await customer.animation_player.animation_finished
 
-	if randf() <= ORDER_PROBABILITY:
+	if InventoryManager.has_enough_for_order() && randf() <= ORDER_PROBABILITY:
+		# Immediately update inventory so no order goes unfilfilled
+		InventoryManager.update_from_order()
+
+		var order_window_x_offset: float = randf_range(
+			-LevelManager.ORDER_WINDOW_MAX_X_VARIANCE, LevelManager.ORDER_WINDOW_MAX_X_VARIANCE
+		)
+		var order_window_y_offset: float = randf_range(
+			-LevelManager.ORDER_WINDOW_MAX_Y_VARIANCE, LevelManager.ORDER_WINDOW_MAX_Y_VARIANCE
+		)
+		var target: Vector2 = (
+			LevelManager.ORDER_WINDOW_POSITION
+			+ Vector2(order_window_x_offset, order_window_y_offset)
+		)
+
 		var target_data: Customer.TargetData = Customer.TargetData.new(
-			LevelManager.ORDER_WINDOW_POSITION, func() -> void: state_machine.transition_to("Sip")
+			target, func() -> void: state_machine.transition_to("Order")
 		)
 		transition_to("Walk", {"target_data": target_data})
 	else:

@@ -26,6 +26,9 @@ func get_ingredient_count(ingredient: RecipeManager.Ingredient) -> int:
 
 
 func change_ingredient_count(ingredient: RecipeManager.Ingredient, delta: int) -> void:
+	if delta == 0:
+		return
+
 	match ingredient:
 		RecipeManager.Ingredient.PUMPKIN:
 			_pumpkins += delta
@@ -37,12 +40,19 @@ func change_ingredient_count(ingredient: RecipeManager.Ingredient, delta: int) -
 			assert(false, "Unhandled ingredient in InventoryManager.change_ingredient_count")
 
 
-func update_from_order() -> void:
-	_coins += PriceManager.current_price
+func has_enough_for_order() -> bool:
+	for ingredient: RecipeManager.Ingredient in RecipeManager.Ingredient.values():
+		if get_ingredient_count(ingredient) < RecipeManager.get_required_amount_for(ingredient):
+			return false
 
-	var recipe: Dictionary = RecipeManager.recipe
-	for ingredient: RecipeManager.Ingredient in recipe.keys():
-		var amount: int = recipe.get(ingredient)
+	return true
+
+
+func update_from_order() -> void:
+	change_coins(PriceManager.current_price)
+
+	for ingredient: RecipeManager.Ingredient in RecipeManager.Ingredient.values():
+		var amount: int = RecipeManager.get_required_amount_for(ingredient)
 		change_ingredient_count(ingredient, -amount)
 
 

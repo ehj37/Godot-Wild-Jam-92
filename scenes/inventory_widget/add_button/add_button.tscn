@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://lxfyy6o2frgq"]
+
+[ext_resource type="Texture2D" uid="uid://dhwhqg3hrtpv8" path="res://scenes/inventory_widget/add_button/add_button.png" id="1_8fq5q"]
+[ext_resource type="Texture2D" uid="uid://bbbrga6klxbxa" path="res://scenes/inventory_widget/add_button/add_button_pressed.png" id="2_0ap2d"]
+[ext_resource type="Texture2D" uid="uid://sgwyj54w7on7" path="res://scenes/inventory_widget/add_button/add_button_hover.png" id="3_krii7"]
+[ext_resource type="Texture2D" uid="uid://dkrxasuvvqevq" path="res://scenes/inventory_widget/add_button/add_button_disabled.png" id="4_cgyv8"]
+
+[node name="AddButton" type="TextureButton" unique_id=2135545805]
+texture_normal = ExtResource("1_8fq5q")
+texture_pressed = ExtResource("2_0ap2d")
+texture_hover = ExtResource("3_krii7")
+texture_disabled = ExtResource("4_cgyv8")

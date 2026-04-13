@@ -2,8 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_3ydqr"]
 [ext_resource type="Script" uid="uid://la1d4onwpxvb" path="res://scenes/inventory_widget/inventory_widget.gd" id="1_nd4os"]
-[ext_resource type="PackedScene" uid="uid://btaemvjlnqh3w" path="res://scenes/pumpkin_icon/pumpkin_icon.tscn" id="2_5gitw"]
-[ext_resource type="PackedScene" uid="uid://qns2akmt2xnl" path="res://scenes/spider_icon/spider_icon.tscn" id="4_purat"]
+[ext_resource type="PackedScene" uid="uid://cj7gg48qa5vm3" path="res://scenes/inventory_widget/inventory_slot.tscn" id="3_nd4os"]
 
 [node name="InventoryWidget" type="Node2D" unique_id=746615663]
 script = ExtResource("1_nd4os")
@@ -18,24 +17,9 @@ theme_override_constants/separation = 2
 layout_mode = 2
 text = "INVENTORY"
 
-[node name="IngredientsContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1059574603]
+[node name="InventorySlotPumpkin" parent="VBoxContainer" unique_id=594767474 instance=ExtResource("3_nd4os")]
 layout_mode = 2
 
-[node name="PumpkinContainer" type="HBoxContainer" parent="VBoxContainer/IngredientsContainer" unique_id=726056466]
+[node name="InventorySlotSpider" parent="VBoxContainer" unique_id=1043167808 instance=ExtResource("3_nd4os")]
 layout_mode = 2
-
-[node name="PumpkinIcon" parent="VBoxContainer/IngredientsContainer/PumpkinContainer" unique_id=1036038493 instance=ExtResource("2_5gitw")]
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="PumpkinQuantityLabel" type="Label" parent="VBoxContainer/IngredientsContainer/PumpkinContainer" unique_id=1757739787]
-layout_mode = 2
-
-[node name="SpiderContainer" type="HBoxContainer" parent="VBoxContainer/IngredientsContainer" unique_id=276791554]
-layout_mode = 2
-
-[node name="SpiderIcon" parent="VBoxContainer/IngredientsContainer/SpiderContainer" unique_id=1104299584 instance=ExtResource("4_purat")]
-layout_mode = 2
-
-[node name="SpiderQuantityLabel" type="Label" parent="VBoxContainer/IngredientsContainer/SpiderContainer" unique_id=1087574001]
-layout_mode = 2
+ingredient = 1

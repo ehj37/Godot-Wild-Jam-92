@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bhtc31ah4pqyh"
+path="res://.godot/imported/mini_spider_icon.aseprite-da8242d65c6229ec4d93615ca152785d.res"
+
+[deps]
+
+source_file="res://scenes/mini_spider_icon/mini_spider_icon.aseprite"
+dest_files=["res://.godot/imported/mini_spider_icon.aseprite-da8242d65c6229ec4d93615ca152785d.res"]
+
+[params]
+

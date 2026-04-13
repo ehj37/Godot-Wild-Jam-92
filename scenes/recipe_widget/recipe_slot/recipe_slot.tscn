@@ -4,17 +4,11 @@
 [ext_resource type="Script" uid="uid://d0fn5sd1ybacm" path="res://scenes/recipe_widget/recipe_slot/recipe_slot.gd" id="2_c6gps"]
 [ext_resource type="Texture2D" uid="uid://d00ycbq1ddofx" path="res://scenes/recipe_widget/recipe_slot/grabber.png" id="2_y8xql"]
 [ext_resource type="PackedScene" uid="uid://btaemvjlnqh3w" path="res://scenes/pumpkin_icon/pumpkin_icon.tscn" id="3_c6gps"]
+[ext_resource type="PackedScene" uid="uid://b4f46hixvlwop" path="res://scenes/recipe_widget/recipe_slot/remove_button/remove_button.tscn" id="3_ixwhy"]
 [ext_resource type="PackedScene" uid="uid://qns2akmt2xnl" path="res://scenes/spider_icon/spider_icon.tscn" id="4_74qm3"]
 
-[sub_resource type="Gradient" id="Gradient_gl6dg"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2jiwq"]
-gradient = SubResource("Gradient_gl6dg")
-width = 4
-height = 4
-
 [node name="RecipeSlot" type="VBoxContainer" unique_id=601482140]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(20, 16)
 offset_right = 16.0
 offset_bottom = 36.0
 theme = ExtResource("1_l30du")
@@ -25,18 +19,18 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1540740166]
+[node name="RemoveButton" parent="Panel" unique_id=1728985289 instance=ExtResource("3_ixwhy")]
 layout_mode = 0
 offset_left = 13.0
-offset_top = -3.0
-offset_right = 19.0
-offset_bottom = 3.0
-texture = SubResource("GradientTexture2D_2jiwq")
+offset_top = -1.0
+offset_right = 18.0
+offset_bottom = 4.0
 
 [node name="IngredientIconContainer" type="CenterContainer" parent="Panel" unique_id=1023549665]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+mouse_filter = 2
 
 [node name="PumpkinIcon" parent="Panel/IngredientIconContainer" unique_id=1036038493 instance=ExtResource("3_c6gps")]
 layout_mode = 2
@@ -59,4 +53,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "0"
 
+[connection signal="pressed" from="Panel/RemoveButton" to="." method="_on_remove_button_pressed"]
 [connection signal="value_changed" from="QuantitySlider" to="." method="_on_quantity_slider_value_changed"]

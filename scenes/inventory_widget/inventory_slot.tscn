@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cj7gg48qa5vm3"]
+
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_vvalc"]
+[ext_resource type="PackedScene" uid="uid://cvee8mxnvdrgg" path="res://scenes/mini_pumpkin_icon/mini_pumpkin_icon.tscn" id="2_ol808"]
+[ext_resource type="Script" uid="uid://7sgn7gykv4f6" path="res://scenes/inventory_widget/inventory_slot.gd" id="2_xw81j"]
+[ext_resource type="PackedScene" uid="uid://dygcpxq3o0d7s" path="res://scenes/mini_spider_icon/mini_spider_icon.tscn" id="3_xw81j"]
+[ext_resource type="PackedScene" uid="uid://lxfyy6o2frgq" path="res://scenes/inventory_widget/add_button/add_button.tscn" id="5_hx261"]
+
+[node name="InventorySlot" type="HBoxContainer" unique_id=594767474]
+theme = ExtResource("1_vvalc")
+theme_override_constants/separation = 2
+script = ExtResource("2_xw81j")
+
+[node name="AddButton" parent="." unique_id=2135545805 instance=ExtResource("5_hx261")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="." unique_id=1427757313]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="MiniPumpkinIcon" parent="Panel" unique_id=327108308 instance=ExtResource("2_ol808")]
+layout_mode = 0
+
+[node name="MiniSpiderIcon" parent="Panel" unique_id=812179645 instance=ExtResource("3_xw81j")]
+layout_mode = 0
+
+[node name="QuantityLabel" type="Label" parent="." unique_id=87010034]
+layout_mode = 2
+text = "5"
+
+[connection signal="pressed" from="AddButton" to="." method="_on_add_button_pressed"]

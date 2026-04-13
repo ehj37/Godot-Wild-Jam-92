@@ -10,8 +10,15 @@ const LACKING_INGREDIENT_TEXT_COLOR: Color = Color.RED
 @export var ingredient: Ingredient:
 	set(new_ingredient):
 		ingredient = new_ingredient
-		_update_ingredient_icon()
+		if not is_node_ready():
+			await ready
 
+		_update_remove_button()
+		_update_ingredient_icon()
+		_update_quantity_label()
+		_update_quantity_slider()
+
+@onready var _remove_button: TextureButton = $Panel/RemoveButton
 @onready var _pumpkin_icon: TextureRect = $Panel/IngredientIconContainer/PumpkinIcon
 @onready var _spider_icon: TextureRect = $Panel/IngredientIconContainer/SpiderIcon
 @onready var _ingredient_to_icon: Dictionary = {
@@ -23,13 +30,6 @@ const LACKING_INGREDIENT_TEXT_COLOR: Color = Color.RED
 
 
 func _ready() -> void:
-	_update_ingredient_icon()
-	_update_quantity_label()
-
-	if ingredient != Ingredient.NONE:
-		var translated_ingredient: RecipeManager.Ingredient = _get_translated_ingredient()
-		_quantity_slider.value = RecipeManager.recipe.get(translated_ingredient, 0)
-
 	InventoryManager.ingredient_changed.connect(_on_ingredient_changed)
 
 
@@ -49,6 +49,10 @@ func _get_translated_ingredient() -> RecipeManager.Ingredient:
 	return RecipeManager.Ingredient.PUMPKIN
 
 
+func _update_remove_button() -> void:
+	_remove_button.visible = ingredient != Ingredient.NONE
+
+
 func _update_ingredient_icon() -> void:
 	var icon_to_show: TextureRect = _ingredient_to_icon.get(ingredient)
 	var all_icons: Array = _ingredient_to_icon.values()
@@ -59,16 +63,27 @@ func _update_ingredient_icon() -> void:
 func _update_quantity_label() -> void:
 	if ingredient == Ingredient.NONE:
 		_quantity_label.text = "-"
+		_quantity_label.add_theme_color_override("font_color", HAS_ENOUGH_OF_INGREDIENT_TEXT_COLOR)
 		return
 
 	var translated_ingredient: RecipeManager.Ingredient = _get_translated_ingredient()
-	var recipe_amount: int = RecipeManager.recipe.get(translated_ingredient, 0)
+	var recipe_amount: int = RecipeManager.get_required_amount_for(translated_ingredient)
 	_quantity_label.text = str(recipe_amount)
 
 	if recipe_amount > InventoryManager.get_ingredient_count(translated_ingredient):
 		_quantity_label.add_theme_color_override("font_color", LACKING_INGREDIENT_TEXT_COLOR)
 	else:
 		_quantity_label.add_theme_color_override("font_color", HAS_ENOUGH_OF_INGREDIENT_TEXT_COLOR)
+
+
+func _update_quantity_slider() -> void:
+	if ingredient == Ingredient.NONE:
+		_quantity_slider.visible = false
+		return
+
+	_quantity_slider.visible = true
+	var translated_ingredient: RecipeManager.Ingredient = _get_translated_ingredient()
+	_quantity_slider.value = RecipeManager.get_required_amount_for(translated_ingredient)
 
 
 func _on_ingredient_changed(
@@ -86,5 +101,14 @@ func _on_quantity_slider_value_changed(value: float) -> void:
 
 	var translated_ingredient: RecipeManager.Ingredient = _get_translated_ingredient()
 	var new_quantity: int = int(value)
-	RecipeManager.recipe.set(translated_ingredient, new_quantity)
+	RecipeManager.change_required_amount(translated_ingredient, new_quantity)
+	_update_quantity_label()
+
+
+func _on_remove_button_pressed() -> void:
+	var translated_ingredient: RecipeManager.Ingredient = _get_translated_ingredient()
+	RecipeManager.change_required_amount(translated_ingredient, 0)
+	ingredient = Ingredient.NONE
+	_update_ingredient_icon()
+	_update_remove_button()
 	_update_quantity_label()

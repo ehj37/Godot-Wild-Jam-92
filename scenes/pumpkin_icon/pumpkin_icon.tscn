@@ -6,6 +6,7 @@ size_override = Vector2(12, 12)
 
 [node name="PumpkinIcon" type="TextureRect" unique_id=1036038493]
 texture_filter = 1
+mouse_filter = 2
 texture = SubResource("PortableCompressedTexture2D_fs2tx")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}

@@ -6,6 +6,7 @@ size_override = Vector2(12, 12)
 
 [node name="SpiderIcon" type="TextureRect" unique_id=1104299584]
 texture_filter = 1
+mouse_filter = 2
 texture = SubResource("PortableCompressedTexture2D_6oxcf")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}

@@ -17,6 +17,9 @@ border_width_right = 5
 border_width_bottom = 2
 border_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4bdt"]
+bg_color = Color(0.21176471, 0.21176471, 0.21176471, 0.49019608)
+
 [resource]
 Button/font_sizes/font_size = 6
 Button/fonts/font = ExtResource("1_dapwq")
@@ -26,3 +29,4 @@ HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_gc8vy")
 HSlider/styles/slider = SubResource("StyleBoxFlat_p3a7w")
 Label/font_sizes/font_size = 6
 Label/fonts/font = ExtResource("1_dapwq")
+Panel/styles/panel = SubResource("StyleBoxFlat_f4bdt")

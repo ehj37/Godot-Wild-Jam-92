@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b4f46hixvlwop"]
+
+[ext_resource type="Texture2D" uid="uid://bdu4gidi6tdbn" path="res://scenes/recipe_widget/recipe_slot/remove_button/remove_button.png" id="1_wdh5p"]
+[ext_resource type="Texture2D" uid="uid://clgg0vidqblbg" path="res://scenes/recipe_widget/recipe_slot/remove_button/remove_button_pressed.png" id="2_k1s63"]
+[ext_resource type="Texture2D" uid="uid://ohjx617kff52" path="res://scenes/recipe_widget/recipe_slot/remove_button/remove_button_hover.png" id="3_vqafl"]
+
+[node name="RemoveButton" type="TextureButton" unique_id=1728985289]
+custom_minimum_size = Vector2(5, 5)
+texture_normal = ExtResource("1_wdh5p")
+texture_pressed = ExtResource("2_k1s63")
+texture_hover = ExtResource("3_vqafl")

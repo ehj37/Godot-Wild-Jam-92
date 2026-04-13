@@ -16,7 +16,7 @@ class TargetData:
 
 const MIN_DELAY_BEFORE_CONSIDER: float = 0.5
 const MAX_DELAY_BEFORE_CONSIDER: float = 4.5
-const CONSIDER_PROBABILITY: float = 1.0
+const CONSIDER_PROBABILITY: float = 0.9
 
 var default_target_data: TargetData
 var _consider_triggered: bool = false
@@ -40,4 +40,5 @@ func _on_consider_area_detector_area_entered(_area: Area2D) -> void:
 		)
 		await get_tree().create_timer(delay_before_consider).timeout
 
-		_state_machine.transition_to("Consider")
+		if InventoryManager.has_enough_for_order():
+			_state_machine.transition_to("Consider")

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d027sd5o8xxpk"
+path="res://.godot/imported/remove_button.aseprite-08642b7c50e1afdae722dc1c0ef96f9b.res"
+
+[deps]
+
+source_file="res://scenes/recipe_widget/recipe_slot/remove_button/remove_button.aseprite"
+dest_files=["res://.godot/imported/remove_button.aseprite-08642b7c50e1afdae722dc1c0ef96f9b.res"]
+
+[params]
+

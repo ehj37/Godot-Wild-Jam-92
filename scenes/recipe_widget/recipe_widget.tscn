@@ -28,6 +28,3 @@ ingredient = 1
 [node name="RecipeSlot2" parent="VBoxContainer/RecipeSlotContainer" unique_id=51619218 instance=ExtResource("2_asqf0")]
 layout_mode = 2
 ingredient = 2
-
-[node name="RecipeSlot3" parent="VBoxContainer/RecipeSlotContainer" unique_id=601482140 instance=ExtResource("2_asqf0")]
-layout_mode = 2

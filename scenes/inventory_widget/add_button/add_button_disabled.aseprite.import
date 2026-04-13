@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://clol37ks5sgb2"
+path="res://.godot/imported/add_button_disabled.aseprite-1329e68ee236e4314b0038906de0e530.res"
+
+[deps]
+
+source_file="res://scenes/inventory_widget/add_button/add_button_disabled.aseprite"
+dest_files=["res://.godot/imported/add_button_disabled.aseprite-1329e68ee236e4314b0038906de0e530.res"]
+
+[params]
+
