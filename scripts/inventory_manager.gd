@@ -1,5 +1,6 @@
 extends Node
 
+signal order_fulfilled
 signal coins_changed(new_amount: int, delta: int)
 signal ingredient_changed(ingredient: RecipeManager.Ingredient, new_amount: int, delta: int)
 
@@ -57,6 +58,8 @@ func update_from_order() -> void:
 	for ingredient: RecipeManager.Ingredient in RecipeManager.Ingredient.values():
 		var amount: int = RecipeManager.get_required_amount_for(ingredient)
 		change_ingredient_count(ingredient, -amount)
+
+	order_fulfilled.emit()
 
 
 func get_coins() -> int:

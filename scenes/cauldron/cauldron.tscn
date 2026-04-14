@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bie5bavboqaus"]
 
 [ext_resource type="PackedScene" uid="uid://cjkitklspgjby" path="res://scenes/cauldron/fire_light/fire_light.tscn" id="1_8w4fm"]
+[ext_resource type="Script" uid="uid://d1chuhmhjatxp" path="res://scenes/cauldron/cauldron.gd" id="1_to7hx"]
 [ext_resource type="PackedScene" uid="uid://c2ruwk4txydvt" path="res://scenes/cauldron/fire_particles.tscn" id="1_u2lxt"]
 [ext_resource type="PackedScene" uid="uid://ln455l4q8ixe" path="res://scenes/cauldron/ember_particles.tscn" id="2_tvp6t"]
 
@@ -9,12 +10,13 @@ _data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACEAAAAUklGRnwAAABXRUJQVlA4THA
 size_override = Vector2(64, 64)
 
 [node name="Cauldron" type="Node2D" unique_id=487662480]
+script = ExtResource("1_to7hx")
 
 [node name="FireLight" parent="." unique_id=49652170 instance=ExtResource("1_8w4fm")]
 position = Vector2(0, -12)
 
 [node name="FireParticlesBack" parent="." unique_id=144084119 instance=ExtResource("1_u2lxt")]
-position = Vector2(0, 6)
+position = Vector2(0, 8)
 
 [node name="EmberParticlesBack" parent="." unique_id=842681694 instance=ExtResource("2_tvp6t")]
 
@@ -48,4 +50,4 @@ metadata/_aseprite_wizard_source_file_hash_ = "d1fb0bc62f7d4e516de7d1ee30ad7449"
 position = Vector2(0, 3)
 
 [node name="FireParticlesFront" parent="." unique_id=925899156 instance=ExtResource("1_u2lxt")]
-position = Vector2(0, 6)
+position = Vector2(0, 8)

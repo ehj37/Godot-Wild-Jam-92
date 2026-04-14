@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c2ruwk4txydvt"]
 
+[ext_resource type="Script" uid="uid://beieoj4jjrjm7" path="res://scenes/cauldron/fire_particles.gd" id="1_iil4y"]
+
 [sub_resource type="Gradient" id="Gradient_puunx"]
 offsets = PackedFloat32Array(0, 0.98913044)
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
@@ -47,14 +49,21 @@ scale_max = 3.0
 color_ramp = SubResource("GradientTexture1D_pewqb")
 
 [node name="FireParticles" type="Node2D" unique_id=144084119]
+script = ExtResource("1_iil4y")
 
 [node name="BackParticles" type="GPUParticles2D" parent="." unique_id=1682438097]
-amount = 32
+amount = 48
 lifetime = 0.25
 process_material = SubResource("ParticleProcessMaterial_pewqb")
 
 [node name="FrontParticles" type="GPUParticles2D" parent="." unique_id=600809780]
-amount = 64
+amount = 96
 lifetime = 0.2
+preprocess = 1.0
 randomness = 0.5
 process_material = SubResource("ParticleProcessMaterial_skrtw")
+
+[node name="DecayTimer" type="Timer" parent="." unique_id=1060580992]
+autostart = true
+
+[connection signal="timeout" from="DecayTimer" to="." method="_on_decay_timer_timeout"]

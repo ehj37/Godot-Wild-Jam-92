@@ -56,13 +56,13 @@ offset_right = 310.0
 offset_bottom = 47.0
 
 [node name="RecipeWidget" parent="TopBar/ColorRect" unique_id=2139735939 instance=ExtResource("7_dg77c")]
-position = Vector2(67, 5)
+position = Vector2(85, 4)
 
 [node name="PriceWidget" parent="TopBar/ColorRect" unique_id=264271832 instance=ExtResource("6_efxa6")]
 position = Vector2(232, 3)
 
 [node name="InventoryWidget" parent="TopBar/ColorRect" unique_id=746615663 instance=ExtResource("8_ycdy4")]
-position = Vector2(160, 5)
+position = Vector2(150, 4)
 
 [node name="ActivityLog" type="CanvasLayer" parent="." unique_id=789801740]
 
