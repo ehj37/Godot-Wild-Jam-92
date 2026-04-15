@@ -8,7 +8,7 @@ extends Resource
 @export var ending_minute: int
 
 
-func in_range(hour: int, minute: int) -> bool:
+func contains(hour: int, minute: int) -> bool:
 	# Ranges assumed to be end-inclusive
 	if (
 		hour == starting_hour && minute == starting_minute
@@ -20,6 +20,21 @@ func in_range(hour: int, minute: int) -> bool:
 		_is_after(hour, minute, starting_hour, starting_minute)
 		&& !_is_after(hour, minute, ending_hour, ending_minute)
 	)
+
+
+# This is weird, but attempting to override _init makes trouble for export vars
+@warning_ignore("shadowed_variable")
+
+
+func initialize(
+	starting_hour: int, starting_minute: int, ending_hour: int, ending_minute: int
+) -> TimeRange:
+	self.starting_hour = starting_hour
+	self.starting_minute = starting_minute
+	self.ending_hour = ending_hour
+	self.ending_minute = ending_minute
+
+	return self
 
 
 # Assumes that any AM values come AFTER a PM value (since the night progresses

@@ -1,7 +1,7 @@
-class_name Level
+class_name Night
 
 extends Node2D
 
 
 func _ready() -> void:
-	LevelManager.current_level = self
+	NightManager.current_night = self

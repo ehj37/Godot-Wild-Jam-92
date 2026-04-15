@@ -17,9 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LevelManager="*uid://b42lqinvktlkr"
+ScreenFadeManager="*uid://d4r4sajkfibm"
 RecipeManager="*uid://c02j3u5dwvvqf"
 TimeManager="*uid://boougkwf6a136"
+NightManager="*uid://b42lqinvktlkr"
 InventoryManager="*uid://kkny8xuyjc5j"
 PriceManager="*uid://uydjslgka2de"
 SoundEffectManager="*uid://deybvy54ns6fy"

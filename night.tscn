@@ -34,34 +34,33 @@ script = ExtResource("1_272bh")
 [node name="Shop" parent="." unique_id=576003885 instance=ExtResource("6_7mycd")]
 position = Vector2(0, 128)
 
-[node name="TopBar" type="CanvasLayer" parent="." unique_id=711361258]
-
-[node name="ColorRect" type="ColorRect" parent="TopBar" unique_id=140337174]
+[node name="TopBar" type="ColorRect" parent="." unique_id=140337174]
+z_index = 1
 clip_contents = true
 offset_right = 320.0
 offset_bottom = 56.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Cauldron" parent="TopBar/ColorRect" unique_id=487662480 instance=ExtResource("4_1bvp3")]
+[node name="Cauldron" parent="TopBar" unique_id=487662480 instance=ExtResource("4_1bvp3")]
 position = Vector2(24, 53)
 
-[node name="StatusWidget" parent="TopBar/ColorRect" unique_id=785536209 instance=ExtResource("4_272bh")]
+[node name="StatusWidget" parent="TopBar" unique_id=785536209 instance=ExtResource("4_272bh")]
 
-[node name="CatButton" parent="TopBar/ColorRect" unique_id=449247657 instance=ExtResource("3_h2yge")]
+[node name="CatButton" parent="TopBar" unique_id=449247657 instance=ExtResource("3_h2yge")]
 layout_mode = 0
 offset_left = 310.0
 offset_top = 47.0
 offset_right = 310.0
 offset_bottom = 47.0
 
-[node name="RecipeWidget" parent="TopBar/ColorRect" unique_id=2139735939 instance=ExtResource("7_dg77c")]
+[node name="RecipeWidget" parent="TopBar" unique_id=2139735939 instance=ExtResource("7_dg77c")]
 position = Vector2(85, 4)
 
-[node name="PriceWidget" parent="TopBar/ColorRect" unique_id=264271832 instance=ExtResource("6_efxa6")]
+[node name="PriceWidget" parent="TopBar" unique_id=264271832 instance=ExtResource("6_efxa6")]
 position = Vector2(232, 3)
 
-[node name="InventoryWidget" parent="TopBar/ColorRect" unique_id=746615663 instance=ExtResource("8_ycdy4")]
+[node name="InventoryWidget" parent="TopBar" unique_id=746615663 instance=ExtResource("8_ycdy4")]
 position = Vector2(150, 4)
 
 [node name="ActivityLog" type="CanvasLayer" parent="." unique_id=789801740]

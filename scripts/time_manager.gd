@@ -1,14 +1,18 @@
 extends Node
 
-signal night_number_changed(new_night_number: int)
+signal end_of_day_reached
 # Using 24 hour clock. So 6 PM = 18:00
 signal time_changed(new_hour: int, new_minute: int)
 
 const STARTING_HOUR: int = 20
 const STARTING_MINUTE: int = 00
 const ENDING_HOUR: int = 4
+const ENDING_MINUTE: int = 00
 const SECONDS_PER_HOUR: float = 15.0
 
+var _day_time_range: TimeRange = TimeRange.new().initialize(
+	STARTING_HOUR, STARTING_MINUTE, ENDING_HOUR, ENDING_MINUTE
+)
 var _night_number: int = 1
 var _hour: int = STARTING_HOUR
 var _minute: int = STARTING_MINUTE
@@ -26,23 +30,35 @@ func get_minute() -> int:
 	return _minute
 
 
-func _ready() -> void:
+func increment_night() -> void:
+	_night_number += 1
+	_hour = STARTING_HOUR
+	_minute = STARTING_MINUTE
+
+
+func start_night() -> void:
 	_tick()
 
 
+func _ready() -> void:
+	start_night()
+
+
 func _tick() -> void:
-	await get_tree().create_timer(SECONDS_PER_HOUR / 4).timeout
+	await get_tree().create_timer(SECONDS_PER_HOUR / 4, false).timeout
 
 	_minute = (_minute + 15) % 60
 	if _minute == 0:
 		_hour = (_hour + 1) % 24
 
-	# Allow 6:00–6:15 AM to happen, and then change the night number
-	if _hour == ENDING_HOUR && _minute > 0:
-		_hour = STARTING_HOUR
-		_minute = STARTING_MINUTE
-		_night_number += 1
-		night_number_changed.emit(_night_number)
+	# A little weird. Would read better to check if the hour and minute came
+	# after the end of the range, but eh, if it works it works.
+	if !_day_time_range.contains(_hour, _minute):
+		#_hour = STARTING_HOUR
+		#_minute = STARTING_MINUTE
+		#_night_number += 1
+		end_of_day_reached.emit()
+		return
 
 	time_changed.emit(_hour, _minute)
 	_tick()

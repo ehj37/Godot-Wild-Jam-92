@@ -27,7 +27,7 @@ var _consider_triggered: bool = false
 
 
 func _ready() -> void:
-	var target_position: Vector2 = Vector2(LevelManager.CUSTOMER_DESPAWN_X, global_position.y)
+	var target_position: Vector2 = Vector2(NightManager.CUSTOMER_DESPAWN_X, global_position.y)
 	default_target_data = TargetData.new(target_position, func() -> void: queue_free())
 
 

@@ -12,13 +12,13 @@ func enter(_data: Dictionary = {}) -> void:
 		InventoryManager.update_from_order()
 
 		var order_window_x_offset: float = randf_range(
-			-LevelManager.ORDER_WINDOW_MAX_X_VARIANCE, LevelManager.ORDER_WINDOW_MAX_X_VARIANCE
+			-NightManager.ORDER_WINDOW_MAX_X_VARIANCE, NightManager.ORDER_WINDOW_MAX_X_VARIANCE
 		)
 		var order_window_y_offset: float = randf_range(
-			-LevelManager.ORDER_WINDOW_MAX_Y_VARIANCE, LevelManager.ORDER_WINDOW_MAX_Y_VARIANCE
+			-NightManager.ORDER_WINDOW_MAX_Y_VARIANCE, NightManager.ORDER_WINDOW_MAX_Y_VARIANCE
 		)
 		var target: Vector2 = (
-			LevelManager.ORDER_WINDOW_POSITION
+			NightManager.ORDER_WINDOW_POSITION
 			+ Vector2(order_window_x_offset, order_window_y_offset)
 		)
 

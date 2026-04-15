@@ -33,7 +33,7 @@ func _ready() -> void:
 
 
 func _on_time_changed(new_hour: int, new_minute: int) -> void:
-	if time_range.in_range(new_hour, new_minute):
+	if time_range.contains(new_hour, new_minute):
 		if _spawn_roll_timer.is_stopped():
 			_spawn_roll_timer.start()
 	else:
@@ -46,4 +46,4 @@ func _on_spawn_roll_timer_timeout() -> void:
 
 		var y_offset: float = randf_range(-MAX_Y_OFFSET, MAX_Y_OFFSET)
 		customer.global_position = global_position + Vector2(0, y_offset)
-		LevelManager.current_level.add_child(customer)
+		NightManager.current_night.add_child(customer)

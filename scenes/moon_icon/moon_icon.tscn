@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://77xn4bq41ign"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_3fte6"]
+_data = PackedByteArray("AAADAAUAAAABAAAADAAAAAwAAAA4AAAAUklGRjAAAABXRUJQVlA4TCMAAAAvC8ACEA8w//M///Mf8DDINlJN3uTIDvok3iGi/zEVcS+iBgA=")
+size_override = Vector2(12, 12)
+
+[node name="MoonIcon" type="TextureRect" unique_id=330198499]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_3fte6")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/moon_icon/moon_icon.aseprite",
+"source_uid": 7987216769266516063
+}
+metadata/_aseprite_wizard_source_file_hash_ = "408640902559c5e853f00541d86f615e"
