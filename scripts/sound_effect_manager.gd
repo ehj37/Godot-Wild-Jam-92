@@ -15,6 +15,7 @@ func play(sound_effect_config: SoundEffectConfig) -> void:
 
 	var new_audio_stream_player: AudioStreamPlayer = AudioStreamPlayer.new()
 	new_audio_stream_player.stream = sound_effect_config.audio_stream
+	new_audio_stream_player.bus = "SFX"
 	same_config_audio_stream_players.append(new_audio_stream_player)
 	add_child(new_audio_stream_player)
 	new_audio_stream_player.play()

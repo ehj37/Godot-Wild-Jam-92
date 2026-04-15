@@ -24,6 +24,7 @@ NightManager="*uid://b42lqinvktlkr"
 InventoryManager="*uid://kkny8xuyjc5j"
 PriceManager="*uid://uydjslgka2de"
 SoundEffectManager="*uid://deybvy54ns6fy"
+MusicManager="*uid://4ks10nk3lyv"
 
 [debug]
 
