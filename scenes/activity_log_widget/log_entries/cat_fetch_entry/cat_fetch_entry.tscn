@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2aafmtr4wsux" path="res://scenes/mini_cat_icon/mini_cat_icon.tscn" id="2_w6k1b"]
 [ext_resource type="PackedScene" uid="uid://cvee8mxnvdrgg" path="res://scenes/mini_pumpkin_icon/mini_pumpkin_icon.tscn" id="3_w6k1b"]
 [ext_resource type="PackedScene" uid="uid://dygcpxq3o0d7s" path="res://scenes/mini_spider_icon/mini_spider_icon.tscn" id="4_q0wlj"]
+[ext_resource type="PackedScene" uid="uid://jm0vhb2cejfv" path="res://scenes/mini_corn_icon/mini_corn_icon.tscn" id="6_q0wlj"]
 
 [node name="CatFetchEntry" type="HBoxContainer" unique_id=719286403]
 offset_right = 41.0
@@ -41,6 +42,11 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="MiniSpiderIcon" parent="Icons" unique_id=812179645 instance=ExtResource("4_q0wlj")]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="MiniCornIcon" parent="Icons" unique_id=1270782113 instance=ExtResource("6_q0wlj")]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0

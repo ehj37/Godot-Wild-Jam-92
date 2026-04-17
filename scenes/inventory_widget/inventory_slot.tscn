@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://7sgn7gykv4f6" path="res://scenes/inventory_widget/inventory_slot.gd" id="2_xw81j"]
 [ext_resource type="PackedScene" uid="uid://dygcpxq3o0d7s" path="res://scenes/mini_spider_icon/mini_spider_icon.tscn" id="3_xw81j"]
 [ext_resource type="PackedScene" uid="uid://lxfyy6o2frgq" path="res://scenes/inventory_widget/add_button/add_button.tscn" id="5_hx261"]
+[ext_resource type="PackedScene" uid="uid://jm0vhb2cejfv" path="res://scenes/mini_corn_icon/mini_corn_icon.tscn" id="6_5ymo0"]
 
 [node name="InventorySlot" type="HBoxContainer" unique_id=594767474]
 theme = ExtResource("1_vvalc")
@@ -23,6 +24,9 @@ layout_mode = 2
 layout_mode = 0
 
 [node name="MiniSpiderIcon" parent="Panel" unique_id=812179645 instance=ExtResource("3_xw81j")]
+layout_mode = 0
+
+[node name="MiniCornIcon" parent="Panel" unique_id=1270782113 instance=ExtResource("6_5ymo0")]
 layout_mode = 0
 
 [node name="QuantityLabel" type="Label" parent="." unique_id=87010034]

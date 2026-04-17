@@ -23,3 +23,7 @@ layout_mode = 2
 [node name="InventorySlotSpider" parent="VBoxContainer" unique_id=1043167808 instance=ExtResource("3_nd4os")]
 layout_mode = 2
 ingredient = 1
+
+[node name="InventorySlotCorn" parent="VBoxContainer" unique_id=2116553316 instance=ExtResource("3_nd4os")]
+layout_mode = 2
+ingredient = 2

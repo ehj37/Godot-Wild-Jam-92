@@ -9,6 +9,7 @@ var amount: int
 @onready var _icons: Control = $Icons
 @onready var _pumpkin_icon: TextureRect = $Icons/MiniPumpkinIcon
 @onready var _spider_icon: TextureRect = $Icons/MiniSpiderIcon
+@onready var _corn_icon: TextureRect = $Icons/MiniCornIcon
 @onready var _coin_icon: TextureRect = $Icons/MiniCoinIcon
 
 
@@ -24,6 +25,8 @@ func _set_icon() -> void:
 			icon_to_show = _pumpkin_icon
 		CatManager.Fetchable.SPIDER:
 			icon_to_show = _spider_icon
+		CatManager.Fetchable.CORN:
+			icon_to_show = _corn_icon
 		CatManager.Fetchable.COIN:
 			icon_to_show = _coin_icon
 		_:

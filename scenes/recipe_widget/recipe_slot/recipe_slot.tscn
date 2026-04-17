@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://btaemvjlnqh3w" path="res://scenes/pumpkin_icon/pumpkin_icon.tscn" id="3_c6gps"]
 [ext_resource type="PackedScene" uid="uid://b4f46hixvlwop" path="res://scenes/recipe_widget/recipe_slot/remove_button/remove_button.tscn" id="3_ixwhy"]
 [ext_resource type="PackedScene" uid="uid://qns2akmt2xnl" path="res://scenes/spider_icon/spider_icon.tscn" id="4_74qm3"]
+[ext_resource type="PackedScene" uid="uid://b27tw632y5hm1" path="res://scenes/corn_icon/corn_icon.tscn" id="6_oqgii"]
 
 [node name="RecipeSlot" type="VBoxContainer" unique_id=601482140]
 custom_minimum_size = Vector2(20, 16)
@@ -36,6 +37,9 @@ mouse_filter = 2
 layout_mode = 2
 
 [node name="SpiderIcon" parent="Panel/IngredientIconContainer" unique_id=1104299584 instance=ExtResource("4_74qm3")]
+layout_mode = 2
+
+[node name="CornIcon" parent="Panel/IngredientIconContainer" unique_id=1590682832 instance=ExtResource("6_oqgii")]
 layout_mode = 2
 
 [node name="QuantitySlider" type="HSlider" parent="." unique_id=1942553195]

@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://jm0vhb2cejfv"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_a61sq"]
+_data = PackedByteArray("AAADAAUAAAABAAAACAAAAAgAAABgAAAAUklGRlgAAABXRUJQVlA4TEwAAAAvB8ABEC9AFmCya/4AqQQVQRoE2Tb1Z5zDEU4QQFISM+xvNsHzH8D/JUWqbaCokSQ13HcKbiws/A+UYET/A0AFtD/6ae2b8czoXmEB")
+size_override = Vector2(8, 8)
+
+[node name="MiniCornIcon" type="TextureRect" unique_id=1270782113]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_a61sq")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/mini_corn_icon/mini_corn_icon.aseprite",
+"source_uid": 3459567002328252850
+}
+metadata/_aseprite_wizard_source_file_hash_ = "b2a400b186ca45d28e02900a93efcdfa"

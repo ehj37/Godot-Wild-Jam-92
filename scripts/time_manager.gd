@@ -9,7 +9,7 @@ const STARTING_HOUR: int = 20
 const STARTING_MINUTE: int = 00
 const ENDING_HOUR: int = 4
 const ENDING_MINUTE: int = 00
-const SECONDS_PER_HOUR: float = 15.0
+const SECONDS_PER_HOUR: float = 1.5  #15.0
 
 var _day_time_range: TimeRange = TimeRange.new().initialize(
 	STARTING_HOUR, STARTING_MINUTE, ENDING_HOUR, ENDING_MINUTE

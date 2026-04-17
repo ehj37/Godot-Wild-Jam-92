@@ -30,6 +30,11 @@ func _on_fetch_spider_button_pressed() -> void:
 	_hide()
 
 
+func _on_fetch_corn_button_pressed() -> void:
+	CatManager.fetch(CatManager.Fetchable.CORN)
+	_hide()
+
+
 func _on_fetch_coin_button_pressed() -> void:
 	CatManager.fetch(CatManager.Fetchable.COIN)
 	_hide()

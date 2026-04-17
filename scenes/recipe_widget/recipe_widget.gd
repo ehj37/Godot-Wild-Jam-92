@@ -6,6 +6,17 @@ extends Node2D
 
 
 func _ready() -> void:
+	var recipe: Dictionary = RecipeManager.get_recipe()
+	var recipe_ingredients: Array = recipe.keys()
+	var recipe_slots: Array = _recipe_slot_container.get_children()
+	for i: int in recipe_slots.size():
+		var recipe_slot: RecipeSlot = recipe_slots[i]
+		if i < recipe_ingredients.size():
+			var recipe_ingredient: RecipeManager.Ingredient = recipe_ingredients[i]
+			recipe_slot.ingredient = _translate_ingredient(recipe_ingredient)
+		else:
+			recipe_slot.ingredient = RecipeSlot.Ingredient.NONE
+
 	RecipeManager.ingredient_added.connect(_on_ingredient_added)
 	RecipeManager.ingredient_removed.connect(_on_ingredient_removed)
 
@@ -16,6 +27,8 @@ func _translate_ingredient(ingredient: RecipeManager.Ingredient) -> RecipeSlot.I
 			return RecipeSlot.Ingredient.PUMPKIN
 		RecipeManager.Ingredient.SPIDER:
 			return RecipeSlot.Ingredient.SPIDER
+		RecipeManager.Ingredient.CORN:
+			return RecipeSlot.Ingredient.CORN
 		_:
 			assert(false, "Unhandled ingredient in RecipeWidget")
 

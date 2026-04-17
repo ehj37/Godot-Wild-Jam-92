@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://mbp440je4xf2"
+path="res://.godot/imported/corn_icon.aseprite-cd2d5992c966f531315bccc906c4944b.res"
+
+[deps]
+
+source_file="res://scenes/corn_icon/corn_icon.aseprite"
+dest_files=["res://.godot/imported/corn_icon.aseprite-cd2d5992c966f531315bccc906c4944b.res"]
+
+[params]
+

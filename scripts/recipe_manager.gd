@@ -4,7 +4,7 @@ signal recipe_changed
 signal ingredient_added(new_ingredient: Ingredient)
 signal ingredient_removed(removed_ingredient: Ingredient)
 
-enum Ingredient { PUMPKIN, SPIDER }
+enum Ingredient { PUMPKIN, SPIDER, CORN }
 
 const MAX_ALLOWED_INGREDIENTS: int = 2
 const DEFAULT_PUMPKIN_AMOUNT: int = 2

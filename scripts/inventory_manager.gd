@@ -8,10 +8,12 @@ const INITIAL_COINS: int = 0
 const INITIAL_CUPS: int = 20
 const INITIAL_PUMPKINS: int = 20
 const INITIAL_SPIDERS: int = 5
+const INITIAL_CORN: int = 2
 
 var _coins: int = INITIAL_COINS
 var _pumpkins: int = INITIAL_PUMPKINS
 var _spiders: int = INITIAL_SPIDERS
+var _corn: int = INITIAL_CORN
 
 @onready
 var _coin_add_sound_effect_config: SoundEffectConfig = preload("res://sound_effects/coin_add.tres")
@@ -23,6 +25,8 @@ func get_ingredient_count(ingredient: RecipeManager.Ingredient) -> int:
 			return _pumpkins
 		RecipeManager.Ingredient.SPIDER:
 			return _spiders
+		RecipeManager.Ingredient.CORN:
+			return _corn
 		_:
 			assert(false, "Unhandled ingredient in InventoryManager.get_ingredient_count")
 
@@ -40,6 +44,9 @@ func change_ingredient_count(ingredient: RecipeManager.Ingredient, delta: int) -
 		RecipeManager.Ingredient.SPIDER:
 			_spiders += delta
 			ingredient_changed.emit(ingredient, _spiders, delta)
+		RecipeManager.Ingredient.CORN:
+			_corn += delta
+			ingredient_changed.emit(ingredient, _corn, delta)
 		_:
 			assert(false, "Unhandled ingredient in InventoryManager.change_ingredient_count")
 

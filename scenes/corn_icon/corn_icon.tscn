@@ -1,0 +1,34 @@
+[gd_scene format=4 uid="uid://b27tw632y5hm1"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_it4k4"]
+_data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAAB8AAAAUklGRnQAAABXRUJQVlA4TGgAAAAvD8ADEC9AFmCya/4AqQQVQRoE2Tb1Z5zDEU4QQFISM+xvNsHzH8D/JUWqbcAokiRFffTfsbDwPzDADq78i1myENH/CVC/G0pmQ8WWzBkUgEXS+QEZkEZJP/jsJRXOuHvlRxgrKq5qBg==")
+size_override = Vector2(16, 16)
+
+[node name="CornIcon" type="TextureRect" unique_id=1590682832]
+texture_filter = 1
+mouse_filter = 2
+texture = SubResource("PortableCompressedTexture2D_it4k4")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {
+"source": "res://scenes/corn_icon/corn_icon.aseprite"
+}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/corn_icon/corn.aseprite",
+"source_uid": 845294606537882665
+}
+metadata/_aseprite_wizard_source_file_hash_ = "d85c5c0b8e0ceaad3081e4ebfca00892"

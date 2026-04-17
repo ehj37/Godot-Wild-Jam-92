@@ -2,7 +2,7 @@ class_name RecipeSlot
 
 extends VBoxContainer
 
-enum Ingredient { NONE, PUMPKIN, SPIDER }
+enum Ingredient { NONE, PUMPKIN, SPIDER, CORN }
 
 const HAS_ENOUGH_OF_INGREDIENT_TEXT_COLOR: Color = Color.WHITE
 const LACKING_INGREDIENT_TEXT_COLOR: Color = Color.RED
@@ -21,9 +21,9 @@ const LACKING_INGREDIENT_TEXT_COLOR: Color = Color.RED
 @onready var _remove_button: TextureButton = $Panel/RemoveButton
 @onready var _pumpkin_icon: TextureRect = $Panel/IngredientIconContainer/PumpkinIcon
 @onready var _spider_icon: TextureRect = $Panel/IngredientIconContainer/SpiderIcon
+@onready var _corn_icon: TextureRect = $Panel/IngredientIconContainer/CornIcon
 @onready var _ingredient_to_icon: Dictionary = {
-	Ingredient.PUMPKIN: _pumpkin_icon,
-	Ingredient.SPIDER: _spider_icon,
+	Ingredient.PUMPKIN: _pumpkin_icon, Ingredient.SPIDER: _spider_icon, Ingredient.CORN: _corn_icon
 }
 @onready var _quantity_slider: HSlider = $QuantitySlider
 @onready var _quantity_label: Label = $QuantityLabel
@@ -40,6 +40,8 @@ func _get_translated_ingredient() -> RecipeManager.Ingredient:
 			return RecipeManager.Ingredient.PUMPKIN
 		Ingredient.SPIDER:
 			return RecipeManager.Ingredient.SPIDER
+		Ingredient.CORN:
+			return RecipeManager.Ingredient.CORN
 		Ingredient.NONE:
 			@warning_ignore("int_as_enum_without_cast", "int_as_enum_without_match")
 			return -1

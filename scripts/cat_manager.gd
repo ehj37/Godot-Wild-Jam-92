@@ -6,7 +6,7 @@ signal plan_mode_exited
 signal off_to_fetch
 signal resource_fetched(fetchable: Fetchable, amount: int)
 
-enum Fetchable { PUMPKIN, SPIDER, COIN }
+enum Fetchable { PUMPKIN, SPIDER, CORN, COIN }
 
 # TODO: Adjust to more reasonable times before release
 const RECHARGE_TIME: float = 6.0  #60.0
@@ -14,14 +14,16 @@ const FETCH_TIME: float = 5  #15.0
 const FETCHABLE_TO_INGREDIENT: Dictionary = {
 	Fetchable.PUMPKIN: RecipeManager.Ingredient.PUMPKIN,
 	Fetchable.SPIDER: RecipeManager.Ingredient.SPIDER,
+	Fetchable.CORN: RecipeManager.Ingredient.CORN
 }
 const FETCHABLE_TO_MIN_FETCH_AMOUNT: Dictionary = {
 	Fetchable.PUMPKIN: 5,
 	Fetchable.SPIDER: 5,
+	Fetchable.CORN: 3,
 	Fetchable.COIN: 1,
 }
 const FETCHABLE_TO_MAX_FETCH_AMOUNT: Dictionary = {
-	Fetchable.PUMPKIN: 10, Fetchable.SPIDER: 10, Fetchable.COIN: 20
+	Fetchable.PUMPKIN: 10, Fetchable.SPIDER: 10, Fetchable.CORN: 10, Fetchable.COIN: 20
 }
 
 # TODO: May want to set to false to start when I have a main menu
@@ -70,7 +72,7 @@ func _process(delta: float) -> void:
 				var fetch_amount: int = randi_range(min_quantity, max_quantity)
 
 				match _resource_being_fetched:
-					Fetchable.PUMPKIN, Fetchable.SPIDER:
+					Fetchable.PUMPKIN, Fetchable.SPIDER, Fetchable.CORN:
 						var ingredient: RecipeManager.Ingredient = FETCHABLE_TO_INGREDIENT.get(
 							_resource_being_fetched
 						)

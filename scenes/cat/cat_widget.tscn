@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dygcpxq3o0d7s" path="res://scenes/mini_spider_icon/mini_spider_icon.tscn" id="2_kgxh8"]
 [ext_resource type="Script" uid="uid://cmojq1be73pxq" path="res://scenes/cat/cat_widget.gd" id="2_p53pk"]
 [ext_resource type="PackedScene" uid="uid://dfdmsr7q5s2fc" path="res://scenes/mini_coin_icon/mini_coin_icon.tscn" id="4_fetlx"]
+[ext_resource type="PackedScene" uid="uid://jm0vhb2cejfv" path="res://scenes/mini_corn_icon/mini_corn_icon.tscn" id="5_4rvid"]
 
 [node name="CatWidget" type="Control" unique_id=1357992206]
 layout_mode = 3
@@ -60,6 +61,17 @@ text = "FETCH"
 [node name="ColumnTwoContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ColumnContainer" unique_id=189413809]
 layout_mode = 2
 
+[node name="CornContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnTwoContainer" unique_id=1168488355]
+layout_mode = 2
+
+[node name="MiniCornIcon" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnTwoContainer/CornContainer" unique_id=1270782113 instance=ExtResource("5_4rvid")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="FetchCornButton" type="Button" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnTwoContainer/CornContainer" unique_id=5102576]
+layout_mode = 2
+text = "FETCH"
+
 [node name="CoinContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnTwoContainer" unique_id=42614666]
 layout_mode = 2
 
@@ -73,4 +85,5 @@ text = "FETCH"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ColumnContainer/ColumnOneContainer/PumpkinContainer/FetchPumpkinButton" to="." method="_on_fetch_pumpkin_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ColumnContainer/ColumnOneContainer/SpiderContainer/FetchSpiderButton" to="." method="_on_fetch_spider_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ColumnContainer/ColumnTwoContainer/CornContainer/FetchCornButton" to="." method="_on_fetch_corn_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ColumnContainer/ColumnTwoContainer/CoinContainer/FetchCoinButton" to="." method="_on_fetch_coin_button_pressed"]
