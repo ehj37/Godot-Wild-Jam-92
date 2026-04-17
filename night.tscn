@@ -64,9 +64,7 @@ position = Vector2(232, 3)
 [node name="InventoryWidget" parent="TopBar" unique_id=746615663 instance=ExtResource("8_ycdy4")]
 position = Vector2(150, 4)
 
-[node name="ActivityLog" type="CanvasLayer" parent="." unique_id=789801740]
-
-[node name="ActivityLogWidget" parent="ActivityLog" unique_id=853032980 instance=ExtResource("6_4c57u")]
+[node name="ActivityLogWidget" parent="." unique_id=853032980 instance=ExtResource("6_4c57u")]
 position = Vector2(2, 58)
 
 [node name="ShopUI" type="Control" parent="." unique_id=455587803]
