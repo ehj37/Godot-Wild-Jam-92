@@ -43,10 +43,10 @@ func start_next_night() -> void:
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	TimeManager.end_of_day_reached.connect(_on_end_of_day_reached)
+	TimeManager.end_of_night_reached.connect(_on_end_of_night_reached)
 
 
-func _on_end_of_day_reached() -> void:
+func _on_end_of_night_reached() -> void:
 	get_tree().paused = true
 
 	# TODO: Communicate that the night is over to the player somehow pre-fade

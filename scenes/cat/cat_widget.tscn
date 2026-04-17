@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bqydyqinam8ed"]
+
+[ext_resource type="PackedScene" uid="uid://cvee8mxnvdrgg" path="res://scenes/mini_pumpkin_icon/mini_pumpkin_icon.tscn" id="1_afqir"]
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_kgxh8"]
+[ext_resource type="PackedScene" uid="uid://dygcpxq3o0d7s" path="res://scenes/mini_spider_icon/mini_spider_icon.tscn" id="2_kgxh8"]
+[ext_resource type="Script" uid="uid://cmojq1be73pxq" path="res://scenes/cat/cat_widget.gd" id="2_p53pk"]
+[ext_resource type="PackedScene" uid="uid://dfdmsr7q5s2fc" path="res://scenes/mini_coin_icon/mini_coin_icon.tscn" id="4_fetlx"]
+
+[node name="CatWidget" type="Control" unique_id=1357992206]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_kgxh8")
+script = ExtResource("2_p53pk")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2059502596]
+layout_mode = 0
+offset_right = 102.0
+offset_bottom = 58.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1675939633]
+layout_mode = 2
+theme = ExtResource("1_kgxh8")
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=852951343]
+layout_mode = 2
+text = "LET'S SEE WHAT
+THE CAT CAN
+DRAG IN"
+horizontal_alignment = 1
+
+[node name="ColumnContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=909924622]
+layout_mode = 2
+
+[node name="ColumnOneContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ColumnContainer" unique_id=302046079]
+layout_mode = 2
+
+[node name="PumpkinContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnOneContainer" unique_id=1997822818]
+layout_mode = 2
+
+[node name="MiniPumpkinIcon" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnOneContainer/PumpkinContainer" unique_id=327108308 instance=ExtResource("1_afqir")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="FetchPumpkinButton" type="Button" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnOneContainer/PumpkinContainer" unique_id=851704176]
+layout_mode = 2
+text = "FETCH"
+
+[node name="SpiderContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnOneContainer" unique_id=617366624]
+layout_mode = 2
+
+[node name="MiniSpiderIcon" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnOneContainer/SpiderContainer" unique_id=812179645 instance=ExtResource("2_kgxh8")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="FetchSpiderButton" type="Button" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnOneContainer/SpiderContainer" unique_id=566534411]
+layout_mode = 2
+text = "FETCH"
+
+[node name="ColumnTwoContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ColumnContainer" unique_id=189413809]
+layout_mode = 2
+
+[node name="CoinContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnTwoContainer" unique_id=42614666]
+layout_mode = 2
+
+[node name="MiniCoinIcon" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnTwoContainer/CoinContainer" unique_id=1193548858 instance=ExtResource("4_fetlx")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="FetchCoinButton" type="Button" parent="PanelContainer/VBoxContainer/ColumnContainer/ColumnTwoContainer/CoinContainer" unique_id=1020772790]
+layout_mode = 2
+text = "FETCH"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ColumnContainer/ColumnOneContainer/PumpkinContainer/FetchPumpkinButton" to="." method="_on_fetch_pumpkin_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ColumnContainer/ColumnOneContainer/SpiderContainer/FetchSpiderButton" to="." method="_on_fetch_spider_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ColumnContainer/ColumnTwoContainer/CoinContainer/FetchCoinButton" to="." method="_on_fetch_coin_button_pressed"]

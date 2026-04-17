@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c6w7y1fo2gmgs"]
+
+[ext_resource type="Script" uid="uid://dg5m0fy4e7pll" path="res://scenes/activity_log_widget/log_entries/cat_fetch_entry/cat_fetch_entry.gd" id="1_cust4"]
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_w6k1b"]
+[ext_resource type="PackedScene" uid="uid://dfdmsr7q5s2fc" path="res://scenes/mini_coin_icon/mini_coin_icon.tscn" id="2_ej0de"]
+[ext_resource type="PackedScene" uid="uid://b2aafmtr4wsux" path="res://scenes/mini_cat_icon/mini_cat_icon.tscn" id="2_w6k1b"]
+[ext_resource type="PackedScene" uid="uid://cvee8mxnvdrgg" path="res://scenes/mini_pumpkin_icon/mini_pumpkin_icon.tscn" id="3_w6k1b"]
+[ext_resource type="PackedScene" uid="uid://dygcpxq3o0d7s" path="res://scenes/mini_spider_icon/mini_spider_icon.tscn" id="4_q0wlj"]
+
+[node name="CatFetchEntry" type="HBoxContainer" unique_id=719286403]
+offset_right = 41.0
+offset_bottom = 8.0
+theme = ExtResource("1_w6k1b")
+script = ExtResource("1_cust4")
+
+[node name="MiniCatIcon" parent="." unique_id=1670832337 instance=ExtResource("2_w6k1b")]
+layout_mode = 2
+
+[node name="LabelContainer" type="HBoxContainer" parent="." unique_id=73120988]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="LabelContainer" unique_id=344407320]
+layout_mode = 2
+text = "FOUND "
+
+[node name="QuantityLabel" type="Label" parent="LabelContainer" unique_id=65390909]
+layout_mode = 2
+text = "999"
+
+[node name="Icons" type="Control" parent="." unique_id=542226150]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MiniPumpkinIcon" parent="Icons" unique_id=327108308 instance=ExtResource("3_w6k1b")]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="MiniSpiderIcon" parent="Icons" unique_id=812179645 instance=ExtResource("4_q0wlj")]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="MiniCoinIcon" parent="Icons" unique_id=1193548858 instance=ExtResource("2_ej0de")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4

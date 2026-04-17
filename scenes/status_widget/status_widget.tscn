@@ -32,18 +32,18 @@ texture = SubResource("AtlasTexture_opib7")
 
 [node name="CoinCountLabel" type="Label" parent="VBoxContainer/CoinContainer" unique_id=422519357]
 layout_mode = 2
-text = "43"
+text = "999"
 
 [node name="NightContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=764393598]
 layout_mode = 2
 
 [node name="NightNumberLabel" type="Label" parent="VBoxContainer/NightContainer" unique_id=1795987588]
 layout_mode = 2
-text = "NIGHT 4"
+text = "NIGHT 999"
 
 [node name="TimeContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1303099019]
 layout_mode = 2
 
 [node name="TimeLabel" type="Label" parent="VBoxContainer/TimeContainer" unique_id=1373321023]
 layout_mode = 2
-text = "6:30 PM"
+text = "9:99 PM"

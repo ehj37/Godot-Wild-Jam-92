@@ -1,12 +1,14 @@
 [gd_scene format=4 uid="uid://dndwr7spvj705"]
 
 [ext_resource type="PackedScene" uid="uid://c4t3k2okqyv46" path="res://scenes/shop/shop_cat/shop_cat.tscn" id="1_100s2"]
+[ext_resource type="Script" uid="uid://dr1glf1mnpmf2" path="res://scenes/shop/shop.gd" id="1_qaxay"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_7r02r"]
 _data = PackedByteArray("AAADAAUAAAABAAAAQAEAAIAAAAB6AAAAUklGRnIAAABXRUJQVlA4TGUAAAAvP8EfEB8gECAMGrBtTiBA+F9SI8CDWDDJ33MOnfMfkH9igFVs20rue0AvIrhbFcro7ce3uzsR/Z8A+DseYG/6dYZXe5PnJwCAQ4iDRuE6luWN/g7K8zzfNoiIy9IaYqO1HO33IwA=")
 size_override = Vector2(320, 128)
 
 [node name="Shop" type="Node2D" unique_id=576003885]
+script = ExtResource("1_qaxay")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=414673055]
 texture_filter = 1

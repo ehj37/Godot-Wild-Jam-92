@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://b2aafmtr4wsux"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_ni46h"]
+_data = PackedByteArray("AAADAAUAAAABAAAABwAAAAgAAABOAAAAUklGRkYAAABXRUJQVlA4TDoAAAAvBsABEB8gEEjyp9h0DYFAkr/hNAsEkvxpN3j+A/BXgYJGkprvChoIq8JwgDU8RfQ/RNRHjDj9xs9n")
+size_override = Vector2(7, 8)
+
+[node name="MiniCatIcon" type="TextureRect" unique_id=1670832337]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_ni46h")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/mini_cat_icon/mini_cat_icon.aseprite",
+"source_uid": 6374871634877411284
+}
+metadata/_aseprite_wizard_source_file_hash_ = "acccae06896cc6020f25277ae5dc755e"

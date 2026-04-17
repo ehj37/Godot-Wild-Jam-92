@@ -15,6 +15,10 @@ run/main_scene="uid://xcasvah72v4s"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://df2rtf2l7xfhl"
+
 [autoload]
 
 ScreenFadeManager="*uid://d4r4sajkfibm"
@@ -25,6 +29,7 @@ InventoryManager="*uid://kkny8xuyjc5j"
 PriceManager="*uid://uydjslgka2de"
 SoundEffectManager="*uid://deybvy54ns6fy"
 MusicManager="*uid://4ks10nk3lyv"
+CatManager="*uid://b77mhf1fc42up"
 
 [debug]
 

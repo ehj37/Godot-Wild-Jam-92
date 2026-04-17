@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bpfevxiwbo8kc"
+path="res://.godot/imported/cat_button_disabled.aseprite-bf8dfa1ae86982600ce5fb5164fce1e4.res"
+
+[deps]
+
+source_file="res://scenes/cat_button/cat_button_disabled.aseprite"
+dest_files=["res://.godot/imported/cat_button_disabled.aseprite-bf8dfa1ae86982600ce5fb5164fce1e4.res"]
+
+[params]
+

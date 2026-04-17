@@ -9,11 +9,15 @@ var _log_entries: Array[HBoxContainer] = []
 @onready var _customer_purchase_entry_packed_scene: PackedScene = preload(
 	"res://scenes/activity_log_widget/log_entries/customer_purchase_entry/customer_purchase_entry.tscn"
 )
+@onready var _cat_fetch_entry_packed_scene: PackedScene = preload(
+	"res://scenes/activity_log_widget/log_entries/cat_fetch_entry/cat_fetch_entry.tscn"
+)
 @onready var _log_entry_container: VBoxContainer = $LogEntryContainer
 
 
 func _ready() -> void:
 	InventoryManager.coins_changed.connect(_on_coins_changed)
+	CatManager.resource_fetched.connect(_on_resource_fetched)
 
 
 func _on_coins_changed(_amount: int, delta: int) -> void:
@@ -22,16 +26,27 @@ func _on_coins_changed(_amount: int, delta: int) -> void:
 
 
 func _add_customer_purchase_entry(amount: int) -> void:
-	_evict_oldest_entry_if_necessary()
-
 	var new_entry: CustomerPurchaseEntry = _customer_purchase_entry_packed_scene.instantiate()
 	new_entry.amount = amount
-	_log_entries.append(new_entry)
-	_log_entry_container.add_child(new_entry)
-	_log_entry_container.move_child(new_entry, 0)
+	_add_log_entry(new_entry)
+
+
+func _on_resource_fetched(resource: CatManager.Fetchable, amount: int) -> void:
+	var new_entry: CatFetchEntry = _cat_fetch_entry_packed_scene.instantiate()
+	new_entry.resource = resource
+	new_entry.amount = amount
+	_add_log_entry(new_entry)
+
+
+func _add_log_entry(log_entry: HBoxContainer) -> void:
+	_evict_oldest_entry_if_necessary()
+
+	_log_entries.append(log_entry)
+	_log_entry_container.add_child(log_entry)
+	_log_entry_container.move_child(log_entry, 0)
 
 	get_tree().create_timer(LOG_ENTRY_PRE_FADE_OUT_TIME).timeout.connect(
-		func() -> void: _fade_out_log_entry(new_entry)
+		func() -> void: _fade_out_log_entry(log_entry)
 	)
 
 

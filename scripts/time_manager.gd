@@ -1,6 +1,7 @@
 extends Node
 
-signal end_of_day_reached
+signal night_started
+signal end_of_night_reached
 # Using 24 hour clock. So 6 PM = 18:00
 signal time_changed(new_hour: int, new_minute: int)
 
@@ -37,6 +38,7 @@ func increment_night() -> void:
 
 
 func start_night() -> void:
+	night_started.emit()
 	_tick()
 
 
@@ -57,7 +59,7 @@ func _tick() -> void:
 		#_hour = STARTING_HOUR
 		#_minute = STARTING_MINUTE
 		#_night_number += 1
-		end_of_day_reached.emit()
+		end_of_night_reached.emit()
 		return
 
 	time_changed.emit(_hour, _minute)

@@ -7,20 +7,16 @@ extends Node2D
 
 func _ready() -> void:
 	InventoryManager.coins_changed.connect(_on_coins_changed)
-	#TimeManager.night_number_changed.connect(_on_night_number_changed)
 	TimeManager.time_changed.connect(_on_time_changed)
 
+	night_number_label.text = "NIGHT " + str(TimeManager.get_night_number())
+
 	_on_coins_changed(InventoryManager.get_coins())
-	#_on_night_number_changed(TimeManager.get_night_number())
 	_on_time_changed(TimeManager.get_hour(), TimeManager.get_minute())
 
 
 func _on_coins_changed(new_amount: int, _delta: int = 0) -> void:
 	coin_count_label.text = str(new_amount)
-
-
-#func _on_night_number_changed(new_night_number: int) -> void:
-#night_number_label.text = "NIGHT " + str(new_night_number)
 
 
 func _on_time_changed(new_hour: int, new_minute: int) -> void:

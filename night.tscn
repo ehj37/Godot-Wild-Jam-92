@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xcasvah72v4s"]
 
-[ext_resource type="Script" uid="uid://bwx4n2pejs7nv" path="res://scripts/level.gd" id="1_272bh"]
+[ext_resource type="Script" uid="uid://bwx4n2pejs7nv" path="res://scripts/night.gd" id="1_272bh"]
 [ext_resource type="FontFile" uid="uid://dxf5bfgvayfhn" path="res://fonts/arne.png" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://drf32pblg7ptn" path="res://scenes/cat_button/cat_button.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bie5bavboqaus" path="res://scenes/cauldron/cauldron.tscn" id="4_1bvp3"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c1cc3m0x0dym2" path="res://scenes/recipe_widget/recipe_widget.tscn" id="7_dg77c"]
 [ext_resource type="PackedScene" uid="uid://h760c5xaan4x" path="res://scenes/inventory_widget/inventory_widget.tscn" id="8_ycdy4"]
 [ext_resource type="Script" uid="uid://c1du00t7sl400" path="res://scripts/time_range.gd" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://bqydyqinam8ed" path="res://scenes/cat/cat_widget.tscn" id="14_vfwos"]
 
 [sub_resource type="Theme" id="Theme_7dm0k"]
 Label/font_sizes/font_size = 6
@@ -49,10 +50,10 @@ position = Vector2(24, 53)
 
 [node name="CatButton" parent="TopBar" unique_id=449247657 instance=ExtResource("3_h2yge")]
 layout_mode = 0
-offset_left = 310.0
-offset_top = 47.0
-offset_right = 310.0
-offset_bottom = 47.0
+offset_left = 305.0
+offset_top = 42.0
+offset_right = 318.0
+offset_bottom = 54.0
 
 [node name="RecipeWidget" parent="TopBar" unique_id=2139735939 instance=ExtResource("7_dg77c")]
 position = Vector2(85, 4)
@@ -100,3 +101,9 @@ time_range = SubResource("Resource_kek77")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=679637319]
 position = Vector2(140, 132)
+
+[node name="CatWidget" parent="." unique_id=249945766 instance=ExtResource("14_vfwos")]
+offset_left = 196.0
+offset_top = 58.0
+offset_right = 196.0
+offset_bottom = 58.0
