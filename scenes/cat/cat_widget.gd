@@ -31,5 +31,5 @@ func _on_fetch_spider_button_pressed() -> void:
 
 
 func _on_fetch_coin_button_pressed() -> void:
-	CatManager.fetch(CatManager.Fetchable.PUMPKIN)
+	CatManager.fetch(CatManager.Fetchable.COIN)
 	_hide()

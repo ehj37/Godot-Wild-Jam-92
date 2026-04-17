@@ -43,14 +43,16 @@ layout_mode = 2
 
 [node name="MinPriceLabel" type="Label" parent="VBoxContainer/PriceSliderContainer/MinPriceContainer" unique_id=495350853]
 layout_mode = 2
-text = "0"
+text = "1"
 
 [node name="PriceSlider" type="HSlider" parent="VBoxContainer/PriceSliderContainer" unique_id=1361338068]
 custom_minimum_size = Vector2(40, 6)
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("5_as5tn")
 theme_override_icons/grabber_highlight = ExtResource("6_sii7i")
+min_value = 1.0
 max_value = 20.0
+value = 1.0
 
 [node name="MaxPriceContainer" type="HBoxContainer" parent="VBoxContainer/PriceSliderContainer" unique_id=551970227]
 layout_mode = 2

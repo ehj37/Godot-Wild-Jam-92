@@ -30,6 +30,7 @@ PriceManager="*uid://uydjslgka2de"
 SoundEffectManager="*uid://deybvy54ns6fy"
 MusicManager="*uid://4ks10nk3lyv"
 CatManager="*uid://b77mhf1fc42up"
+StatsManager="*uid://n4oixbs8oh52"
 
 [debug]
 

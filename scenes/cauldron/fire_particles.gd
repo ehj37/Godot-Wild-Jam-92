@@ -17,7 +17,7 @@ func _ready() -> void:
 	InventoryManager.order_fulfilled.connect(_on_order_fulfilled)
 
 
-func _on_order_fulfilled() -> void:
+func _on_order_fulfilled(_price: int) -> void:
 	_decay_timer.start()
 
 	_back_particles.amount_ratio = min(_back_particles.amount_ratio + RATIO_GROW_AMOUNT, 1.0)

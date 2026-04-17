@@ -18,10 +18,10 @@ const FETCHABLE_TO_INGREDIENT: Dictionary = {
 const FETCHABLE_TO_MIN_FETCH_AMOUNT: Dictionary = {
 	Fetchable.PUMPKIN: 5,
 	Fetchable.SPIDER: 5,
+	Fetchable.COIN: 1,
 }
 const FETCHABLE_TO_MAX_FETCH_AMOUNT: Dictionary = {
-	Fetchable.PUMPKIN: 10,
-	Fetchable.SPIDER: 10,
+	Fetchable.PUMPKIN: 10, Fetchable.SPIDER: 10, Fetchable.COIN: 20
 }
 
 # TODO: May want to set to false to start when I have a main menu
@@ -57,7 +57,7 @@ func fetch(fetchable: Fetchable) -> void:
 
 
 func _process(delta: float) -> void:
-	if _update_times:
+	if !get_tree().paused && _update_times:
 		if _current_charge_time < RECHARGE_TIME:
 			_current_charge_time = min(_current_charge_time + delta, RECHARGE_TIME)
 			charge_changed.emit(_current_charge_time)

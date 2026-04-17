@@ -16,13 +16,12 @@ var _log_entries: Array[HBoxContainer] = []
 
 
 func _ready() -> void:
-	InventoryManager.coins_changed.connect(_on_coins_changed)
+	InventoryManager.order_fulfilled.connect(_on_order_fulfilled)
 	CatManager.resource_fetched.connect(_on_resource_fetched)
 
 
-func _on_coins_changed(_amount: int, delta: int) -> void:
-	if delta > 0:
-		_add_customer_purchase_entry(delta)
+func _on_order_fulfilled(price: int) -> void:
+	_add_customer_purchase_entry(price)
 
 
 func _add_customer_purchase_entry(amount: int) -> void:
