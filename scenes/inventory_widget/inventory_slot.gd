@@ -33,12 +33,11 @@ func _update_icon() -> void:
 
 
 func _can_add_ingredient() -> bool:
-	var ingredient_count: int = InventoryManager.get_ingredient_count(ingredient)
 	var in_recipe: bool = RecipeManager.get_required_amount_for(ingredient) > 0
 	var at_ingredient_limit: bool = (
 		RecipeManager.get_ingredients().size() == RecipeManager.MAX_ALLOWED_INGREDIENTS
 	)
-	return ingredient_count == 0 || in_recipe || at_ingredient_limit
+	return in_recipe || at_ingredient_limit
 
 
 func _on_ingredient_changed(
