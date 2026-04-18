@@ -2,7 +2,8 @@ extends CustomerState
 
 
 func enter(_data: Dictionary = {}) -> void:
-	customer.animation_player.play("sip")
-	await customer.animation_player.animation_finished
+	var animation_player: AnimationPlayer = customer.get_animation_player()
+	animation_player.play("sip")
+	await animation_player.animation_finished
 
 	transition_to("Walk")

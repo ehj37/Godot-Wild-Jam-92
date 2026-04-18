@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b37jrbmwwvjhi"
+path="res://.godot/imported/skelly.aseprite-e1088f815a59584cc758b932265d3cf9.res"
+
+[deps]
+
+source_file="res://scenes/customer/skelly.aseprite"
+dest_files=["res://.godot/imported/skelly.aseprite-e1088f815a59584cc758b932265d3cf9.res"]
+
+[params]
+

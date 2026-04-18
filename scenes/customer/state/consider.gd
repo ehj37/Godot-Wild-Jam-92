@@ -4,8 +4,9 @@ const ORDER_PROBABILITY: float = 0.9
 
 
 func enter(_data: Dictionary = {}) -> void:
-	customer.animation_player.play("consider")
-	await customer.animation_player.animation_finished
+	var animation_player: AnimationPlayer = customer.get_animation_player()
+	animation_player.play("consider")
+	await animation_player.animation_finished
 
 	if InventoryManager.has_enough_for_order() && randf() <= ORDER_PROBABILITY:
 		# Immediately update inventory so no order goes unfilfilled

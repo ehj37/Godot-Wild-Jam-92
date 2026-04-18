@@ -4,6 +4,8 @@
 
 [node name="CustomerSpawner" type="Node2D" unique_id=258900163]
 script = ExtResource("1_isuxd")
+customer_type = null
+disabled = null
 
 [node name="SpawnRollTimer" type="Timer" parent="." unique_id=1739723528]
 
