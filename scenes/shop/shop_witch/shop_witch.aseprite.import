@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cvujms6ghmy7m"
+path="res://.godot/imported/shop_witch.aseprite-44f515810a1aa15b3c4fb62ced93123a.res"
+
+[deps]
+
+source_file="res://scenes/shop/shop_witch/shop_witch.aseprite"
+dest_files=["res://.godot/imported/shop_witch.aseprite-44f515810a1aa15b3c4fb62ced93123a.res"]
+
+[params]
+

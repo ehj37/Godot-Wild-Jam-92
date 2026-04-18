@@ -2,51 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://c4t3k2okqyv46" path="res://scenes/shop/shop_cat/shop_cat.tscn" id="1_100s2"]
 [ext_resource type="Script" uid="uid://dr1glf1mnpmf2" path="res://scenes/shop/shop.gd" id="1_qaxay"]
+[ext_resource type="PackedScene" uid="uid://bq6gv6o0y6mmk" path="res://scenes/shop/shop_witch/shop_witch.tscn" id="2_7lxhl"]
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_qaxay"]
-_data = PackedByteArray("AAADAAUAAAABAAAAMAAAADAAAAB6AAAAUklGRnIAAABXRUJQVlA4TGYAAAAvL8ALECdAIEAZa0+YQiBA+C/R48CJkIDw21bRj/kPAHDmzwRWsW2lureBQAIo8KSAnf65cPmL6P8E0FRyaZJOU2lpospJRFWVU9ALeEoqgKZ5AM9JDsClueN1p9PiOE0INw3FLgU=")
-size_override = Vector2(48, 48)
-
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_7r02r"]
-_data = PackedByteArray("AAADAAUAAAABAAAAQAEAAIAAAAB6AAAAUklGRnIAAABXRUJQVlA4TGUAAAAvP8EfEB8gECAMGrBtTiBA+F9SI8CDWDDJ33MOnfMfkH9igFVs20rue0AvIrhbFcro7ce3uzsR/Z8A+DseYG/6dYZXe5PnJwCAQ4iDRuE6luWN/g7K8zzfNoiIy9IaYqO1HO33IwA=")
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_7lxhl"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAEAAIAAAACwAQAAUklGRqgBAABXRUJQVlA4TJsBAAAvP8EfEA+hKJKk5qKAgA3E4R5e80WCmkiSovvvyNCBchxSRKOobSRnC4DlD25pXHl5/suw737/u+8AAAAQAICPJMJZo05zL2uPjGZWAMGNJEXSwjEzd1VX//+Vwz2dUuZxRP8duG3jSNS1DGax1x9R5Ovff//++/ff38/eQWLuDSTmXkFi7gUk5p5BYu4JJOYeQWLuASTm7kFi7g4k5m5BYu4GJOauQWLuCiTmLkFi7gIk5s5BYu4MJOZOQWLuBCTmjkFi7ggk5g5BYu4AJOb2IDG3A4m5DUh/uSkgV+7yiC8/gVc/scReRHQipk7ggxP48Hl4LHhiHpNPzMPIK4MPxEfHtXkSVsjL3rzEXuvVLlOPhIN8W9Sj4KDfFvV8AQ19ZTZbddHUo8GQ5yWtBo9YYL3VLtNHLlWZQkOl5EmgLZXC1KPgoN6WH3GHfVSl0WF1ukGfLZW6LRKY/zeQSl72z6DV0LedLZTaMvkH4bH0SWyrcgWG1vEfZlbbPAlTz1fQEK0XTT0KDlps8Znv+UpPwtTzFTRE60X77CkA")
 size_override = Vector2(320, 128)
 
 [node name="Shop" type="Node2D" unique_id=576003885]
 script = ExtResource("1_qaxay")
 
-[node name="SpriteWitch" type="Sprite2D" parent="." unique_id=887203632]
-texture_filter = 1
-position = Vector2(138, -16)
-texture = SubResource("PortableCompressedTexture2D_qaxay")
-metadata/_aseprite_wizard_interface_config_ = {
-"layer_section": true,
-"output_section": true,
-"pending_changes": {}
-}
-metadata/_aseprite_wizard_config_ = {
-"convert_fps_field": 60.0,
-"convert_ms_field": 16.0,
-"convert_to_fps": false,
-"embed_tex": true,
-"i_mode": 1,
-"keep_anim_length": false,
-"layers": [],
-"o_ex_p": "",
-"o_folder": "",
-"o_name": "",
-"only_visible": true,
-"player": "",
-"scale": "1.0",
-"slice": "",
-"source": "res://scenes/shop/witch.aseprite",
-"source_uid": 6288663514919541500
-}
-metadata/_aseprite_wizard_source_file_hash_ = "342e9af08b1591cad397eb14d49e7f28"
+[node name="ShopWitch" parent="." unique_id=761288968 instance=ExtResource("2_7lxhl")]
+position = Vector2(141, -10)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=414673055]
 texture_filter = 1
 position = Vector2(160, -64)
-texture = SubResource("PortableCompressedTexture2D_7r02r")
+texture = SubResource("PortableCompressedTexture2D_7lxhl")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
@@ -68,7 +39,7 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://scenes/shop/shop.aseprite",
 "source_uid": 3352649628013489255
 }
-metadata/_aseprite_wizard_source_file_hash_ = "a1555fb7de156ee0b0cd2e4ee5cd3c29"
+metadata/_aseprite_wizard_source_file_hash_ = "3d4db43ab2c89585d3a5b10f9061829c"
 
 [node name="ShopCat" parent="." unique_id=870035451 instance=ExtResource("1_100s2")]
 position = Vector2(174, -13)

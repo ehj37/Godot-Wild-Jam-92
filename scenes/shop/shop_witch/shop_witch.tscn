@@ -1,0 +1,99 @@
+[gd_scene format=4 uid="uid://bq6gv6o0y6mmk"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_r6b18"]
+_data = PackedByteArray("AAADAAUAAAABAAAAkAAAAJAAAAAuAQAAUklGRiYBAABXRUJQVlA4TBkBAAAvj8AjECdAIEAZa0+YQiBA+C/R48CJkIDw21bRj/kPAHDmzwSIDeDGbUhkAR6sCegFDGuBPLf/UulzJuj+BSL6r8ht20bdN/Yb9qM0vN7Z3RNtnIEuTqDc2d0TgNc7VQ7gLZw3crRwWpCwFs4rObyFcyMXb+Gc6z5FzyEnyj0Hav8vL8+0MjXPduBfmdVlzstXpvls6v2THf7ReKKPB108+Gg8AXi9R+UA3sFjN3JYC0+Q0D1e6rmSo94DqY1cdI/rTlea6z4beayLx+XsnJ7M74znn+xw3XPWQi7qg+6pDnI4awG47qlegB/wVI4bOXRP8YOE657SruRw2VPbRi6QPbXNdZ/QPfW5XJvNy7MeZc4Dnq9zfy+HAQA=")
+size_override = Vector2(144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxh7f"]
+atlas = SubResource("PortableCompressedTexture2D_r6b18")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8rjt"]
+atlas = SubResource("PortableCompressedTexture2D_r6b18")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chuit"]
+atlas = SubResource("PortableCompressedTexture2D_r6b18")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thbmc"]
+atlas = SubResource("PortableCompressedTexture2D_r6b18")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa2wb"]
+atlas = SubResource("PortableCompressedTexture2D_r6b18")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a15ju"]
+atlas = SubResource("PortableCompressedTexture2D_r6b18")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mafy"]
+atlas = SubResource("PortableCompressedTexture2D_r6b18")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0ari"]
+atlas = SubResource("PortableCompressedTexture2D_r6b18")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcmod"]
+animations = [{
+"frames": [{
+"duration": 25.0,
+"texture": SubResource("AtlasTexture_fxh7f")
+}, {
+"duration": 25.0,
+"texture": SubResource("AtlasTexture_r8rjt")
+}, {
+"duration": 18.0,
+"texture": SubResource("AtlasTexture_fxh7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chuit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thbmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa2wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a15ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mafy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0ari")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxh7f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="ShopWitch" type="AnimatedSprite2D" unique_id=761288968]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_pcmod")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -6)
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://scenes/shop/shop_witch/shop_witch.aseprite",
+"source_uid": 6288663514919541500
+}
+metadata/_aseprite_wizard_source_file_hash_ = "5440f00ca51804dc846c70003a09ab5f"
