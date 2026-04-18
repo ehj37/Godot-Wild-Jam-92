@@ -3,6 +3,7 @@ class_name InventorySlot
 extends HBoxContainer
 
 @export var ingredient: RecipeManager.Ingredient
+@export var show_quantity: bool = true
 
 @onready var _add_button: TextureButton = $AddButton
 @onready var _pumpkin_icon: TextureRect = $Panel/MiniPumpkinIcon
@@ -21,6 +22,9 @@ func _ready() -> void:
 	var initial_ingredient_count: int = InventoryManager.get_ingredient_count(ingredient)
 	_quantity_label.text = str(initial_ingredient_count)
 	_add_button.disabled = _can_add_ingredient()
+
+	if !show_quantity:
+		_quantity_label.visible = false
 
 	InventoryManager.ingredient_changed.connect(_on_ingredient_changed)
 	RecipeManager.recipe_changed.connect(_on_recipe_changed)

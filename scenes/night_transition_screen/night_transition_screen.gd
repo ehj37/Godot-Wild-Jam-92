@@ -2,12 +2,22 @@ class_name NightTransitionScreen
 
 extends Control
 
+# Splitting the string up in this way because my formatter gets angry
+const _SHOP_CONTAINER_BASE_PATH: String = (
+	"NextNightSetupContainer/VBoxContainer/" + "UpperSectionContainer/ShopContainer"
+)
+const _RESULTS_CONTAINER_BASE_PATH: String = (
+	"NextNightSetupContainer/" + "VBoxContainer/ResultsContainer"
+)
+
 var _current_order: Dictionary = {
 	RecipeManager.Ingredient.PUMPKIN: 0,
 	RecipeManager.Ingredient.SPIDER: 0,
 	RecipeManager.Ingredient.CORN: 0
 }
 
+# I should probably break this up. Will I? Probably not.
+# PREVIOUS NIGHT SUMMARY
 @onready var _previous_night_summary: CenterContainer = $PreviousNightSummary
 @onready var _night_number_label: Label = get_node(
 	"PreviousNightSummary/VBoxContainer/NightDescriptorContainer/NightNumberLabel"
@@ -18,45 +28,70 @@ var _current_order: Dictionary = {
 @onready var _coins_earned_quantity_label: Label = get_node(
 	"PreviousNightSummary/VBoxContainer/StatsContainer/Quantities/CoinsEarnedLabel"
 )
-@onready var _shop: CenterContainer = $Shop
+# NEXT NIGHT SETUP
+@onready var _next_night_setup_container: CenterContainer = $NextNightSetupContainer
 @onready var _pumpkin_current_label: Label = get_node(
-	"Shop/VBoxContainer/IngredientContainer/CurrentColumn/PumpkinCurrentLabel"
+	(
+		_SHOP_CONTAINER_BASE_PATH
+		+ "/PanelContainer/IngredientContainer/CurrentColumn/PumpkinCurrentLabel"
+	)
 )
 @onready var _spider_current_label: Label = get_node(
-	"Shop/VBoxContainer/IngredientContainer/CurrentColumn/SpiderCurrentLabel"
+	(
+		_SHOP_CONTAINER_BASE_PATH
+		+ "/PanelContainer/IngredientContainer/CurrentColumn/SpiderCurrentLabel"
+	)
 )
 @onready var _corn_current_label: Label = get_node(
-	"Shop/VBoxContainer/IngredientContainer/CurrentColumn/CornCurrentLabel"
+	_SHOP_CONTAINER_BASE_PATH + "/PanelContainer/IngredientContainer/CurrentColumn/CornCurrentLabel"
 )
 @onready var _pumpkin_ordered_widget: OrderedWidget = get_node(
-	"Shop/VBoxContainer/IngredientContainer/OrderedColumn/PumpkinOrderedWidget"
+	(
+		_SHOP_CONTAINER_BASE_PATH
+		+ "/PanelContainer/IngredientContainer/OrderedColumn/PumpkinOrderedWidget"
+	)
 )
 @onready var _spider_ordered_widget: OrderedWidget = get_node(
-	"Shop/VBoxContainer/IngredientContainer/OrderedColumn/SpiderOrderedWidget"
+	(
+		_SHOP_CONTAINER_BASE_PATH
+		+ "/PanelContainer/IngredientContainer/OrderedColumn/SpiderOrderedWidget"
+	)
 )
 @onready var _corn_ordered_widget: OrderedWidget = get_node(
-	"Shop/VBoxContainer/IngredientContainer/OrderedColumn/CornOrderedWidget"
+	(
+		_SHOP_CONTAINER_BASE_PATH
+		+ "/PanelContainer/IngredientContainer/OrderedColumn/CornOrderedWidget"
+	)
 )
 @onready var _ordered_widgets: Array[OrderedWidget] = [
 	_pumpkin_ordered_widget, _spider_ordered_widget, _corn_ordered_widget
 ]
 @onready var _pumpkin_cost_label: Label = get_node(
-	"Shop/VBoxContainer/IngredientContainer/CostColumn/PumpkinCostLabel"
+	_SHOP_CONTAINER_BASE_PATH + "/PanelContainer/IngredientContainer/CostColumn/PumpkinCostLabel"
 )
 @onready var _spider_cost_label: Label = get_node(
-	"Shop/VBoxContainer/IngredientContainer/CostColumn/SpiderCostLabel"
+	_SHOP_CONTAINER_BASE_PATH + "/PanelContainer/IngredientContainer/CostColumn/SpiderCostLabel"
 )
 @onready var _corn_cost_label: Label = get_node(
-	"Shop/VBoxContainer/IngredientContainer/CostColumn/CornCostLabel"
+	_SHOP_CONTAINER_BASE_PATH + "/PanelContainer/IngredientContainer/CostColumn/CornCostLabel"
 )
 @onready var _pumpkin_new_label: Label = get_node(
-	"Shop/VBoxContainer/IngredientContainer/NewColumn/PumpkinNewLabel"
+	_SHOP_CONTAINER_BASE_PATH + "/PanelContainer/IngredientContainer/NewColumn/PumpkinNewLabel"
 )
 @onready var _spider_new_label: Label = get_node(
-	"Shop/VBoxContainer/IngredientContainer/NewColumn/SpiderNewLabel"
+	_SHOP_CONTAINER_BASE_PATH + "/PanelContainer/IngredientContainer/NewColumn/SpiderNewLabel"
 )
 @onready var _corn_new_label: Label = get_node(
-	"Shop/VBoxContainer/IngredientContainer/NewColumn/CornNewLabel"
+	_SHOP_CONTAINER_BASE_PATH + "/PanelContainer/IngredientContainer/NewColumn/CornNewLabel"
+)
+@onready var _coins_remaining_quantity_label: Label = get_node(
+	_RESULTS_CONTAINER_BASE_PATH + "/CoinsContainer/LabelContainer/CoinsRemainingQuantityLabel"
+)
+@onready var _coins_initial_quantity_label: Label = get_node(
+	_RESULTS_CONTAINER_BASE_PATH + "/CoinsContainer/LabelContainer/CoinsInitialQuantityLabel"
+)
+@onready var _max_cups_quantity_label: Label = get_node(
+	_RESULTS_CONTAINER_BASE_PATH + "/MaxCupsContainer/MaxCupsQuantityLabel"
 )
 
 
@@ -85,8 +120,16 @@ func _ready() -> void:
 	_spider_new_label.text = _spider_current_label.text
 	_corn_new_label.text = _corn_current_label.text
 
+	_coins_remaining_quantity_label.text = str(InventoryManager.get_coins())
+	_coins_initial_quantity_label.text = _coins_remaining_quantity_label.text
+	_max_cups_quantity_label.text = str(_get_max_cups())
+
 	_previous_night_summary.visible = true
-	_shop.visible = false
+	_next_night_setup_container.visible = false
+
+	RecipeManager.recipe_changed.connect(
+		func() -> void: _max_cups_quantity_label.text = str(_get_max_cups())
+	)
 
 
 func _get_order_cost() -> int:
@@ -99,6 +142,26 @@ func _get_order_cost() -> int:
 	return total_cost
 
 
+func _get_max_cups() -> int:
+	var recipe: Dictionary = RecipeManager.get_recipe()
+	if recipe.is_empty():
+		return 0
+
+	# There's no integer infinity - this will be casted back into an int
+	var max_cups: float = INF
+	for ingredient: RecipeManager.Ingredient in recipe:
+		var ingredient_count_for_recipe: int = recipe.get(ingredient)
+		var amount_currently_held: int = InventoryManager.get_ingredient_count(ingredient)
+		var amount_being_ordered: int = _current_order.get(ingredient)
+		@warning_ignore("integer_division")
+		var max_cups_for_ingredient: int = (
+			(amount_currently_held + amount_being_ordered) / ingredient_count_for_recipe
+		)
+		max_cups = min(max_cups, max_cups_for_ingredient)
+
+	return int(max_cups)
+
+
 func _place_order() -> void:
 	var order_cost: int = _get_order_cost()
 	InventoryManager.change_coins(-order_cost)
@@ -106,7 +169,7 @@ func _place_order() -> void:
 
 func _on_shop_button_pressed() -> void:
 	_previous_night_summary.visible = false
-	_shop.visible = true
+	_next_night_setup_container.visible = true
 
 
 func _on_start_night_button_pressed() -> void:
@@ -140,3 +203,6 @@ func _on_ordered_quantity_changed(ingredient: RecipeManager.Ingredient, new_quan
 		RecipeManager.Ingredient.CORN:
 			_corn_new_label.text = total_quantity_text
 			_corn_cost_label.text = total_cost_text
+
+	_coins_remaining_quantity_label.text = str(InventoryManager.get_coins() - _get_order_cost())
+	_max_cups_quantity_label.text = str(_get_max_cups())

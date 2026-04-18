@@ -1,6 +1,8 @@
 class_name RecipeWidget
 
-extends Node2D
+extends Container
+
+@export var highlight_lacking_ingredient: bool = true
 
 @onready var _recipe_slot_container: HBoxContainer = $VBoxContainer/RecipeSlotContainer
 
@@ -16,6 +18,8 @@ func _ready() -> void:
 			recipe_slot.ingredient = _translate_ingredient(recipe_ingredient)
 		else:
 			recipe_slot.ingredient = RecipeSlot.Ingredient.NONE
+
+		recipe_slot.highlight_lacking_ingredient = highlight_lacking_ingredient
 
 	RecipeManager.ingredient_added.connect(_on_ingredient_added)
 	RecipeManager.ingredient_removed.connect(_on_ingredient_removed)

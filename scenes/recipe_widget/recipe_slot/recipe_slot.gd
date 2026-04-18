@@ -18,6 +18,15 @@ const LACKING_INGREDIENT_TEXT_COLOR: Color = Color.RED
 		_update_quantity_label()
 		_update_quantity_slider()
 
+# For use on the night transition screen
+var highlight_lacking_ingredient: bool = true:
+	set(new_value):
+		highlight_lacking_ingredient = new_value
+		# Extremely scuffed
+		($QuantityLabel as Label).add_theme_color_override(
+			"font_color", HAS_ENOUGH_OF_INGREDIENT_TEXT_COLOR
+		)
+
 @onready var _remove_button: TextureButton = $Panel/RemoveButton
 @onready var _pumpkin_icon: TextureRect = $Panel/IngredientIconContainer/PumpkinIcon
 @onready var _spider_icon: TextureRect = $Panel/IngredientIconContainer/SpiderIcon
@@ -72,10 +81,13 @@ func _update_quantity_label() -> void:
 	var recipe_amount: int = RecipeManager.get_required_amount_for(translated_ingredient)
 	_quantity_label.text = str(recipe_amount)
 
-	if recipe_amount > InventoryManager.get_ingredient_count(translated_ingredient):
-		_quantity_label.add_theme_color_override("font_color", LACKING_INGREDIENT_TEXT_COLOR)
-	else:
-		_quantity_label.add_theme_color_override("font_color", HAS_ENOUGH_OF_INGREDIENT_TEXT_COLOR)
+	if highlight_lacking_ingredient:
+		if recipe_amount > InventoryManager.get_ingredient_count(translated_ingredient):
+			_quantity_label.add_theme_color_override("font_color", LACKING_INGREDIENT_TEXT_COLOR)
+		else:
+			_quantity_label.add_theme_color_override(
+				"font_color", HAS_ENOUGH_OF_INGREDIENT_TEXT_COLOR
+			)
 
 
 func _update_quantity_slider() -> void:
