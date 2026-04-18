@@ -3,12 +3,45 @@
 [ext_resource type="PackedScene" uid="uid://c4t3k2okqyv46" path="res://scenes/shop/shop_cat/shop_cat.tscn" id="1_100s2"]
 [ext_resource type="Script" uid="uid://dr1glf1mnpmf2" path="res://scenes/shop/shop.gd" id="1_qaxay"]
 
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_qaxay"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAADAAAAB6AAAAUklGRnIAAABXRUJQVlA4TGYAAAAvL8ALECdAIEAZa0+YQiBA+C/R48CJkIDw21bRj/kPAHDmzwRWsW2lureBQAIo8KSAnf65cPmL6P8E0FRyaZJOU2lpospJRFWVU9ALeEoqgKZ5AM9JDsClueN1p9PiOE0INw3FLgU=")
+size_override = Vector2(48, 48)
+
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_7r02r"]
 _data = PackedByteArray("AAADAAUAAAABAAAAQAEAAIAAAAB6AAAAUklGRnIAAABXRUJQVlA4TGUAAAAvP8EfEB8gECAMGrBtTiBA+F9SI8CDWDDJ33MOnfMfkH9igFVs20rue0AvIrhbFcro7ce3uzsR/Z8A+DseYG/6dYZXe5PnJwCAQ4iDRuE6luWN/g7K8zzfNoiIy9IaYqO1HO33IwA=")
 size_override = Vector2(320, 128)
 
 [node name="Shop" type="Node2D" unique_id=576003885]
 script = ExtResource("1_qaxay")
+
+[node name="SpriteWitch" type="Sprite2D" parent="." unique_id=887203632]
+texture_filter = 1
+position = Vector2(138, -16)
+texture = SubResource("PortableCompressedTexture2D_qaxay")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/shop/witch.aseprite",
+"source_uid": 6288663514919541500
+}
+metadata/_aseprite_wizard_source_file_hash_ = "342e9af08b1591cad397eb14d49e7f28"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=414673055]
 texture_filter = 1

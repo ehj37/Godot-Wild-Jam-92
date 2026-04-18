@@ -14,7 +14,7 @@ class TargetData:
 		self.on_target_reached = on_target_reached
 
 
-enum CustomerType { FRANK, SKELLY }
+enum CustomerType { FRANK, SKELLY, PHANTOM }
 
 const MIN_DELAY_BEFORE_CONSIDER: float = 0.5
 const MAX_DELAY_BEFORE_CONSIDER: float = 4.5
@@ -29,6 +29,8 @@ var _consider_triggered: bool = false
 @onready var _frank_animation_player: AnimationPlayer = $FrankAnimationPlayer
 @onready var _sprite_skelly: Sprite2D = $SpriteSkelly
 @onready var _skelly_animation_player: AnimationPlayer = $SkellyAnimationPlayer
+@onready var _sprite_phantom: Sprite2D = $SpritePhantom
+@onready var _phantom_animation_player: AnimationPlayer = $PhantomAnimationPlayer
 
 
 func get_animation_player() -> AnimationPlayer:
@@ -38,6 +40,8 @@ func get_animation_player() -> AnimationPlayer:
 			animation_player = _frank_animation_player
 		CustomerType.SKELLY:
 			animation_player = _skelly_animation_player
+		CustomerType.PHANTOM:
+			animation_player = _phantom_animation_player
 		_:
 			push_error("Unhandled customer type in Customer#get_animation_player")
 	return animation_player
@@ -50,6 +54,8 @@ func get_sprite() -> Sprite2D:
 			sprite = _sprite_frank
 		CustomerType.SKELLY:
 			sprite = _sprite_skelly
+		CustomerType.PHANTOM:
+			sprite = _sprite_phantom
 		_:
 			push_error("Unhandled customer type in Customer#get_animation_player")
 
