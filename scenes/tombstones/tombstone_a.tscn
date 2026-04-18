@@ -1,0 +1,32 @@
+[gd_scene format=4 uid="uid://dutddbcal8d8t"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_51w58"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAADsAAAAUklGRuQAAABXRUJQVlA4TNcAAAAvP8APEE+gKJKk5nIG3ijDLToVtG3D5tr9g2AApjYAkDRI58QIOv8BAO/naXMMfH73Vm9TV+qqpsCNa9uNMh2izO4nQJu2YMkrQK6J0xK+dVkGHfJ6Sf/TQRXR/wko/uZny+VyWRS3rtryMeec1aqyPAPc1fplyeNOrez3RLynNUBEgkV4cHTUzsGL+B53g4AItGrXgHyH0+OpW+sF74c9Tq0ejw6D4J3rnQyOMI0NBgWQpjBVu0EEKNUyJKDUu6YIMDWI6QED4pOpAemh1Vs9NwAioPe7BwA=")
+size_override = Vector2(64, 64)
+
+[node name="TombstoneA" type="Sprite2D" unique_id=2089652468]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_51w58")
+offset = Vector2(0, -16)
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/tombstones/tombstone_a.aseprite",
+"source_uid": 6358493896280308737
+}
+metadata/_aseprite_wizard_source_file_hash_ = "e4d551ef8946e34d02d67adb4ce06117"

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://nmsdfnat44ow"
+path="res://.godot/imported/tombstone_b.aseprite-cc42ca747db64b1357211974b1b05780.res"
+
+[deps]
+
+source_file="res://scenes/tombstones/tombstone_b.aseprite"
+dest_files=["res://.godot/imported/tombstone_b.aseprite-cc42ca747db64b1357211974b1b05780.res"]
+
+[params]
+

@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://c1cc3m0x0dym2" path="res://scenes/recipe_widget/recipe_widget.tscn" id="7_dg77c"]
 [ext_resource type="PackedScene" uid="uid://h760c5xaan4x" path="res://scenes/inventory_widget/inventory_widget.tscn" id="8_ycdy4"]
 [ext_resource type="Script" uid="uid://c1du00t7sl400" path="res://scripts/time_range.gd" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://dutddbcal8d8t" path="res://scenes/tombstones/tombstone_a.tscn" id="14_ryn8s"]
 [ext_resource type="PackedScene" uid="uid://bqydyqinam8ed" path="res://scenes/cat/cat_widget.tscn" id="14_vfwos"]
+[ext_resource type="PackedScene" uid="uid://bd8kq0rwxiwnn" path="res://scenes/tombstones/tombstone_b.tscn" id="15_ryn8s"]
 
 [sub_resource type="Theme" id="Theme_7dm0k"]
 Label/font_sizes/font_size = 6
@@ -120,8 +122,23 @@ time_range = SubResource("Resource_t33dh")
 [node name="Marker2D" type="Marker2D" parent="." unique_id=679637319]
 position = Vector2(140, 132)
 
+[node name="TombstoneA2" parent="." unique_id=21956786 instance=ExtResource("14_ryn8s")]
+position = Vector2(288, 185)
+
+[node name="TombstoneB" parent="." unique_id=2852628 instance=ExtResource("15_ryn8s")]
+position = Vector2(312, 127)
+
+[node name="TombstoneB2" parent="." unique_id=1702967190 instance=ExtResource("15_ryn8s")]
+position = Vector2(13, 191)
+
+[node name="TombstoneA3" parent="." unique_id=851516382 instance=ExtResource("14_ryn8s")]
+position = Vector2(-1, 189)
+
 [node name="CatWidget" parent="." unique_id=249945766 instance=ExtResource("14_vfwos")]
 offset_left = 196.0
 offset_top = 58.0
 offset_right = 196.0
 offset_bottom = 58.0
+
+[node name="TombstoneB3" parent="." unique_id=1985099641 instance=ExtResource("15_ryn8s")]
+position = Vector2(321, 205)
