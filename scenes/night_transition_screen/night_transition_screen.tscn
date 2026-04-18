@@ -4,6 +4,10 @@
 [ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_4fkvs"]
 [ext_resource type="PackedScene" uid="uid://b8o7sgvhiftxy" path="res://scenes/coin_icon/coin_icon.tscn" id="3_23mve"]
 [ext_resource type="PackedScene" uid="uid://77xn4bq41ign" path="res://scenes/moon_icon/moon_icon.tscn" id="3_omq0l"]
+[ext_resource type="PackedScene" uid="uid://btaemvjlnqh3w" path="res://scenes/pumpkin_icon/pumpkin_icon.tscn" id="5_ohhhu"]
+[ext_resource type="PackedScene" uid="uid://qns2akmt2xnl" path="res://scenes/spider_icon/spider_icon.tscn" id="6_0mjiw"]
+[ext_resource type="PackedScene" uid="uid://b27tw632y5hm1" path="res://scenes/corn_icon/corn_icon.tscn" id="7_nn3cd"]
+[ext_resource type="PackedScene" uid="uid://djynefq222fka" path="res://scenes/night_transition_screen/ordered_widget/ordered_widget.tscn" id="8_pbtus"]
 
 [node name="NightTransitionScreen" type="Control" unique_id=1821860668]
 custom_minimum_size = Vector2(320, 180)
@@ -13,6 +17,7 @@ theme = ExtResource("1_4fkvs")
 script = ExtResource("1_0qclp")
 
 [node name="PreviousNightSummary" type="CenterContainer" parent="." unique_id=1078905281]
+visible = false
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 0
 offset_right = 40.0
@@ -83,16 +88,173 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Sliders" type="VBoxContainer" parent="Shop" unique_id=1538558187]
-layout_mode = 2
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Shop" unique_id=522891394]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="Shop/VBoxContainer" unique_id=368286800]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
 text = "SHOP"
+
+[node name="IngredientContainer" type="HBoxContainer" parent="Shop/VBoxContainer" unique_id=478356375]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="IconColumn" type="VBoxContainer" parent="Shop/VBoxContainer/IngredientContainer" unique_id=1967535978]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderPlaceholder" type="Control" parent="Shop/VBoxContainer/IngredientContainer/IconColumn" unique_id=82771063]
+custom_minimum_size = Vector2(12, 20)
+layout_mode = 2
+
+[node name="PumpkinIcon" parent="Shop/VBoxContainer/IngredientContainer/IconColumn" unique_id=882007404 instance=ExtResource("5_ohhhu")]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+stretch_mode = 3
+
+[node name="SpiderIcon" parent="Shop/VBoxContainer/IngredientContainer/IconColumn" unique_id=1104299584 instance=ExtResource("6_0mjiw")]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+stretch_mode = 3
+
+[node name="CornIcon" parent="Shop/VBoxContainer/IngredientContainer/IconColumn" unique_id=1590682832 instance=ExtResource("7_nn3cd")]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+stretch_mode = 3
+
+[node name="CurrentColumn" type="VBoxContainer" parent="Shop/VBoxContainer/IngredientContainer" unique_id=611692833]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/CurrentColumn" unique_id=911492466]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "CURRENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PumpkinCurrentLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/CurrentColumn" unique_id=1726601543]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpiderCurrentLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/CurrentColumn" unique_id=335683495]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CornCurrentLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/CurrentColumn" unique_id=652719054]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OrderedColumn" type="VBoxContainer" parent="Shop/VBoxContainer/IngredientContainer" unique_id=903537141]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/OrderedColumn" unique_id=665565]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "ORDERED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PumpkinOrderedWidget" parent="Shop/VBoxContainer/IngredientContainer/OrderedColumn" unique_id=1223467467 instance=ExtResource("8_pbtus")]
+layout_mode = 2
+
+[node name="SpiderOrderedWidget" parent="Shop/VBoxContainer/IngredientContainer/OrderedColumn" unique_id=653553562 instance=ExtResource("8_pbtus")]
+layout_mode = 2
+ingredient = 1
+
+[node name="CornOrderedWidget" parent="Shop/VBoxContainer/IngredientContainer/OrderedColumn" unique_id=1274101414 instance=ExtResource("8_pbtus")]
+layout_mode = 2
+ingredient = 2
+
+[node name="CostColumn" type="VBoxContainer" parent="Shop/VBoxContainer/IngredientContainer" unique_id=1768524794]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/CostColumn" unique_id=1636020863]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "COST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PumpkinCostLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/CostColumn" unique_id=1151316031]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpiderCostLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/CostColumn" unique_id=1818548664]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CornCostLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/CostColumn" unique_id=1488838370]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewColumn" type="VBoxContainer" parent="Shop/VBoxContainer/IngredientContainer" unique_id=721925867]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/NewColumn" unique_id=608118085]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "NEW"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PumpkinNewLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/NewColumn" unique_id=584182156]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpiderNewLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/NewColumn" unique_id=263844362]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CornNewLabel" type="Label" parent="Shop/VBoxContainer/IngredientContainer/NewColumn" unique_id=1953524128]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StartNightButton" type="Button" parent="Shop/VBoxContainer" unique_id=557714254]
 layout_mode = 2
@@ -100,4 +262,7 @@ size_flags_horizontal = 4
 text = "START NIGHT"
 
 [connection signal="pressed" from="PreviousNightSummary/VBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="quantity_changed" from="Shop/VBoxContainer/IngredientContainer/OrderedColumn/PumpkinOrderedWidget" to="." method="_on_ordered_quantity_changed"]
+[connection signal="quantity_changed" from="Shop/VBoxContainer/IngredientContainer/OrderedColumn/SpiderOrderedWidget" to="." method="_on_ordered_quantity_changed"]
+[connection signal="quantity_changed" from="Shop/VBoxContainer/IngredientContainer/OrderedColumn/CornOrderedWidget" to="." method="_on_ordered_quantity_changed"]
 [connection signal="pressed" from="Shop/VBoxContainer/StartNightButton" to="." method="_on_start_night_button_pressed"]

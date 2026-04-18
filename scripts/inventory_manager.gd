@@ -4,11 +4,16 @@ signal order_fulfilled(price: int)
 signal coins_changed(new_amount: int, delta: int)
 signal ingredient_changed(ingredient: RecipeManager.Ingredient, new_amount: int, delta: int)
 
-const INITIAL_COINS: int = 0
+const INITIAL_COINS: int = 999
 const INITIAL_CUPS: int = 20
 const INITIAL_PUMPKINS: int = 20
 const INITIAL_SPIDERS: int = 5
 const INITIAL_CORN: int = 2
+const INGREDIENT_TO_PRICE: Dictionary = {
+	RecipeManager.Ingredient.PUMPKIN: 5,
+	RecipeManager.Ingredient.SPIDER: 4,
+	RecipeManager.Ingredient.CORN: 2
+}
 
 var _coins: int = INITIAL_COINS
 var _pumpkins: int = INITIAL_PUMPKINS
@@ -60,6 +65,8 @@ func has_enough_for_order() -> bool:
 
 
 func update_from_order() -> void:
+	SoundEffectManager.play(_coin_add_sound_effect_config)
+
 	var current_price: int = PriceManager.current_price
 	change_coins(current_price)
 
@@ -77,9 +84,6 @@ func get_coins() -> int:
 func change_coins(amount: int) -> void:
 	if amount == 0:
 		return
-
-	if amount > 0:
-		SoundEffectManager.play(_coin_add_sound_effect_config)
 
 	_coins += amount
 	coins_changed.emit(_coins, amount)

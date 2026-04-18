@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://djynefq222fka"]
+
+[ext_resource type="Script" uid="uid://c4bg414myto6u" path="res://scenes/night_transition_screen/ordered_widget/ordered_widget.gd" id="1_4ojwc"]
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_duf5o"]
+[ext_resource type="PackedScene" uid="uid://dfdmsr7q5s2fc" path="res://scenes/mini_coin_icon/mini_coin_icon.tscn" id="1_od6m3"]
+[ext_resource type="Texture2D" uid="uid://0iduq8imgj2n" path="res://scenes/night_transition_screen/ordered_widget/grabber.png" id="2_4ojwc"]
+[ext_resource type="Texture2D" uid="uid://dwq1tu7fdk5ly" path="res://scenes/night_transition_screen/ordered_widget/grabber_highlight.png" id="3_duf5o"]
+
+[node name="OrderedWidget" type="VBoxContainer" unique_id=1223467467]
+theme = ExtResource("1_duf5o")
+theme_override_constants/separation = 1
+script = ExtResource("1_4ojwc")
+
+[node name="QuantityOrderedLabel" type="Label" parent="." unique_id=452440229]
+layout_mode = 2
+size_flags_vertical = 0
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SliderContainer" type="HBoxContainer" parent="." unique_id=313381110]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MinQuantityLabel" type="Label" parent="SliderContainer" unique_id=1112367672]
+layout_mode = 2
+text = "0"
+
+[node name="HSlider" type="HSlider" parent="SliderContainer" unique_id=940004272]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("2_4ojwc")
+theme_override_icons/grabber_highlight = ExtResource("3_duf5o")
+max_value = 50.0
+
+[node name="MaxQuantityLabel" type="Label" parent="SliderContainer" unique_id=1568248276]
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+text = "999"
+
+[node name="PriceContainer" type="HBoxContainer" parent="." unique_id=2141056693]
+layout_mode = 2
+alignment = 1
+
+[node name="PriceLabel" type="Label" parent="PriceContainer" unique_id=1283270093]
+layout_mode = 2
+text = "PRICE:"
+
+[node name="MiniCoinIcon" parent="PriceContainer" unique_id=1193548858 instance=ExtResource("1_od6m3")]
+layout_mode = 2
+
+[node name="PriceAmountLabel" type="Label" parent="PriceContainer" unique_id=199233307]
+layout_mode = 2
+text = "999"
+
+[connection signal="value_changed" from="SliderContainer/HSlider" to="." method="_on_h_slider_value_changed"]

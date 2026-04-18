@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dm3xi34v4mnr1"
+path="res://.godot/imported/grabber_highlight.aseprite-078d9777ebee4224c031219b18a176e6.res"
+
+[deps]
+
+source_file="res://scenes/night_transition_screen/ordered_widget/grabber_highlight.aseprite"
+dest_files=["res://.godot/imported/grabber_highlight.aseprite-078d9777ebee4224c031219b18a176e6.res"]
+
+[params]
+
