@@ -84,6 +84,12 @@ const _CUSTOMER_TYPE_TO_MAX_TIP_AMOUNT: Dictionary = {
 	Customer.CustomerType.PHANTOM: _PHANTOM_MAX_TIP_AMOUNT
 }
 
+const LARGE_NEGATIVE_REPUTATION_HIT: float = -0.1
+const MEDIUM_NEGATIVE_REPUTATION_HIT: float = -0.03
+const SMALL_NEGATIVE_REPUTATION_HIT: float = -0.01
+const SMALL_POSITIVE_REPUTATION_BOOST: float = 0.01
+const MEDIUM_POSITIVE_REPUTATION_BOOST: float = 0.03
+
 const FEEDBACK_PROBABILITY: float = 0.5
 
 
@@ -100,7 +106,29 @@ func enter(data: Dictionary = {}) -> void:
 	)
 	var total_score: float = report_card.total_score()
 	var customer_type: Customer.CustomerType = customer.customer_type
+
+	if total_score < 0.25:
+		# Serving cauldron juice on its own is treated as a war crime
+		var serving_cauldron_water: bool = recipe_at_time_of_order.is_empty()
+		if serving_cauldron_water:
+			ReputationManager.update_reputation(LARGE_NEGATIVE_REPUTATION_HIT)
+		else:
+			ReputationManager.update_reputation(MEDIUM_NEGATIVE_REPUTATION_HIT)
+
+		if serving_cauldron_water:
+			var feedback: String = FeedbackManager.CUSTOMER_TYPE_TO_CAULDRON_WATER_FEEDBACK.get(
+				customer_type
+			)
+			FeedbackManager.give_feedback(customer_type, feedback)
+		elif randf() < FEEDBACK_PROBABILITY:
+			FeedbackManager.give_feedback(customer_type, _get_negative_feedback(report_card))
+	elif total_score < 0.5:
+		ReputationManager.update_reputation(SMALL_NEGATIVE_REPUTATION_HIT)
+	elif total_score < 0.75:
+		ReputationManager.update_reputation(SMALL_POSITIVE_REPUTATION_BOOST)
 	if total_score > 0.75:
+		ReputationManager.update_reputation(MEDIUM_POSITIVE_REPUTATION_BOOST)
+
 		var min_tip_amount: int = _CUSTOMER_TYPE_TO_MIN_TIP_AMOUNT.get(customer_type)
 		var max_tip_amount: int = _CUSTOMER_TYPE_TO_MAX_TIP_AMOUNT.get(customer_type)
 		var tip_amount: int = randi_range(min_tip_amount, max_tip_amount)
@@ -108,10 +136,6 @@ func enter(data: Dictionary = {}) -> void:
 
 		if randf() < FEEDBACK_PROBABILITY:
 			FeedbackManager.give_feedback(customer_type, _get_positive_feedback(report_card))
-
-	if total_score < 0.25:
-		if randf() < FEEDBACK_PROBABILITY:
-			FeedbackManager.give_feedback(customer_type, _get_negative_feedback(report_card))
 
 	transition_to("Walk")
 

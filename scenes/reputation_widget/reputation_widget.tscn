@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://db5jyn5c8xt40"]
+
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_f5soj"]
+[ext_resource type="Script" uid="uid://dxnfrrpaiwhsw" path="res://scenes/reputation_widget/reputation_widget.gd" id="2_pe7yj"]
+
+[node name="ReputationWidget" type="VBoxContainer" unique_id=29683973]
+theme = ExtResource("1_f5soj")
+alignment = 1
+script = ExtResource("2_pe7yj")
+
+[node name="Label" type="Label" parent="." unique_id=1177822262]
+layout_mode = 2
+text = "REPUTATION"
+horizontal_alignment = 1
+
+[node name="ReputationProgressBar" type="ProgressBar" parent="." unique_id=1968475030]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+value = 50.0
+show_percentage = false

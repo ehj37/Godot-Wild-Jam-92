@@ -20,6 +20,12 @@ border_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4bdt"]
 bg_color = Color(0.21176471, 0.21176471, 0.21176471, 0.49019608)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35ai6"]
+bg_color = Color(0.07812946, 0.008139629, 0.106569566, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3swm"]
+bg_color = Color(0.92941177, 0.827451, 0.972549, 1)
+
 [resource]
 Button/font_sizes/font_size = 6
 Button/fonts/font = ExtResource("1_dapwq")
@@ -30,3 +36,5 @@ HSlider/styles/slider = SubResource("StyleBoxFlat_p3a7w")
 Label/font_sizes/font_size = 6
 Label/fonts/font = ExtResource("1_dapwq")
 Panel/styles/panel = SubResource("StyleBoxFlat_f4bdt")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_35ai6")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_s3swm")
