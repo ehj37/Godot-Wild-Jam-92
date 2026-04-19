@@ -1,14 +1,15 @@
 extends Node
 
 signal order_fulfilled(price: int)
+signal tip_given(customer: Customer.CustomerType, amount: int)
 signal coins_changed(new_amount: int, delta: int)
 signal ingredient_changed(ingredient: RecipeManager.Ingredient, new_amount: int, delta: int)
 
 const INITIAL_COINS: int = 999
 const INITIAL_CUPS: int = 20
 const INITIAL_PUMPKINS: int = 20
-const INITIAL_SPIDERS: int = 5
-const INITIAL_CORN: int = 2
+const INITIAL_SPIDERS: int = 30
+const INITIAL_CORN: int = 40
 const INGREDIENT_TO_PRICE: Dictionary = {
 	RecipeManager.Ingredient.PUMPKIN: 5,
 	RecipeManager.Ingredient.SPIDER: 4,
@@ -87,3 +88,9 @@ func change_coins(amount: int) -> void:
 
 	_coins += amount
 	coins_changed.emit(_coins, amount)
+
+
+func add_tip(customer_type: Customer.CustomerType, amount: int) -> void:
+	SoundEffectManager.play(_coin_add_sound_effect_config)
+	change_coins(amount)
+	tip_given.emit(customer_type, amount)

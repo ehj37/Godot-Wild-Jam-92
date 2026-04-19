@@ -1,0 +1,53 @@
+extends Node
+
+signal feedback_given(customer_type: Customer.CustomerType, feedback: String)
+
+const FRANK_PUMPKIN_FEEDBACK: String = "PUMPKIN GOOD."
+const SKELLY_SPIDER_FEEDBACK: String = "SPIDERS, YUM."
+const PHANTOM_CORN_FEEDBACK: String = "CAAAANDY COOOORN :D"
+
+const CUSTOMER_TYPE_TO_FAIR_PRICE_FEEDBACK: Dictionary = {
+	Customer.CustomerType.FRANK: _FRANK_FAIR_PRICE_FEEDBACK,
+	Customer.CustomerType.SKELLY: _SKELLY_FAIR_PRICE_FEEDBACK,
+	Customer.CustomerType.PHANTOM: _PHANTOM_FAIR_PRICE_FEEDBACK
+}
+
+const SKELLY_CORN_FEEDBACK: String = "CANDY CORN, YUCK"
+
+const CUSTOMER_TYPE_TO_TOO_EXPENSIVE_FEEDBACK: Dictionary = {
+	Customer.CustomerType.FRANK: _FRANK_TOO_EXPENSIVE_FEEDBACK,
+	Customer.CustomerType.SKELLY: _SKELLY_TOO_EXPENSIVE_FEEDBACK,
+	Customer.CustomerType.PHANTOM: _PHANTOM_TOO_EXPENSIVE_FEEDBACK
+}
+
+const CUSTOMER_TYPE_TO_VARIETY_FEEDBACK: Dictionary = {
+	Customer.CustomerType.FRANK: _FRANK_VARIETY_FEEDBACK,
+	Customer.CustomerType.SKELLY: _SKELLY_VARIETY_FEEDBACK,
+	Customer.CustomerType.PHANTOM: _PHANTOM_VARIETY_FEEDBACK
+}
+const CUSTOMER_TYPE_TO_GENERIC_NEGATIVE_FEEDBACK: Dictionary = {
+	Customer.CustomerType.FRANK: _FRANK_GENERIC_NEGATIVE_FEEDBACK,
+	Customer.CustomerType.SKELLY: _SKELLY_GENERIC_NEGATIVE_FEEDBACK,
+	Customer.CustomerType.PHANTOM: _PHANTOM_GENERIC_NEGATIVE_FEEDBACK
+}
+
+const _FRANK_FAIR_PRICE_FEEDBACK: String = "PRICE. PRICE GOOD."
+const _SKELLY_FAIR_PRICE_FEEDBACK: String = "REASONABLE PRICE"
+const _PHANTOM_FAIR_PRICE_FEEDBACK: String = "GOOOOOD DEEEAL"
+
+const _FRANK_TOO_EXPENSIVE_FEEDBACK: String = "URG, COST TOO MUCH"
+const _SKELLY_TOO_EXPENSIVE_FEEDBACK: String = "MY POOR WALLET"
+const _PHANTOM_TOO_EXPENSIVE_FEEDBACK: String = "TOOOOOO EXPENSIVE"
+
+const _FRANK_VARIETY_FEEDBACK: String = "NEED MORE STUFF"
+const _SKELLY_VARIETY_FEEDBACK: String = "MISSING SOMETHING"
+const _PHANTOM_VARIETY_FEEDBACK: String = "TOOOOOO BLAAAND"
+
+const _FRANK_GENERIC_NEGATIVE_FEEDBACK: String = "BAD"
+const _SKELLY_GENERIC_NEGATIVE_FEEDBACK: String = "NO GOOD"
+const _PHANTOM_GENERIC_NEGATIVE_FEEDBACK: String = "NOOOOT GOOOOD"
+
+
+# Yes, it's weird that this is just emitting a signal with the exact same params.
+func give_feedback(customer_type: Customer.CustomerType, feedback: String) -> void:
+	feedback_given.emit(customer_type, feedback)

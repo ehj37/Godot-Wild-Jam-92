@@ -9,6 +9,12 @@ var _log_entries: Array[HBoxContainer] = []
 @onready var _customer_purchase_entry_packed_scene: PackedScene = preload(
 	"res://scenes/activity_log_widget/log_entries/customer_purchase_entry/customer_purchase_entry.tscn"
 )
+@onready var _customer_tip_entry_packed_scene: PackedScene = preload(
+	"res://scenes/activity_log_widget/log_entries/customer_tip_entry/customer_tip_entry.tscn"
+)
+@onready var _customer_feedback_entry_packed_scene: PackedScene = preload(
+	"res://scenes/activity_log_widget/log_entries/customer_feedback_entry/customer_feedback_entry.tscn"
+)
 @onready var _cat_fetch_entry_packed_scene: PackedScene = preload(
 	"res://scenes/activity_log_widget/log_entries/cat_fetch_entry/cat_fetch_entry.tscn"
 )
@@ -17,11 +23,27 @@ var _log_entries: Array[HBoxContainer] = []
 
 func _ready() -> void:
 	InventoryManager.order_fulfilled.connect(_on_order_fulfilled)
+	InventoryManager.tip_given.connect(_on_tip_given)
+	FeedbackManager.feedback_given.connect(_on_feedback_given)
 	CatManager.resource_fetched.connect(_on_resource_fetched)
 
 
 func _on_order_fulfilled(price: int) -> void:
 	_add_customer_purchase_entry(price)
+
+
+func _on_tip_given(customer_type: Customer.CustomerType, amount: int) -> void:
+	var new_entry: CustomerTipEntry = _customer_tip_entry_packed_scene.instantiate()
+	new_entry.customer_type = customer_type
+	new_entry.amount = amount
+	_add_log_entry(new_entry)
+
+
+func _on_feedback_given(customer_type: Customer.CustomerType, feedback: String) -> void:
+	var new_entry: CustomerFeedbackEntry = _customer_feedback_entry_packed_scene.instantiate()
+	new_entry.customer_type = customer_type
+	new_entry.feedback = feedback
+	_add_log_entry(new_entry)
 
 
 func _add_customer_purchase_entry(amount: int) -> void:

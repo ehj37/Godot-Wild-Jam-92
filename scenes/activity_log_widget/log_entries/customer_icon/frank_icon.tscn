@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://ducpr603fuubk"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_s4nks"]
+_data = PackedByteArray("AAADAAUAAAABAAAABgAAAAYAAABIAAAAUklGRkAAAABXRUJQVlA4TDMAAAAvBUABEB8gEEjy55hyEoFAinMbY4FAihMb5vkPwM4NitpGcgJy0e27lzu8Ef0PwfgoQwEA")
+size_override = Vector2(6, 6)
+
+[node name="FrankIcon" type="TextureRect" unique_id=649523763]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_s4nks")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/activity_log_widget/log_entries/customer_icon/frank_icon.aseprite",
+"source_uid": 8628438912109331080
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1f5528c23c7ef7778b7b0e7da35d5652"

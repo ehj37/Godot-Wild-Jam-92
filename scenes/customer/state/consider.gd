@@ -23,8 +23,18 @@ func enter(_data: Dictionary = {}) -> void:
 			+ Vector2(order_window_x_offset, order_window_y_offset)
 		)
 
+		# Recipe/price may change by Order/Sip
+		var recipe_at_time_of_order: Dictionary = RecipeManager.get_recipe()
+		var price_at_time_of_order: int = PriceManager.current_price
 		var target_data: Customer.TargetData = Customer.TargetData.new(
-			target, func() -> void: state_machine.transition_to("Order")
+			target,
+			func() -> void: state_machine.transition_to(
+				"Order",
+				{
+					"recipe_at_time_of_order": recipe_at_time_of_order,
+					"price_at_time_of_order": price_at_time_of_order
+				}
+			)
 		)
 		transition_to("Walk", {"target_data": target_data})
 	else:

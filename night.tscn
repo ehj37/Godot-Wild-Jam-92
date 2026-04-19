@@ -69,7 +69,11 @@ offset_right = 318.0
 offset_bottom = 54.0
 
 [node name="RecipeWidget" parent="TopBar" unique_id=2139735939 instance=ExtResource("7_dg77c")]
-position = Vector2(85, 4)
+layout_mode = 0
+offset_left = 85.0
+offset_top = 4.0
+offset_right = 129.0
+offset_bottom = 50.0
 
 [node name="PriceWidget" parent="TopBar" unique_id=264271832 instance=ExtResource("6_efxa6")]
 position = Vector2(232, 3)
@@ -106,13 +110,11 @@ position = Vector2(-42, 159)
 spawn_roll_probability = 0.8
 spawn_roll_cadence = 0.5
 time_range = SubResource("Resource_kek77")
-disabled = true
 
 [node name="SkellySpawner" parent="." unique_id=183502004 instance=ExtResource("7_5vw27")]
 position = Vector2(-23, 154)
 customer_type = 1
 time_range = SubResource("Resource_vfwos")
-disabled = true
 
 [node name="PhantomSpawner" parent="." unique_id=494277386 instance=ExtResource("7_5vw27")]
 position = Vector2(-35, 156)

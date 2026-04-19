@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://b80lbgas3ddb"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_r2q1o"]
+_data = PackedByteArray("AAADAAUAAAABAAAABgAAAAYAAAAyAAAAUklGRioAAABXRUJQVlA4TB0AAAAvBUABEBcw//M/5vMfgAcCSRsw7pOdJY7of1wmOQA=")
+size_override = Vector2(6, 6)
+
+[node name="SkellyIcon" type="TextureRect" unique_id=1286100250]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_r2q1o")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/activity_log_widget/log_entries/customer_icon/skelly_icon.aseprite",
+"source_uid": 7103919487950959081
+}
+metadata/_aseprite_wizard_source_file_hash_ = "9cef6176210f0878776262fc88e0ea27"

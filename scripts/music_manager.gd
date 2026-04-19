@@ -9,10 +9,7 @@ var _song_to_audio_stream_player: Dictionary = {}
 
 @onready var _shop_music: AudioStreamOggVorbis = preload("res://music/shop.ogg")
 @onready var _night_music: AudioStreamOggVorbis = preload("res://music/night.ogg")
-@onready var _song_to_stream: Dictionary = {
-	Song.SHOP: _shop_music,
-	Song.NIGHT: _night_music
-}
+@onready var _song_to_stream: Dictionary = {Song.SHOP: _shop_music, Song.NIGHT: _night_music}
 
 
 func fade_music_in(song: Song) -> void:

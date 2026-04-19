@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c7i4wsxl7vmya"]
+
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_smd76"]
+[ext_resource type="Script" uid="uid://dd1xokootg3jb" path="res://scenes/activity_log_widget/log_entries/customer_tip_entry/customer_tip_entry.gd" id="1_vb6bq"]
+[ext_resource type="PackedScene" uid="uid://ducpr603fuubk" path="res://scenes/activity_log_widget/log_entries/customer_icon/frank_icon.tscn" id="2_5yxdr"]
+[ext_resource type="PackedScene" uid="uid://fmd5giqhlfs3" path="res://scenes/activity_log_widget/log_entries/customer_icon/phantom_icon.tscn" id="3_26kha"]
+[ext_resource type="PackedScene" uid="uid://b80lbgas3ddb" path="res://scenes/activity_log_widget/log_entries/customer_icon/skelly_icon.tscn" id="4_smd76"]
+[ext_resource type="PackedScene" uid="uid://dfdmsr7q5s2fc" path="res://scenes/mini_coin_icon/mini_coin_icon.tscn" id="6_n4rv7"]
+
+[node name="CustomerTipEntry" type="HBoxContainer" unique_id=1690452898]
+theme = ExtResource("1_smd76")
+script = ExtResource("1_vb6bq")
+
+[node name="Icons" type="Control" parent="." unique_id=1708025776]
+custom_minimum_size = Vector2(6, 6)
+layout_mode = 2
+
+[node name="FrankIcon" parent="Icons" unique_id=649523763 instance=ExtResource("2_5yxdr")]
+layout_mode = 0
+
+[node name="SkellyIcon" parent="Icons" unique_id=1286100250 instance=ExtResource("4_smd76")]
+layout_mode = 0
+
+[node name="PhantomIcon" parent="Icons" unique_id=1527379710 instance=ExtResource("3_26kha")]
+layout_mode = 0
+offset_right = 6.0
+offset_bottom = 6.0
+
+[node name="TippedLabel" type="Label" parent="." unique_id=828021767]
+layout_mode = 2
+text = "TIPPED"
+
+[node name="MiniCoinIcon" parent="." unique_id=1193548858 instance=ExtResource("6_n4rv7")]
+layout_mode = 2
+
+[node name="QuantityLabel" type="Label" parent="." unique_id=1819253586]
+layout_mode = 2
+text = "999"
