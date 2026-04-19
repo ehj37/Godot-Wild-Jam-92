@@ -17,6 +17,7 @@ var _current_order: Dictionary = {
 }
 
 # I should probably break this up. Will I? Probably not.
+@onready var _restock_tutorial_dialog: TutorialDialog = $RestockTutorialDialog
 @onready var _calendar_button: TextureButton = $CalendarButton
 @onready var _upcoming_night_overlay: UpcomingNightOverlay = $UpcomingNightOverlay
 
@@ -111,6 +112,10 @@ var _current_order: Dictionary = {
 func _ready() -> void:
 	var night_number: int = TimeManager.get_night_number()
 	var night_stats: StatsManager.NightStats = StatsManager.get_night_stats(night_number)
+	
+	
+	if night_number == 1:
+		get_tree().create_timer(2).timeout.connect(func() -> void: _restock_tutorial_dialog.pause_and_show())
 
 	_night_number_label.text = str(night_number)
 	if night_number < NightManager.MAX_NIGHT_NUMBER:

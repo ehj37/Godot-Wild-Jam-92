@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bd8kq0rwxiwnn" path="res://scenes/tombstones/tombstone_b.tscn" id="15_ryn8s"]
 [ext_resource type="PackedScene" uid="uid://psqmq5uep2nm" path="res://scenes/end_of_night_dialog/end_of_night_dialog.tscn" id="16_54l60"]
 [ext_resource type="PackedScene" uid="uid://db5jyn5c8xt40" path="res://scenes/reputation_widget/reputation_widget.tscn" id="16_k11o4"]
+[ext_resource type="PackedScene" uid="uid://bdwnond1u5wfc" path="res://scenes/tutorial_dialog/tutorial_dialog.tscn" id="17_54l60"]
 
 [sub_resource type="Theme" id="Theme_7dm0k"]
 Label/font_sizes/font_size = 6
@@ -23,6 +24,14 @@ Label/fonts/font = ExtResource("1_ig7tw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(48, 48)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54l60"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0, 0, 1)
 
 [node name="Night" type="Control" unique_id=1877055148]
 y_sort_enabled = true
@@ -136,3 +145,107 @@ mouse_filter = 2
 
 [node name="EndOfNightDialog" parent="EndOfNightDialogContainer" unique_id=468280642 instance=ExtResource("16_54l60")]
 layout_mode = 2
+
+[node name="TutorialDialog" type="CanvasLayer" parent="." unique_id=290704363]
+
+[node name="InitialTutorialDialog" parent="TutorialDialog" unique_id=569111080 instance=ExtResource("17_54l60")]
+visible = false
+z_index = 1
+offset_left = 9.0
+offset_top = 85.0
+offset_right = 159.0
+offset_bottom = 160.0
+tutorial_text = "WELCOME TO ESP AND ESPRESSO."
+dismiss_button_text = "HELLO"
+
+[node name="OverallGoalTutorialDialog" parent="TutorialDialog" unique_id=1834006380 instance=ExtResource("17_54l60")]
+visible = false
+offset_left = 9.0
+offset_top = 85.0
+offset_right = 159.0
+offset_bottom = 160.0
+tutorial_text = "YOU'LL BE SERVING WITCH'S BREW TO EAGER CUSTOMERS"
+dismiss_button_text = "NEAT"
+
+[node name="RecipeDialog" parent="TutorialDialog" unique_id=2025111695 instance=ExtResource("17_54l60")]
+visible = false
+offset_left = 39.0
+offset_top = 66.0
+offset_right = 189.0
+offset_bottom = 141.0
+tutorial_text = "DIFFERENT CUSTOMERS WILL PREFER DIFFERENT INGREDIENTS IN THEIR BREW. MANAGE INGREDIENT AMOUNTS HERE."
+dismiss_button_text = "GOT IT"
+
+[node name="Outline" type="Panel" parent="TutorialDialog/RecipeDialog" unique_id=434467180]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -65.0
+offset_right = 99.0
+offset_bottom = -13.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_54l60")
+
+[node name="InventoryDialog" parent="TutorialDialog" unique_id=1211572474 instance=ExtResource("17_54l60")]
+visible = false
+offset_left = 95.0
+offset_top = 65.0
+offset_right = 245.0
+offset_bottom = 140.0
+tutorial_text = "YOU CAN TWEAK THE RECIPE BY CLICKING THE CAULDRON BUTTONS HERE"
+dismiss_button_text = "MAKES SENSE"
+
+[node name="Outline" type="Panel" parent="TutorialDialog/InventoryDialog" unique_id=39268581]
+layout_mode = 0
+offset_left = 51.0
+offset_top = -65.0
+offset_right = 111.0
+offset_bottom = -13.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_54l60")
+
+[node name="PriceDialog" parent="TutorialDialog" unique_id=250924860 instance=ExtResource("17_54l60")]
+visible = false
+offset_left = 165.0
+offset_top = 45.0
+offset_right = 315.0
+offset_bottom = 120.0
+tutorial_text = "AND OF COURSE, THE CHEAPER IT IS, THE HAPPIER THE CUSTOMER."
+dismiss_button_text = "TRUE"
+
+[node name="Outline" type="Panel" parent="TutorialDialog/PriceDialog" unique_id=1279564807]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -45.0
+offset_right = 154.0
+offset_bottom = -10.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_54l60")
+
+[node name="ReputationDialog" parent="TutorialDialog" unique_id=2115161738 instance=ExtResource("17_54l60")]
+visible = false
+offset_left = 130.0
+offset_top = 81.0
+offset_right = 280.0
+offset_bottom = 156.0
+tutorial_text = "WORD GETS AROUND. THE HAPPIER YOUR CUSTOMERS, THE HIGHER YOUR REPUTATION."
+dismiss_button_text = "THUMBS UP"
+
+[node name="Outline" type="Panel" parent="TutorialDialog/ReputationDialog" unique_id=1772662452]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 75.0
+offset_right = 186.0
+offset_bottom = 95.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_54l60")
+
+[node name="GetIntoItDialog" parent="TutorialDialog" unique_id=1293242445 instance=ExtResource("17_54l60")]
+offset_left = 61.0
+offset_top = 60.0
+offset_right = 211.0
+offset_bottom = 135.0
+tutorial_text = "WELL, THAT'S ALL FOR NOW. TIME TO SELL SOME GREEN GOO."
+dismiss_button_text = "LET'S GO"
+
+[connection signal="dismissed" from="TutorialDialog/InitialTutorialDialog" to="TutorialDialog/OverallGoalTutorialDialog" method="pause_and_show"]
+[connection signal="dismissed" from="TutorialDialog/OverallGoalTutorialDialog" to="TutorialDialog/RecipeDialog" method="pause_and_show"]
+[connection signal="dismissed" from="TutorialDialog/RecipeDialog" to="TutorialDialog/InventoryDialog" method="pause_and_show"]
+[connection signal="dismissed" from="TutorialDialog/InventoryDialog" to="TutorialDialog/PriceDialog" method="pause_and_show"]
+[connection signal="dismissed" from="TutorialDialog/PriceDialog" to="TutorialDialog/ReputationDialog" method="pause_and_show"]
+[connection signal="dismissed" from="TutorialDialog/ReputationDialog" to="TutorialDialog/GetIntoItDialog" method="pause_and_show"]

@@ -66,18 +66,18 @@ const _CUSTOMER_TYPE_TO_VARIETY_BONUS: Dictionary = {
 }
 
 # TIP RANGES
-const _FRANK_MIN_TIP_AMOUNT: int = 5
-const _SKELLY_MIN_TIP_AMOUNT: int = 3
-const _PHANTOM_MIN_TIP_AMOUNT: int = 2
+const _FRANK_MIN_TIP_AMOUNT: int = 7
+const _SKELLY_MIN_TIP_AMOUNT: int = 6
+const _PHANTOM_MIN_TIP_AMOUNT: int = 5
 const _CUSTOMER_TYPE_TO_MIN_TIP_AMOUNT: Dictionary = {
 	Customer.CustomerType.FRANK: _FRANK_MIN_TIP_AMOUNT,
 	Customer.CustomerType.SKELLY: _SKELLY_MIN_TIP_AMOUNT,
 	Customer.CustomerType.PHANTOM: _PHANTOM_MIN_TIP_AMOUNT
 }
 
-const _FRANK_MAX_TIP_AMOUNT: int = 5
-const _SKELLY_MAX_TIP_AMOUNT: int = 3
-const _PHANTOM_MAX_TIP_AMOUNT: int = 2
+const _FRANK_MAX_TIP_AMOUNT: int = 12
+const _SKELLY_MAX_TIP_AMOUNT: int = 8
+const _PHANTOM_MAX_TIP_AMOUNT: int = 8
 const _CUSTOMER_TYPE_TO_MAX_TIP_AMOUNT: Dictionary = {
 	Customer.CustomerType.FRANK: _FRANK_MAX_TIP_AMOUNT,
 	Customer.CustomerType.SKELLY: _SKELLY_MAX_TIP_AMOUNT,

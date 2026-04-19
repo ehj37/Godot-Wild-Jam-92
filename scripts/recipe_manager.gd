@@ -8,10 +8,7 @@ enum Ingredient { PUMPKIN, SPIDER, CORN }
 
 const MAX_ALLOWED_INGREDIENTS: int = 2
 const DEFAULT_PUMPKIN_AMOUNT: int = 1
-const DEFAULT_CORN_AMOUNT: int = 2
-const DEFAULT_RECIPE: Dictionary = {
-	Ingredient.PUMPKIN: DEFAULT_PUMPKIN_AMOUNT, Ingredient.CORN: DEFAULT_CORN_AMOUNT
-}
+const DEFAULT_RECIPE: Dictionary = { Ingredient.PUMPKIN: DEFAULT_PUMPKIN_AMOUNT }
 
 var _recipe: Dictionary = DEFAULT_RECIPE.duplicate()
 

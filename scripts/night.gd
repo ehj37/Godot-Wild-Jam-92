@@ -9,6 +9,7 @@ var night_config: NightConfig
 )
 @onready var _customer_spawner_marker: Marker2D = $CustomerSpawnerMarker
 @onready var _end_of_night_dialog: EndOfNightDialog = $EndOfNightDialogContainer/EndOfNightDialog
+@onready var _initial_tutorial_dialog: TutorialDialog = $TutorialDialog/InitialTutorialDialog
 
 
 func _ready() -> void:
@@ -25,6 +26,10 @@ func _ready() -> void:
 		add_child(customer_spawner)
 
 	TimeManager.end_of_night_reached.connect(_on_end_of_night_reached)
+	
+	if TimeManager.get_night_number() == 1:
+		await get_tree().create_timer(2).timeout
+		_initial_tutorial_dialog.pause_and_show()
 
 
 func _on_end_of_night_reached() -> void:

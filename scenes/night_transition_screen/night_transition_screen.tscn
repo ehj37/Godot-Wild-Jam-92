@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://db5jyn5c8xt40" path="res://scenes/reputation_widget/reputation_widget.tscn" id="11_pbtus"]
 [ext_resource type="PackedScene" uid="uid://484sxre6ubqf" path="res://scenes/night_transition_screen/calendar_button/calendar_button.tscn" id="12_h5tu1"]
 [ext_resource type="PackedScene" uid="uid://dckevdg1q0na8" path="res://scenes/night_transition_screen/upcoming_night_overlay/upcoming_night_overlay.tscn" id="13_5udxb"]
+[ext_resource type="PackedScene" uid="uid://bdwnond1u5wfc" path="res://scenes/tutorial_dialog/tutorial_dialog.tscn" id="14_q6jav"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fs7h"]
 bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.39215687)
@@ -21,6 +22,14 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.09803922, 0.09803922, 0.09803922, 0.39215687)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6jav"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0, 0, 1)
 
 [node name="NightTransitionScreen" type="Control" unique_id=1821860668]
 custom_minimum_size = Vector2(320, 180)
@@ -451,6 +460,35 @@ offset_right = 11.0
 offset_bottom = 177.0
 
 [node name="UpcomingNightOverlay" parent="." unique_id=1573610704 instance=ExtResource("13_5udxb")]
+visible = false
+
+[node name="RestockTutorialDialog" parent="." unique_id=2025111695 instance=ExtResource("14_q6jav")]
+visible = false
+layout_mode = 0
+offset_left = 85.0
+offset_top = 50.0
+offset_right = 235.0
+offset_bottom = 125.0
+tutorial_text = "TIME TO RESTOCK BETWEEN NIGHTS."
+dismiss_button_text = "OK"
+
+[node name="CalendarDialog" parent="." unique_id=2035470481 instance=ExtResource("14_q6jav")]
+visible = false
+layout_mode = 0
+offset_left = 26.0
+offset_top = 84.0
+offset_right = 176.0
+offset_bottom = 159.0
+tutorial_text = "IF YOU'D LIKE TO PLAN AHEAD, CHECK THE FORECAST FOR THE NEXT FEW DAYS."
+dismiss_button_text = "YEP"
+
+[node name="Outline" type="Panel" parent="CalendarDialog" unique_id=1795128045]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 83.0
+offset_right = -13.0
+offset_bottom = 95.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q6jav")
 
 [connection signal="pressed" from="PreviousNightSummary/VBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="PreviousNightSummary/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
@@ -459,3 +497,4 @@ offset_bottom = 177.0
 [connection signal="quantity_changed" from="NextNightSetupContainer/VBoxContainer/UpperSectionContainer/ShopContainer/PanelContainer/IngredientContainer/OrderedColumn/CornOrderedWidget" to="." method="_on_ordered_quantity_changed"]
 [connection signal="pressed" from="NextNightSetupContainer/VBoxContainer/StartNightButton" to="." method="_on_start_night_button_pressed"]
 [connection signal="pressed" from="CalendarButton" to="." method="_on_calendar_button_pressed"]
+[connection signal="dismissed" from="RestockTutorialDialog" to="CalendarDialog" method="pause_and_show"]
