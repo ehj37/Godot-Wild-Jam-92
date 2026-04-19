@@ -5,8 +5,7 @@ signal tip_given(customer: Customer.CustomerType, amount: int)
 signal coins_changed(new_amount: int, delta: int)
 signal ingredient_changed(ingredient: RecipeManager.Ingredient, new_amount: int, delta: int)
 
-const INITIAL_COINS: int = 999
-const INITIAL_CUPS: int = 20
+const INITIAL_COINS: int = 25
 const INITIAL_PUMPKINS: int = 20
 const INITIAL_SPIDERS: int = 30
 const INITIAL_CORN: int = 40

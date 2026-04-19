@@ -6,8 +6,9 @@
 
 [sub_resource type="Resource" id="Resource_e50gu"]
 script = ExtResource("2_15pbj")
-starting_hour = 21
-ending_hour = 24
+starting_hour = 20
+ending_hour = 23
+starting_minute = 15
 metadata/_custom_type_script = "uid://c1du00t7sl400"
 
 [sub_resource type="Resource" id="Resource_4jtts"]
@@ -40,7 +41,7 @@ metadata/_custom_type_script = "uid://c1du00t7sl400"
 [sub_resource type="Resource" id="Resource_gm8ho"]
 script = ExtResource("1_4jtts")
 customer_type = 1
-spawn_roll_probability = 0.25
+spawn_roll_probability = 0.1
 spawn_roll_cadence = 1.0
 time_range = SubResource("Resource_ippf4")
 metadata/_custom_type_script = "uid://ganli7oc3dk6"

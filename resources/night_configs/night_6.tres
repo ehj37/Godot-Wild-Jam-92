@@ -2,7 +2,80 @@
 
 [ext_resource type="Script" uid="uid://ganli7oc3dk6" path="res://resources/customer_spawn_period.gd" id="1_aansa"]
 [ext_resource type="Script" uid="uid://bkugacg1hs53c" path="res://resources/night_config.gd" id="2_npe5v"]
+[ext_resource type="Script" uid="uid://c1du00t7sl400" path="res://scripts/time_range.gd" id="2_y26pn"]
+
+[sub_resource type="Resource" id="Resource_vuawg"]
+script = ExtResource("2_y26pn")
+starting_hour = 20
+ending_hour = 11
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_j7q4f"]
+script = ExtResource("1_aansa")
+spawn_roll_probability = 0.2
+spawn_roll_cadence = 1.5
+time_range = SubResource("Resource_vuawg")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_1yh5h"]
+script = ExtResource("2_y26pn")
+starting_hour = 24
+ending_hour = 1
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_5fa8q"]
+script = ExtResource("1_aansa")
+spawn_roll_probability = 0.5
+spawn_roll_cadence = 2.0
+time_range = SubResource("Resource_1yh5h")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_e5t36"]
+script = ExtResource("2_y26pn")
+starting_hour = 21
+ending_hour = 11
+ending_minute = 30
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_30x4a"]
+script = ExtResource("1_aansa")
+customer_type = 1
+spawn_roll_probability = 0.2
+spawn_roll_cadence = 1.5
+time_range = SubResource("Resource_e5t36")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_anhea"]
+script = ExtResource("2_y26pn")
+starting_hour = 23
+ending_hour = 1
+starting_minute = 45
+ending_minute = 15
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_xak8q"]
+script = ExtResource("1_aansa")
+customer_type = 1
+spawn_roll_probability = 0.5
+spawn_roll_cadence = 2.0
+time_range = SubResource("Resource_anhea")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_npe5v"]
+script = ExtResource("2_y26pn")
+starting_hour = 20
+ending_hour = 1
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_y26pn"]
+script = ExtResource("1_aansa")
+customer_type = 2
+spawn_roll_probability = 0.2
+spawn_roll_cadence = 1.5
+time_range = SubResource("Resource_npe5v")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
 
 [resource]
 script = ExtResource("2_npe5v")
+customer_spawn_periods = Array[ExtResource("1_aansa")]([SubResource("Resource_j7q4f"), SubResource("Resource_5fa8q"), SubResource("Resource_30x4a"), SubResource("Resource_xak8q"), SubResource("Resource_y26pn")])
 metadata/_custom_type_script = "uid://bkugacg1hs53c"

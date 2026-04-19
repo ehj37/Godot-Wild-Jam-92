@@ -16,7 +16,7 @@ func _ready() -> void:
 	NightManager.current_night = self
 	if night_config == null:
 		push_warning("night_config not defined, defaulting to night 1 config")
-		night_config = NightManager.get_night_config(1)
+		night_config = NightManager.get_night_config(TimeManager.get_night_number())
 
 	for customer_spawn_period: CustomerSpawnPeriod in night_config.customer_spawn_periods:
 		var customer_spawner: CustomerSpawner = _customer_spawner_packed_scene.instantiate()

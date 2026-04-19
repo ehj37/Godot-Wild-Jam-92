@@ -1,8 +1,91 @@
 [gd_resource type="Resource" script_class="NightConfig" format=3 uid="uid://65f5vmciyyy"]
 
 [ext_resource type="Script" uid="uid://ganli7oc3dk6" path="res://resources/customer_spawn_period.gd" id="1_b574u"]
+[ext_resource type="Script" uid="uid://c1du00t7sl400" path="res://scripts/time_range.gd" id="2_n60n4"]
 [ext_resource type="Script" uid="uid://bkugacg1hs53c" path="res://resources/night_config.gd" id="2_xdj12"]
+
+[sub_resource type="Resource" id="Resource_odcgd"]
+script = ExtResource("2_n60n4")
+starting_hour = 20
+ending_hour = 24
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_h1m62"]
+script = ExtResource("1_b574u")
+spawn_roll_probability = 0.5
+spawn_roll_cadence = 1.5
+time_range = SubResource("Resource_odcgd")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_82bc1"]
+script = ExtResource("2_n60n4")
+starting_hour = 20
+ending_hour = 23
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_d853s"]
+script = ExtResource("1_b574u")
+customer_type = 1
+spawn_roll_probability = 0.5
+spawn_roll_cadence = 1.5
+time_range = SubResource("Resource_82bc1")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_3b4si"]
+script = ExtResource("2_n60n4")
+starting_hour = 21
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_moott"]
+script = ExtResource("1_b574u")
+customer_type = 2
+spawn_roll_probability = 0.5
+spawn_roll_cadence = 1.5
+time_range = SubResource("Resource_3b4si")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_7fnu1"]
+script = ExtResource("2_n60n4")
+starting_hour = 24
+ending_hour = 1
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_0pqjf"]
+script = ExtResource("1_b574u")
+spawn_roll_probability = 0.6
+spawn_roll_cadence = 1.0
+time_range = SubResource("Resource_7fnu1")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_mnksk"]
+script = ExtResource("2_n60n4")
+starting_hour = 24
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_72d7f"]
+script = ExtResource("1_b574u")
+customer_type = 1
+spawn_roll_probability = 0.6
+spawn_roll_cadence = 1.0
+time_range = SubResource("Resource_mnksk")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_8jqdc"]
+script = ExtResource("2_n60n4")
+starting_hour = 23
+ending_hour = 24
+ending_minute = 45
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_j1cqy"]
+script = ExtResource("1_b574u")
+customer_type = 2
+spawn_roll_probability = 0.6
+spawn_roll_cadence = 1.0
+time_range = SubResource("Resource_8jqdc")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
 
 [resource]
 script = ExtResource("2_xdj12")
+customer_spawn_periods = Array[ExtResource("1_b574u")]([SubResource("Resource_h1m62"), SubResource("Resource_d853s"), SubResource("Resource_moott"), SubResource("Resource_0pqjf"), SubResource("Resource_72d7f"), SubResource("Resource_j1cqy")])
 metadata/_custom_type_script = "uid://bkugacg1hs53c"

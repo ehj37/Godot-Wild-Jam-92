@@ -341,6 +341,7 @@ horizontal_alignment = 1
 
 [node name="MaxCupsQuantityLabel" type="Label" parent="NextNightSetupContainer/VBoxContainer/ResultsContainer/MaxCupsContainer" unique_id=530008561]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.65882355, 0.1764706, 0.8666667, 1)
 text = "999"
 
 [node name="CupsSuffixLabel" type="Label" parent="NextNightSetupContainer/VBoxContainer/ResultsContainer/MaxCupsContainer" unique_id=664703308]

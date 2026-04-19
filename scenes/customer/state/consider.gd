@@ -2,7 +2,7 @@ extends CustomerState
 
 const MIN_ORDER_PROBABILITY: float = 0.1
 const MAX_ORDER_PROBABILITY: float = 0.9
-const REPUTATION_PROBABILITY_FACTOR: float = 1.5
+const REPUTATION_PROBABILITY_FACTOR: float = 1.75
 const PROBABLITY_HIT_PER_PRICE_UNIT: float = 0.05
 
 

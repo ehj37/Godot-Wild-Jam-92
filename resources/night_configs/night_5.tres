@@ -1,8 +1,64 @@
 [gd_resource type="Resource" script_class="NightConfig" format=3 uid="uid://dycva6h222m83"]
 
 [ext_resource type="Script" uid="uid://ganli7oc3dk6" path="res://resources/customer_spawn_period.gd" id="1_hs3ck"]
+[ext_resource type="Script" uid="uid://c1du00t7sl400" path="res://scripts/time_range.gd" id="2_5u8m0"]
 [ext_resource type="Script" uid="uid://bkugacg1hs53c" path="res://resources/night_config.gd" id="2_k6or6"]
+
+[sub_resource type="Resource" id="Resource_y008f"]
+script = ExtResource("2_5u8m0")
+starting_hour = 20
+ending_hour = 11
+starting_minute = 30
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_k35w4"]
+script = ExtResource("1_hs3ck")
+spawn_roll_probability = 0.5
+spawn_roll_cadence = 1.5
+time_range = SubResource("Resource_y008f")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_0b3qq"]
+script = ExtResource("2_5u8m0")
+starting_hour = 24
+ending_hour = 1
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_3i05l"]
+script = ExtResource("1_hs3ck")
+time_range = SubResource("Resource_0b3qq")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_er0wy"]
+script = ExtResource("2_5u8m0")
+starting_hour = 20
+ending_hour = 22
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_bjxa5"]
+script = ExtResource("1_hs3ck")
+customer_type = 2
+spawn_roll_probability = 0.25
+spawn_roll_cadence = 1.2
+time_range = SubResource("Resource_er0wy")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
+
+[sub_resource type="Resource" id="Resource_l2pku"]
+script = ExtResource("2_5u8m0")
+starting_hour = 24
+ending_hour = 1
+ending_minute = 30
+metadata/_custom_type_script = "uid://c1du00t7sl400"
+
+[sub_resource type="Resource" id="Resource_rg06x"]
+script = ExtResource("1_hs3ck")
+customer_type = 2
+spawn_roll_probability = 0.01
+spawn_roll_cadence = 0.1
+time_range = SubResource("Resource_l2pku")
+metadata/_custom_type_script = "uid://ganli7oc3dk6"
 
 [resource]
 script = ExtResource("2_k6or6")
+customer_spawn_periods = Array[ExtResource("1_hs3ck")]([SubResource("Resource_k35w4"), SubResource("Resource_3i05l"), SubResource("Resource_bjxa5"), SubResource("Resource_rg06x")])
 metadata/_custom_type_script = "uid://bkugacg1hs53c"

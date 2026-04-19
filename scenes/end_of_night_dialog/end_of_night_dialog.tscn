@@ -22,6 +22,7 @@ z_index = 1
 custom_minimum_size = Vector2(128, 40)
 offset_right = 128.0
 offset_bottom = 40.0
+mouse_filter = 2
 theme = ExtResource("1_x5ygw")
 theme_override_styles/panel = SubResource("StyleBoxFlat_x5ygw")
 script = ExtResource("2_h0j0s")

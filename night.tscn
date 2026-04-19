@@ -132,6 +132,7 @@ position = Vector2(-33, 155)
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
+mouse_filter = 2
 
 [node name="EndOfNightDialog" parent="EndOfNightDialogContainer" unique_id=468280642 instance=ExtResource("16_54l60")]
 layout_mode = 2

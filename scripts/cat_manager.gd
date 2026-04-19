@@ -8,9 +8,8 @@ signal resource_fetched(fetchable: Fetchable, amount: int)
 
 enum Fetchable { PUMPKIN, SPIDER, CORN, COIN }
 
-# TODO: Adjust to more reasonable times before release
-const RECHARGE_TIME: float = 6.0  #60.0
-const FETCH_TIME: float = 5  #15.0
+const RECHARGE_TIME: float = 28.0
+const FETCH_TIME: float = 8.0
 const FETCHABLE_TO_INGREDIENT: Dictionary = {
 	Fetchable.PUMPKIN: RecipeManager.Ingredient.PUMPKIN,
 	Fetchable.SPIDER: RecipeManager.Ingredient.SPIDER,
