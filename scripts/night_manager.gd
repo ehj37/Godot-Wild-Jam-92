@@ -17,10 +17,11 @@ var current_night: Night
 func start_next_night() -> void:
 	TimeManager.increment_night()
 	TimeManager.start_night()
+	
+	get_tree().paused = true
 
 	MusicManager.fade_music_out(MusicManager.Song.SHOP)
-
-	get_tree().paused = true
+	MusicManager.fade_music_in(MusicManager.Song.NIGHT)
 
 	ScreenFadeManager.fade_out()
 	await ScreenFadeManager.fade_complete
@@ -53,7 +54,10 @@ func _on_end_of_night_reached() -> void:
 
 	# TODO: Fade out the night music, maybe wait for it to fully stop before
 	# fading in the shop music.
+	MusicManager.fade_music_out(MusicManager.Song.NIGHT)
 	MusicManager.fade_music_in(MusicManager.Song.SHOP)
+	
+	
 
 	ScreenFadeManager.fade_out()
 	await ScreenFadeManager.fade_complete

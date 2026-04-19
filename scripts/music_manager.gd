@@ -8,7 +8,11 @@ const MUSIC_FADE_OUT_TIME: float = 6.0
 var _song_to_audio_stream_player: Dictionary = {}
 
 @onready var _shop_music: AudioStreamOggVorbis = preload("res://music/shop.ogg")
-@onready var _song_to_stream: Dictionary = {Song.SHOP: _shop_music}
+@onready var _night_music: AudioStreamOggVorbis = preload("res://music/night.ogg")
+@onready var _song_to_stream: Dictionary = {
+	Song.SHOP: _shop_music,
+	Song.NIGHT: _night_music
+}
 
 
 func fade_music_in(song: Song) -> void:
@@ -29,7 +33,9 @@ func fade_music_in(song: Song) -> void:
 
 
 func fade_music_out(song: Song) -> void:
-	assert(_song_to_audio_stream_player.has(song), "Attempting to cancel song that's not playing")
+	if !_song_to_audio_stream_player.has(song):
+		push_warning("Attempting to cancel song that's not playing")
+		return
 
 	var audio_stream_player: AudioStreamPlayer = _song_to_audio_stream_player.get(song)
 	var volume_tween: Tween = audio_stream_player.create_tween()
