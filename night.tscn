@@ -8,10 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://br1b6vdg4pfvk" path="res://scenes/activity_log_widget/activity_log_widget.tscn" id="6_4c57u"]
 [ext_resource type="PackedScene" uid="uid://dndwr7spvj705" path="res://scenes/shop/shop.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bt5tvcj2wdrbp" path="res://scenes/price_widget/price_widget.tscn" id="6_efxa6"]
-[ext_resource type="PackedScene" uid="uid://48c8aljyu7hn" path="res://scenes/customer_spawner/customer_spawner.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c1cc3m0x0dym2" path="res://scenes/recipe_widget/recipe_widget.tscn" id="7_dg77c"]
 [ext_resource type="PackedScene" uid="uid://h760c5xaan4x" path="res://scenes/inventory_widget/inventory_widget.tscn" id="8_ycdy4"]
-[ext_resource type="Script" uid="uid://c1du00t7sl400" path="res://scripts/time_range.gd" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://dutddbcal8d8t" path="res://scenes/tombstones/tombstone_a.tscn" id="14_ryn8s"]
 [ext_resource type="PackedScene" uid="uid://bqydyqinam8ed" path="res://scenes/cat_widget/cat_widget.tscn" id="14_vfwos"]
 [ext_resource type="PackedScene" uid="uid://bd8kq0rwxiwnn" path="res://scenes/tombstones/tombstone_b.tscn" id="15_ryn8s"]
@@ -24,25 +22,7 @@ Label/fonts/font = ExtResource("1_ig7tw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(48, 48)
 
-[sub_resource type="Resource" id="Resource_kek77"]
-script = ExtResource("9_kek77")
-starting_hour = 21
-ending_hour = 2
-metadata/_custom_type_script = "uid://c1du00t7sl400"
-
-[sub_resource type="Resource" id="Resource_vfwos"]
-script = ExtResource("9_kek77")
-starting_hour = 20
-ending_hour = 1
-metadata/_custom_type_script = "uid://c1du00t7sl400"
-
-[sub_resource type="Resource" id="Resource_t33dh"]
-script = ExtResource("9_kek77")
-starting_hour = 20
-ending_hour = 4
-metadata/_custom_type_script = "uid://c1du00t7sl400"
-
-[node name="Main" type="Node2D" unique_id=1460177824]
+[node name="Night" type="Node2D" unique_id=1460177824]
 y_sort_enabled = true
 script = ExtResource("1_272bh")
 
@@ -106,22 +86,6 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConsiderArea" unique_id=1485401662]
 shape = SubResource("RectangleShape2D_7mycd")
 
-[node name="FrankSpawner" parent="." unique_id=258900163 instance=ExtResource("7_5vw27")]
-position = Vector2(-42, 159)
-spawn_roll_probability = 0.8
-spawn_roll_cadence = 0.5
-time_range = SubResource("Resource_kek77")
-
-[node name="SkellySpawner" parent="." unique_id=183502004 instance=ExtResource("7_5vw27")]
-position = Vector2(-23, 154)
-customer_type = 1
-time_range = SubResource("Resource_vfwos")
-
-[node name="PhantomSpawner" parent="." unique_id=494277386 instance=ExtResource("7_5vw27")]
-position = Vector2(-35, 156)
-customer_type = 2
-time_range = SubResource("Resource_t33dh")
-
 [node name="Marker2D" type="Marker2D" parent="." unique_id=679637319]
 position = Vector2(140, 132)
 
@@ -152,3 +116,6 @@ offset_left = 253.0
 offset_top = 159.0
 offset_right = 313.0
 offset_bottom = 172.0
+
+[node name="CustomerSpawnerMarker" type="Marker2D" parent="." unique_id=240302788]
+position = Vector2(-33, 155)

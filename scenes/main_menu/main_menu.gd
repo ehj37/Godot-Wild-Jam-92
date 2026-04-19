@@ -22,6 +22,17 @@ func _on_start_button_pressed() -> void:
 
 	await MusicManager.fade_complete
 
+	var night: Night = _night_packed_scene.instantiate()
+	# Dunno how I feel about the TimeManager owning the night number. Whatever.
+	var night_config: NightConfig = NightManager.get_night_config(1)
+	night.night_config = night_config
+	var tree: SceneTree = get_tree()
+	var current_scene: Node = tree.current_scene
+	current_scene.queue_free()
+	tree.root.add_child(night)
+	tree.set_current_scene(night)
+	NightManager.current_night = night
+
 	get_tree().change_scene_to_packed(_night_packed_scene)
 	ScreenFadeManager.fade_in()
 

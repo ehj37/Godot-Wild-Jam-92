@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="NightConfig" format=3 uid="uid://1glyuxalvyw5"]
+
+[ext_resource type="Script" uid="uid://ganli7oc3dk6" path="res://resources/customer_spawn_period.gd" id="1_qbagl"]
+[ext_resource type="Script" uid="uid://bkugacg1hs53c" path="res://resources/night_config.gd" id="2_pabyk"]
+
+[resource]
+script = ExtResource("2_pabyk")
+metadata/_custom_type_script = "uid://bkugacg1hs53c"
