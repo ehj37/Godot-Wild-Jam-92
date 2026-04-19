@@ -20,7 +20,7 @@ var _current_order: Dictionary = {
 # PREVIOUS NIGHT SUMMARY
 @onready var _previous_night_summary: CenterContainer = $PreviousNightSummary
 @onready var _night_number_label: Label = get_node(
-	"PreviousNightSummary/VBoxContainer/NightDescriptorContainer/NightNumberLabel"
+	"PreviousNightSummary/VBoxContainer/NightDescriptorContainer/LabelContainer/NumberLabel"
 )
 @onready var _cups_sold_quantity_label: Label = get_node(
 	"PreviousNightSummary/VBoxContainer/StatsContainer/Quantities/CupsSoldLabel"
@@ -28,6 +28,8 @@ var _current_order: Dictionary = {
 @onready var _coins_earned_quantity_label: Label = get_node(
 	"PreviousNightSummary/VBoxContainer/StatsContainer/Quantities/CoinsEarnedLabel"
 )
+@onready var _shop_button: Button = $PreviousNightSummary/VBoxContainer/ShopButton
+@onready var _continue_button: Button = $PreviousNightSummary/VBoxContainer/ContinueButton
 # NEXT NIGHT SETUP
 @onready var _next_night_setup_container: CenterContainer = $NextNightSetupContainer
 @onready var _pumpkin_current_label: Label = get_node(
@@ -93,12 +95,36 @@ var _current_order: Dictionary = {
 @onready var _max_cups_quantity_label: Label = get_node(
 	_RESULTS_CONTAINER_BASE_PATH + "/MaxCupsContainer/MaxCupsQuantityLabel"
 )
+# END OF GAME
+@onready var _end_of_game_container: CenterContainer = $EndOfGameContainer
+@onready var _final_cups_sold_quantity_label: Label = get_node(
+	"EndOfGameContainer/VBoxContainer/CupsSoldContainer/CupsSoldQuantityLabel"
+)
+@onready var _final_coins_quantity_label: Label = get_node(
+	"EndOfGameContainer/VBoxContainer/FinalCoinsContainer/FinalCoinsQuantityLabel"
+)
 
 
 func _ready() -> void:
 	var night_number: int = TimeManager.get_night_number()
-	_night_number_label.text = "NIGHT " + str(night_number)
 	var night_stats: StatsManager.NightStats = StatsManager.get_night_stats(night_number)
+
+	_night_number_label.text = str(night_number)
+	if night_number < NightManager.MAX_NIGHT_NUMBER:
+		_shop_button.visible = true
+		_continue_button.visible = false
+	else:
+		_shop_button.visible = false
+		_continue_button.visible = true
+
+		var cups_sold: int = 0
+		for i: int in range(NightManager.MAX_NIGHT_NUMBER):
+			var night_stats_i: StatsManager.NightStats = StatsManager.get_night_stats(i)
+			cups_sold += night_stats_i.cups_sold
+
+		_final_cups_sold_quantity_label.text = str(cups_sold)
+		_final_coins_quantity_label.text = str(InventoryManager.get_coins())
+
 	_cups_sold_quantity_label.text = str(night_stats.cups_sold)
 	_coins_earned_quantity_label.text = str(night_stats.coins_earned)
 
@@ -126,6 +152,7 @@ func _ready() -> void:
 
 	_previous_night_summary.visible = true
 	_next_night_setup_container.visible = false
+	_end_of_game_container.visible = false
 
 	RecipeManager.recipe_changed.connect(
 		func() -> void: _max_cups_quantity_label.text = str(_get_max_cups())
@@ -170,6 +197,11 @@ func _place_order() -> void:
 func _on_shop_button_pressed() -> void:
 	_previous_night_summary.visible = false
 	_next_night_setup_container.visible = true
+
+
+func _on_continue_button_pressed() -> void:
+	_previous_night_summary.visible = false
+	_end_of_game_container.visible = true
 
 
 func _on_start_night_button_pressed() -> void:

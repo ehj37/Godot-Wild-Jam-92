@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://djynefq222fka" path="res://scenes/night_transition_screen/ordered_widget/ordered_widget.tscn" id="8_pbtus"]
 [ext_resource type="PackedScene" uid="uid://c1cc3m0x0dym2" path="res://scenes/recipe_widget/recipe_widget.tscn" id="9_nn3cd"]
 [ext_resource type="PackedScene" uid="uid://cj7gg48qa5vm3" path="res://scenes/inventory_widget/inventory_slot.tscn" id="10_3fs7h"]
+[ext_resource type="PackedScene" uid="uid://db5jyn5c8xt40" path="res://scenes/reputation_widget/reputation_widget.tscn" id="11_pbtus"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fs7h"]
 bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.39215687)
@@ -39,10 +40,22 @@ layout_mode = 2
 [node name="NightDescriptorContainer" type="VBoxContainer" parent="PreviousNightSummary/VBoxContainer" unique_id=645385719]
 layout_mode = 2
 
-[node name="NightNumberLabel" type="Label" parent="PreviousNightSummary/VBoxContainer/NightDescriptorContainer" unique_id=838660820]
+[node name="LabelContainer" type="HBoxContainer" parent="PreviousNightSummary/VBoxContainer/NightDescriptorContainer" unique_id=894667624]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="NightLabel" type="Label" parent="PreviousNightSummary/VBoxContainer/NightDescriptorContainer/LabelContainer" unique_id=838660820]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "NIGHT 3"
+text = "NIGHT "
+
+[node name="NumberLabel" type="Label" parent="PreviousNightSummary/VBoxContainer/NightDescriptorContainer/LabelContainer" unique_id=603246487]
+layout_mode = 2
+text = "999"
+
+[node name="OutOfLabel" type="Label" parent="PreviousNightSummary/VBoxContainer/NightDescriptorContainer/LabelContainer" unique_id=1682751343]
+layout_mode = 2
+text = "/7"
 
 [node name="MoonIcon" parent="PreviousNightSummary/VBoxContainer/NightDescriptorContainer" unique_id=330198499 instance=ExtResource("3_omq0l")]
 layout_mode = 2
@@ -92,7 +105,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "SHOP"
 
+[node name="ContinueButton" type="Button" parent="PreviousNightSummary/VBoxContainer" unique_id=913271503]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "CONTINUE"
+
 [node name="NextNightSetupContainer" type="CenterContainer" parent="." unique_id=623462503]
+visible = false
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 0
 offset_right = 40.0
@@ -359,7 +378,69 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 12
 text = "START NIGHT"
 
+[node name="EndOfGameContainer" type="CenterContainer" parent="." unique_id=525341748]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndOfGameContainer" unique_id=1190956849]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ThankYouLabel" type="Label" parent="EndOfGameContainer/VBoxContainer" unique_id=352977740]
+layout_mode = 2
+text = "THANK YOU FOR PLAYING
+ESP AND ESPRESSO"
+horizontal_alignment = 1
+
+[node name="MoonIcon" parent="EndOfGameContainer/VBoxContainer" unique_id=1595325181 instance=ExtResource("3_omq0l")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="FinalStatsLabel" type="Label" parent="EndOfGameContainer/VBoxContainer" unique_id=1110099383]
+layout_mode = 2
+text = "FINAL STATS"
+horizontal_alignment = 1
+
+[node name="CupsSoldContainer" type="HBoxContainer" parent="EndOfGameContainer/VBoxContainer" unique_id=355470149]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="CupsSoldLabel" type="Label" parent="EndOfGameContainer/VBoxContainer/CupsSoldContainer" unique_id=728605019]
+layout_mode = 2
+text = "CUPS SOLD: "
+
+[node name="CupsSoldQuantityLabel" type="Label" parent="EndOfGameContainer/VBoxContainer/CupsSoldContainer" unique_id=2023301271]
+layout_mode = 2
+text = "999"
+
+[node name="FinalCoinsContainer" type="HBoxContainer" parent="EndOfGameContainer/VBoxContainer" unique_id=1325832026]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="FinalLabel" type="Label" parent="EndOfGameContainer/VBoxContainer/FinalCoinsContainer" unique_id=1366507680]
+layout_mode = 2
+text = "FINAL "
+
+[node name="CoinIcon" parent="EndOfGameContainer/VBoxContainer/FinalCoinsContainer" unique_id=1008673484 instance=ExtResource("3_23mve")]
+layout_mode = 2
+
+[node name="ColonLabel" type="Label" parent="EndOfGameContainer/VBoxContainer/FinalCoinsContainer" unique_id=169404708]
+layout_mode = 2
+text = ": "
+
+[node name="FinalCoinsQuantityLabel" type="Label" parent="EndOfGameContainer/VBoxContainer/FinalCoinsContainer" unique_id=35833258]
+layout_mode = 2
+text = "999"
+
+[node name="ReputationWidget" parent="EndOfGameContainer/VBoxContainer" unique_id=29683973 instance=ExtResource("11_pbtus")]
+layout_mode = 2
+
 [connection signal="pressed" from="PreviousNightSummary/VBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="PreviousNightSummary/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="quantity_changed" from="NextNightSetupContainer/VBoxContainer/UpperSectionContainer/ShopContainer/PanelContainer/IngredientContainer/OrderedColumn/PumpkinOrderedWidget" to="." method="_on_ordered_quantity_changed"]
 [connection signal="quantity_changed" from="NextNightSetupContainer/VBoxContainer/UpperSectionContainer/ShopContainer/PanelContainer/IngredientContainer/OrderedColumn/SpiderOrderedWidget" to="." method="_on_ordered_quantity_changed"]
 [connection signal="quantity_changed" from="NextNightSetupContainer/VBoxContainer/UpperSectionContainer/ShopContainer/PanelContainer/IngredientContainer/OrderedColumn/CornOrderedWidget" to="." method="_on_ordered_quantity_changed"]
