@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c0hjq88x5135e"]
+
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_cjpwu"]
+[ext_resource type="Script" uid="uid://dvlaaxd08lqri" path="res://scenes/night_transition_screen/upcoming_night_overlay/night_preview/night_preview.gd" id="1_i33x0"]
+[ext_resource type="PackedScene" uid="uid://ducpr603fuubk" path="res://scenes/customer_icon/frank_icon.tscn" id="3_c41e2"]
+[ext_resource type="PackedScene" uid="uid://b80lbgas3ddb" path="res://scenes/customer_icon/skelly_icon.tscn" id="4_4b12p"]
+[ext_resource type="PackedScene" uid="uid://fmd5giqhlfs3" path="res://scenes/customer_icon/phantom_icon.tscn" id="5_4ctby"]
+
+[node name="NightPreview" type="VBoxContainer" unique_id=795955593]
+theme = ExtResource("1_cjpwu")
+script = ExtResource("1_i33x0")
+
+[node name="HeaderLabelContainer" type="HBoxContainer" parent="." unique_id=724084552]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="NightLabel" type="Label" parent="HeaderLabelContainer" unique_id=2001296721]
+layout_mode = 2
+text = "NIGHT "
+
+[node name="NightNumberLabel" type="Label" parent="HeaderLabelContainer" unique_id=1633883671]
+layout_mode = 2
+text = "999"
+
+[node name="FrankRow" type="HBoxContainer" parent="." unique_id=1062440604]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="FrankIcon" parent="FrankRow" unique_id=649523763 instance=ExtResource("3_c41e2")]
+layout_mode = 2
+
+[node name="SpawnAmountLabel" type="Label" parent="FrankRow" unique_id=510675576]
+layout_mode = 2
+text = "MANY"
+
+[node name="SkellyRow" type="HBoxContainer" parent="." unique_id=300890023]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SkellyIcon" parent="SkellyRow" unique_id=1286100250 instance=ExtResource("4_4b12p")]
+layout_mode = 2
+
+[node name="SpawnAmountLabel" type="Label" parent="SkellyRow" unique_id=1590394047]
+layout_mode = 2
+text = "SOME"
+
+[node name="PhantomRow" type="HBoxContainer" parent="." unique_id=275606896]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PhantomIcon" parent="PhantomRow" unique_id=1527379710 instance=ExtResource("5_4ctby")]
+layout_mode = 2
+
+[node name="SpawnAmountLabel" type="Label" parent="PhantomRow" unique_id=1322760482]
+layout_mode = 2
+text = "NONE"

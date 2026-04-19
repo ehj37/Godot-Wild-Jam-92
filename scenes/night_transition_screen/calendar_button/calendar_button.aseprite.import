@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://csrsha1mvig23"
+path="res://.godot/imported/calendar_button.aseprite-d01d0daaa1fe2f9f5a46f08ad4ea176f.res"
+
+[deps]
+
+source_file="res://scenes/night_transition_screen/calendar_button/calendar_button.aseprite"
+dest_files=["res://.godot/imported/calendar_button.aseprite-d01d0daaa1fe2f9f5a46f08ad4ea176f.res"]
+
+[params]
+

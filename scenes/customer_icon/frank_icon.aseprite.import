@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://du6xemi2oeq4o"
+path="res://.godot/imported/frank_icon.aseprite-8bd8a5cf8e775c2c12c7e2a5a6a8906b.res"
+
+[deps]
+
+source_file="res://scenes/customer_icon/frank_icon.aseprite"
+dest_files=["res://.godot/imported/frank_icon.aseprite-8bd8a5cf8e775c2c12c7e2a5a6a8906b.res"]
+
+[params]
+

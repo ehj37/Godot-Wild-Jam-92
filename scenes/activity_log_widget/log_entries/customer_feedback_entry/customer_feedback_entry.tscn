@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_2v8l1"]
 [ext_resource type="Script" uid="uid://8cgrwdyu7h1s" path="res://scenes/activity_log_widget/log_entries/customer_feedback_entry/customer_feedback_entry.gd" id="1_mx82c"]
-[ext_resource type="PackedScene" uid="uid://ducpr603fuubk" path="res://scenes/activity_log_widget/log_entries/customer_icon/frank_icon.tscn" id="3_mj4xy"]
-[ext_resource type="PackedScene" uid="uid://b80lbgas3ddb" path="res://scenes/activity_log_widget/log_entries/customer_icon/skelly_icon.tscn" id="4_0agca"]
-[ext_resource type="PackedScene" uid="uid://fmd5giqhlfs3" path="res://scenes/activity_log_widget/log_entries/customer_icon/phantom_icon.tscn" id="5_6r4am"]
+[ext_resource type="PackedScene" uid="uid://ducpr603fuubk" path="res://scenes/customer_icon/frank_icon.tscn" id="3_mj4xy"]
+[ext_resource type="PackedScene" uid="uid://b80lbgas3ddb" path="res://scenes/customer_icon/skelly_icon.tscn" id="4_0agca"]
+[ext_resource type="PackedScene" uid="uid://fmd5giqhlfs3" path="res://scenes/customer_icon/phantom_icon.tscn" id="5_6r4am"]
 
 [node name="CustomerFeedbackEntry" type="HBoxContainer" unique_id=1025627229]
 theme = ExtResource("1_2v8l1")

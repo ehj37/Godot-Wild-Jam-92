@@ -38,12 +38,13 @@ layout_mode = 2
 text = "999"
 
 [node name="NightContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1457689879]
+custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="NightNumberLabel" type="Label" parent="VBoxContainer/NightContainer" unique_id=1795987588]
 layout_mode = 2
-text = "NIGHT 999"
+text = "NIGHT 9"
 
 [node name="NightProgressBar" type="ProgressBar" parent="VBoxContainer/NightContainer" unique_id=990181243]
 layout_mode = 2
@@ -57,4 +58,4 @@ layout_mode = 2
 
 [node name="TimeLabel" type="Label" parent="VBoxContainer/TimeContainer" unique_id=1373321023]
 layout_mode = 2
-text = "9:99 PM"
+text = "99:99 PM"

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://484sxre6ubqf"]
+
+[ext_resource type="Texture2D" uid="uid://0kbrxufkci8i" path="res://scenes/night_transition_screen/calendar_button/calendar_button.png" id="1_76i06"]
+[ext_resource type="Texture2D" uid="uid://c3nm52fpg3igb" path="res://scenes/night_transition_screen/calendar_button/calendar_button_pressed.png" id="2_e62v1"]
+[ext_resource type="Texture2D" uid="uid://dfmc8phkl62rf" path="res://scenes/night_transition_screen/calendar_button/calendar_button_hover.png" id="3_qec7t"]
+
+[node name="CalendarButton" type="TextureButton" unique_id=12754338]
+texture_normal = ExtResource("1_76i06")
+texture_pressed = ExtResource("2_e62v1")
+texture_hover = ExtResource("3_qec7t")

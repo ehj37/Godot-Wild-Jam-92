@@ -2,6 +2,8 @@ extends CenterContainer
 
 @onready var _night_packed_scene: PackedScene = preload("res://night.tscn")
 @onready var _main_buttons: VBoxContainer = $MainButtons
+@onready var _start_button: Button = $MainButtons/StartButton
+@onready var _settings_button: Button = $MainButtons/SettingsButton
 @onready var _settings_container: VBoxContainer = $SettingsContainer
 
 
@@ -9,8 +11,15 @@ func _ready() -> void:
 	_main_buttons.visible = true
 	_settings_container.visible = false
 
+	_start_button.disabled = true
+	_settings_button.disabled = true
+
 	ScreenFadeManager.fade_in()
 	MusicManager.fade_music_in(MusicManager.Song.SHOP)
+	await ScreenFadeManager.fade_complete
+
+	_start_button.disabled = false
+	_settings_button.disabled = false
 
 
 func _on_start_button_pressed() -> void:
@@ -20,7 +29,7 @@ func _on_start_button_pressed() -> void:
 	ScreenFadeManager.fade_out()
 	MusicManager.fade_music_out(MusicManager.Song.SHOP)
 
-	await MusicManager.fade_complete
+	await ScreenFadeManager.fade_complete
 
 	var night: Night = _night_packed_scene.instantiate()
 	# Dunno how I feel about the TimeManager owning the night number. Whatever.

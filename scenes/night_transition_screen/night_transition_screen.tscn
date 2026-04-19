@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c1cc3m0x0dym2" path="res://scenes/recipe_widget/recipe_widget.tscn" id="9_nn3cd"]
 [ext_resource type="PackedScene" uid="uid://cj7gg48qa5vm3" path="res://scenes/inventory_widget/inventory_slot.tscn" id="10_3fs7h"]
 [ext_resource type="PackedScene" uid="uid://db5jyn5c8xt40" path="res://scenes/reputation_widget/reputation_widget.tscn" id="11_pbtus"]
+[ext_resource type="PackedScene" uid="uid://484sxre6ubqf" path="res://scenes/night_transition_screen/calendar_button/calendar_button.tscn" id="12_h5tu1"]
+[ext_resource type="PackedScene" uid="uid://dckevdg1q0na8" path="res://scenes/night_transition_screen/upcoming_night_overlay/upcoming_night_overlay.tscn" id="13_5udxb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fs7h"]
 bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.39215687)
@@ -440,9 +442,19 @@ text = "999"
 [node name="ReputationWidget" parent="EndOfGameContainer/VBoxContainer" unique_id=29683973 instance=ExtResource("11_pbtus")]
 layout_mode = 2
 
+[node name="CalendarButton" parent="." unique_id=12754338 instance=ExtResource("12_h5tu1")]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 169.0
+offset_right = 11.0
+offset_bottom = 177.0
+
+[node name="UpcomingNightOverlay" parent="." unique_id=1573610704 instance=ExtResource("13_5udxb")]
+
 [connection signal="pressed" from="PreviousNightSummary/VBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="PreviousNightSummary/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="quantity_changed" from="NextNightSetupContainer/VBoxContainer/UpperSectionContainer/ShopContainer/PanelContainer/IngredientContainer/OrderedColumn/PumpkinOrderedWidget" to="." method="_on_ordered_quantity_changed"]
 [connection signal="quantity_changed" from="NextNightSetupContainer/VBoxContainer/UpperSectionContainer/ShopContainer/PanelContainer/IngredientContainer/OrderedColumn/SpiderOrderedWidget" to="." method="_on_ordered_quantity_changed"]
 [connection signal="quantity_changed" from="NextNightSetupContainer/VBoxContainer/UpperSectionContainer/ShopContainer/PanelContainer/IngredientContainer/OrderedColumn/CornOrderedWidget" to="." method="_on_ordered_quantity_changed"]
 [connection signal="pressed" from="NextNightSetupContainer/VBoxContainer/StartNightButton" to="." method="_on_start_night_button_pressed"]
+[connection signal="pressed" from="CalendarButton" to="." method="_on_calendar_button_pressed"]

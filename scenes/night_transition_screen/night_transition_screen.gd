@@ -17,6 +17,9 @@ var _current_order: Dictionary = {
 }
 
 # I should probably break this up. Will I? Probably not.
+@onready var _calendar_button: TextureButton = $CalendarButton
+@onready var _upcoming_night_overlay: UpcomingNightOverlay = $UpcomingNightOverlay
+
 # PREVIOUS NIGHT SUMMARY
 @onready var _previous_night_summary: CenterContainer = $PreviousNightSummary
 @onready var _night_number_label: Label = get_node(
@@ -113,10 +116,11 @@ func _ready() -> void:
 	if night_number < NightManager.MAX_NIGHT_NUMBER:
 		_shop_button.visible = true
 		_continue_button.visible = false
+		_calendar_button.visible = true
 	else:
 		_shop_button.visible = false
 		_continue_button.visible = true
-
+		_calendar_button.visible = false
 		var cups_sold: int = 0
 		for i: int in range(NightManager.MAX_NIGHT_NUMBER):
 			var night_stats_i: StatsManager.NightStats = StatsManager.get_night_stats(i)
@@ -124,6 +128,8 @@ func _ready() -> void:
 
 		_final_cups_sold_quantity_label.text = str(cups_sold)
 		_final_coins_quantity_label.text = str(InventoryManager.get_coins())
+
+	_upcoming_night_overlay.visible = false
 
 	_cups_sold_quantity_label.text = str(night_stats.cups_sold)
 	_coins_earned_quantity_label.text = str(night_stats.coins_earned)
@@ -238,3 +244,7 @@ func _on_ordered_quantity_changed(ingredient: RecipeManager.Ingredient, new_quan
 
 	_coins_remaining_quantity_label.text = str(InventoryManager.get_coins() - _get_order_cost())
 	_max_cups_quantity_label.text = str(_get_max_cups())
+
+
+func _on_calendar_button_pressed() -> void:
+	_upcoming_night_overlay.visible = true
