@@ -23,8 +23,8 @@ func _ready() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	_main_buttons.visible = false
-	_settings_container.visible = false
+	_start_button.disabled = true
+	_settings_button.disabled = true
 
 	ScreenFadeManager.fade_out()
 	MusicManager.fade_music_out(MusicManager.Song.SHOP)

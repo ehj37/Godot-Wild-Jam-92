@@ -1,30 +1,107 @@
-[gd_scene format=3 uid="uid://c3n6uoapkpu5i"]
+[gd_scene format=4 uid="uid://c3n6uoapkpu5i"]
 
 [ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_fsom3"]
 [ext_resource type="PackedScene" uid="uid://bie5bavboqaus" path="res://scenes/cauldron/cauldron.tscn" id="2_0ebjn"]
 [ext_resource type="Script" uid="uid://x4534jb7v7sn" path="res://scenes/main_menu/main_menu.gd" id="2_uqeha"]
 [ext_resource type="PackedScene" uid="uid://c2065aah13m75" path="res://scenes/settings_widget.tscn" id="3_ob46e"]
 
+[sub_resource type="Curve" id="Curve_uqeha"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.46120688, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wem23"]
+curve = SubResource("Curve_uqeha")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uqeha"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(160, 90, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(1, -1, 0)
+spread = 30.0
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 2.0
+color = Color(0.02745098, 0.02745098, 0.02745098, 0.35686275)
+alpha_curve = SubResource("CurveTexture_wem23")
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_uqeha"]
+_data = PackedByteArray("AAADAAUAAAABAAAAZAAAADIAAAAQAQAAUklGRggBAABXRUJQVlA4TPsAAAAvY0AMAC9AEEAST0avvcowhNlG81eaxXnsdwCKApCB9JZXAHY+5z8A16vyt2SO4DqSbSm5uARwIAEfF/+9r8oE9AXgmn8uPi7CeSy/Ef13oLaRJFGgBs89s/sJFBiL9KmD0qcpA4DgOwuL0XdjEVR9XxUAmOtU8porL/fGcl0A/N8akcX8Z+oCNEsAQNiGrFqAWOawaX3kf8Z3c/3PvYz8X/oeXB++l8UCwMb3Kah/pp6qfp2S48B7q3v34baQ0MAnGgP3m/JQfmvUEf5/Zi8nOiI7OiL0vBO5sBERYfP6fq9s3o/jef6k7zf9CExSd0uZlrfeU9umThvwBwA=")
+size_override = Vector2(100, 50)
+
 [node name="MainMenu" type="CenterContainer" unique_id=473995476]
 custom_minimum_size = Vector2(320, 180)
+offset_right = 320.0
+offset_bottom = 180.0
 theme = ExtResource("1_fsom3")
 script = ExtResource("2_uqeha")
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1916076057]
+position = Vector2(160, 90)
+amount = 30
+lifetime = 5.0
+preprocess = 5.0
+process_material = SubResource("ParticleProcessMaterial_uqeha")
+
 [node name="MainButtons" type="VBoxContainer" parent="." unique_id=1227970982]
 layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Logo" type="TextureRect" parent="MainButtons" unique_id=180525686]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("PortableCompressedTexture2D_uqeha")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/main_menu/logo.aseprite",
+"source_uid": 4066522147257040411
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7a2283375464418bf11432ab2a642365"
+
+[node name="ColorRect" type="ColorRect" parent="MainButtons/Logo" unique_id=15936416]
+z_index = -1
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 103.0
+offset_bottom = 53.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.39215687)
 
 [node name="StartButton" type="Button" parent="MainButtons" unique_id=1756054494]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "START"
 
 [node name="SettingsButton" type="Button" parent="MainButtons" unique_id=822305085]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "OPTIONS"
 
 [node name="Cauldron" parent="." unique_id=487662480 instance=ExtResource("2_0ebjn")]
-position = Vector2(160, 177)
+position = Vector2(160, 178)
 
 [node name="SettingsContainer" type="VBoxContainer" parent="." unique_id=38022103]
+visible = false
 layout_mode = 2
 
 [node name="SettingsWidget" parent="SettingsContainer" unique_id=625611006 instance=ExtResource("3_ob46e")]
