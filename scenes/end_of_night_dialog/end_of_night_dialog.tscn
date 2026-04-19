@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://psqmq5uep2nm"]
+
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_x5ygw"]
+[ext_resource type="Script" uid="uid://orp7pc267r4a" path="res://scenes/end_of_night_dialog/end_of_night_dialog.gd" id="2_h0j0s"]
+[ext_resource type="PackedScene" uid="uid://77xn4bq41ign" path="res://scenes/moon_icon/moon_icon.tscn" id="3_plvqd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5ygw"]
+bg_color = Color(0.65882355, 0.1764706, 0.8666667, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.92941177, 0.827451, 0.972549, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[node name="EndOfNightDialog" type="PanelContainer" unique_id=1162695798]
+process_mode = 3
+z_index = 1
+custom_minimum_size = Vector2(128, 40)
+offset_right = 128.0
+offset_bottom = 40.0
+theme = ExtResource("1_x5ygw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_x5ygw")
+script = ExtResource("2_h0j0s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=890481037]
+layout_mode = 2
+alignment = 1
+
+[node name="MoonIcon" parent="HBoxContainer" unique_id=330198499 instance=ExtResource("3_plvqd")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LabelContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=422228621]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="EndOfNightLabel" type="Label" parent="HBoxContainer/LabelContainer" unique_id=124516111]
+layout_mode = 2
+text = "END OF NIGHT "
+
+[node name="NightNumberLabel" type="Label" parent="HBoxContainer/LabelContainer" unique_id=21174435]
+layout_mode = 2
+text = "999"
+
+[node name="MoonIcon2" parent="HBoxContainer" unique_id=106891552 instance=ExtResource("3_plvqd")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+flip_h = true

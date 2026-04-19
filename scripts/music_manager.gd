@@ -5,7 +5,7 @@ signal fade_complete
 enum Song { SHOP, NIGHT }
 
 const MUSIC_FADE_IN_TIME: float = 2.0
-const MUSIC_FADE_OUT_TIME: float = 4.0
+const MUSIC_FADE_OUT_TIME: float = 6.0
 
 var _song_to_audio_stream_player: Dictionary = {}
 

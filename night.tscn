@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwx4n2pejs7nv" path="res://scripts/night.gd" id="1_272bh"]
 [ext_resource type="FontFile" uid="uid://dxf5bfgvayfhn" path="res://fonts/arne.png" id="1_ig7tw"]
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_ryn8s"]
 [ext_resource type="PackedScene" uid="uid://drf32pblg7ptn" path="res://scenes/cat_button/cat_button.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bie5bavboqaus" path="res://scenes/cauldron/cauldron.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b86gbj1hrinun" path="res://scenes/status_widget/status_widget.tscn" id="4_272bh"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dutddbcal8d8t" path="res://scenes/tombstones/tombstone_a.tscn" id="14_ryn8s"]
 [ext_resource type="PackedScene" uid="uid://bqydyqinam8ed" path="res://scenes/cat_widget/cat_widget.tscn" id="14_vfwos"]
 [ext_resource type="PackedScene" uid="uid://bd8kq0rwxiwnn" path="res://scenes/tombstones/tombstone_b.tscn" id="15_ryn8s"]
+[ext_resource type="PackedScene" uid="uid://psqmq5uep2nm" path="res://scenes/end_of_night_dialog/end_of_night_dialog.tscn" id="16_54l60"]
 [ext_resource type="PackedScene" uid="uid://db5jyn5c8xt40" path="res://scenes/reputation_widget/reputation_widget.tscn" id="16_k11o4"]
 
 [sub_resource type="Theme" id="Theme_7dm0k"]
@@ -22,8 +24,11 @@ Label/fonts/font = ExtResource("1_ig7tw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(48, 48)
 
-[node name="Night" type="Node2D" unique_id=1460177824]
+[node name="Night" type="Control" unique_id=1877055148]
 y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_ryn8s")
 script = ExtResource("1_272bh")
 
 [node name="Shop" parent="." unique_id=576003885 instance=ExtResource("6_7mycd")]
@@ -32,6 +37,7 @@ position = Vector2(0, 128)
 [node name="TopBar" type="ColorRect" parent="." unique_id=140337174]
 z_index = 1
 clip_contents = true
+layout_mode = 0
 offset_right = 320.0
 offset_bottom = 56.0
 mouse_filter = 2
@@ -66,13 +72,13 @@ position = Vector2(150, 4)
 position = Vector2(2, 58)
 
 [node name="ShopUI" type="Control" parent="." unique_id=455587803]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_7dm0k")
 
 [node name="Road" type="ColorRect" parent="." unique_id=1409168392]
+layout_mode = 0
 offset_top = 132.0
 offset_right = 320.0
 offset_bottom = 180.0
@@ -102,6 +108,7 @@ position = Vector2(13, 191)
 position = Vector2(-1, 189)
 
 [node name="CatWidget" parent="." unique_id=249945766 instance=ExtResource("14_vfwos")]
+layout_mode = 0
 offset_left = 196.0
 offset_top = 58.0
 offset_right = 196.0
@@ -112,6 +119,7 @@ position = Vector2(321, 205)
 
 [node name="ReputationWidget" parent="." unique_id=29683973 instance=ExtResource("16_k11o4")]
 z_index = 1
+layout_mode = 0
 offset_left = 253.0
 offset_top = 159.0
 offset_right = 313.0
@@ -119,3 +127,11 @@ offset_bottom = 172.0
 
 [node name="CustomerSpawnerMarker" type="Marker2D" parent="." unique_id=240302788]
 position = Vector2(-33, 155)
+
+[node name="EndOfNightDialogContainer" type="CenterContainer" parent="." unique_id=1006986118]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="EndOfNightDialog" parent="EndOfNightDialogContainer" unique_id=468280642 instance=ExtResource("16_54l60")]
+layout_mode = 2

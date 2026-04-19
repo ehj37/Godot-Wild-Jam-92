@@ -9,14 +9,18 @@ const STARTING_HOUR: int = 20
 const STARTING_MINUTE: int = 00
 const ENDING_HOUR: int = 4
 const ENDING_MINUTE: int = 00
-const SECONDS_PER_HOUR: float = 6.5  #15.0
+const SECONDS_PER_HOUR: float = 1.5  #15.0
 
-var _day_time_range: TimeRange = TimeRange.new().initialize(
+var _night_time_range: TimeRange = TimeRange.new().initialize(
 	STARTING_HOUR, STARTING_MINUTE, ENDING_HOUR, ENDING_MINUTE
 )
 var _night_number: int = 1
 var _hour: int = STARTING_HOUR
 var _minute: int = STARTING_MINUTE
+
+
+func get_night_time_range() -> TimeRange:
+	return _night_time_range
 
 
 func get_night_number() -> int:
@@ -55,7 +59,7 @@ func _tick() -> void:
 
 	# A little weird. Would read better to check if the hour and minute came
 	# after the end of the range, but eh, if it works it works.
-	if !_day_time_range.contains(_hour, _minute):
+	if !_night_time_range.contains(_hour, _minute):
 		#_hour = STARTING_HOUR
 		#_minute = STARTING_MINUTE
 		#_night_number += 1

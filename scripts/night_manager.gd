@@ -1,6 +1,7 @@
 extends Node
 
 const MAX_NIGHT_NUMBER: int = 7
+const PRE_SCREEN_FADE_DURATION: float = 3.0
 const CUSTOMER_DESPAWN_X: float = 360.0
 const ORDER_WINDOW_POSITION: Vector2 = Vector2(140, 132)
 const ORDER_WINDOW_MAX_X_VARIANCE: float = 10.0
@@ -35,6 +36,30 @@ func get_night_config(night_number: int) -> NightConfig:
 	return _night_num_to_config.get(night_number)
 
 
+func switch_to_shop() -> void:
+	get_tree().paused = true
+	MusicManager.fade_music_out(MusicManager.Song.NIGHT)
+	await get_tree().create_timer(PRE_SCREEN_FADE_DURATION).timeout
+
+	ScreenFadeManager.fade_out()
+	await ScreenFadeManager.fade_complete
+
+	await get_tree().create_timer(TIME_BETWEEN_SCREENS).timeout
+
+	var night_transition_screen: NightTransitionScreen = (
+		_night_transition_screen_packed_scene.instantiate()
+	)
+	var tree: SceneTree = get_tree()
+	var current_scene: Node = tree.current_scene
+	current_scene.queue_free()
+	tree.root.add_child(night_transition_screen)
+	tree.set_current_scene(night_transition_screen)
+
+	ScreenFadeManager.fade_in()
+	MusicManager.fade_music_in(MusicManager.Song.SHOP)
+	get_tree().paused = false
+
+
 func start_next_night() -> void:
 	TimeManager.increment_night()
 	TimeManager.start_night()
@@ -42,10 +67,11 @@ func start_next_night() -> void:
 	get_tree().paused = true
 
 	MusicManager.fade_music_out(MusicManager.Song.SHOP)
-	MusicManager.fade_music_in(MusicManager.Song.NIGHT)
 
 	ScreenFadeManager.fade_out()
 	await ScreenFadeManager.fade_complete
+
+	MusicManager.fade_music_in(MusicManager.Song.NIGHT)
 
 	var night: Night = _night_packed_scene.instantiate()
 	# Dunno how I feel about the TimeManager owning the night number. Whatever.
@@ -68,30 +94,3 @@ func start_next_night() -> void:
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	TimeManager.end_of_night_reached.connect(_on_end_of_night_reached)
-
-
-func _on_end_of_night_reached() -> void:
-	get_tree().paused = true
-
-	# TODO: Communicate that the night is over to the player somehow pre-fade
-
-	MusicManager.fade_music_out(MusicManager.Song.NIGHT)
-	MusicManager.fade_music_in(MusicManager.Song.SHOP)
-
-	ScreenFadeManager.fade_out()
-	await ScreenFadeManager.fade_complete
-
-	var night_transition_screen: NightTransitionScreen = (
-		_night_transition_screen_packed_scene.instantiate()
-	)
-	var tree: SceneTree = get_tree()
-	var current_scene: Node = tree.current_scene
-	current_scene.queue_free()
-	tree.root.add_child(night_transition_screen)
-	tree.set_current_scene(night_transition_screen)
-
-	await get_tree().create_timer(TIME_BETWEEN_SCREENS).timeout
-
-	ScreenFadeManager.fade_in()
-	get_tree().paused = false

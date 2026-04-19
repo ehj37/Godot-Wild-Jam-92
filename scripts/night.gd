@@ -1,6 +1,6 @@
 class_name Night
 
-extends Node2D
+extends Control
 
 var night_config: NightConfig
 
@@ -8,6 +8,7 @@ var night_config: NightConfig
 	"res://scenes/customer_spawner/customer_spawner.tscn"
 )
 @onready var _customer_spawner_marker: Marker2D = $CustomerSpawnerMarker
+@onready var _end_of_night_dialog: EndOfNightDialog = $EndOfNightDialogContainer/EndOfNightDialog
 
 
 func _ready() -> void:
@@ -22,3 +23,10 @@ func _ready() -> void:
 		customer_spawner.customer_spawn_period = customer_spawn_period
 		customer_spawner.global_position = _customer_spawner_marker.global_position
 		add_child(customer_spawner)
+
+	TimeManager.end_of_night_reached.connect(_on_end_of_night_reached)
+
+
+func _on_end_of_night_reached() -> void:
+	_end_of_night_dialog.fade_in()
+	NightManager.switch_to_shop()

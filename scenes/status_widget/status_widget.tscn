@@ -13,6 +13,9 @@ atlas = SubResource("PortableCompressedTexture2D_e147w")
 region = Rect2(0, 0, 12, 12)
 filter_clip = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ww05o"]
+bg_color = Color(1, 1, 1, 0.5882353)
+
 [node name="StatusWidget" type="Node2D" unique_id=1117262020]
 script = ExtResource("1_cf5pj")
 
@@ -34,12 +37,20 @@ texture = SubResource("AtlasTexture_opib7")
 layout_mode = 2
 text = "999"
 
-[node name="NightContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=764393598]
+[node name="NightContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1457689879]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="NightNumberLabel" type="Label" parent="VBoxContainer/NightContainer" unique_id=1795987588]
 layout_mode = 2
 text = "NIGHT 999"
+
+[node name="NightProgressBar" type="ProgressBar" parent="VBoxContainer/NightContainer" unique_id=990181243]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ww05o")
+max_value = 1.0
+step = 0.001
+show_percentage = false
 
 [node name="TimeContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1303099019]
 layout_mode = 2
