@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cvee8mxnvdrgg" path="res://scenes/mini_pumpkin_icon/mini_pumpkin_icon.tscn" id="1_afqir"]
 [ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_kgxh8"]
 [ext_resource type="PackedScene" uid="uid://dygcpxq3o0d7s" path="res://scenes/mini_spider_icon/mini_spider_icon.tscn" id="2_kgxh8"]
-[ext_resource type="Script" uid="uid://cmojq1be73pxq" path="res://scenes/cat/cat_widget.gd" id="2_p53pk"]
+[ext_resource type="Script" uid="uid://cmojq1be73pxq" path="res://scenes/cat_widget/cat_widget.gd" id="2_p53pk"]
 [ext_resource type="PackedScene" uid="uid://dfdmsr7q5s2fc" path="res://scenes/mini_coin_icon/mini_coin_icon.tscn" id="4_fetlx"]
 [ext_resource type="PackedScene" uid="uid://jm0vhb2cejfv" path="res://scenes/mini_corn_icon/mini_corn_icon.tscn" id="5_4rvid"]
 

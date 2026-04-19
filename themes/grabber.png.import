@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lr7vk2qxcks4"
-path="res://.godot/imported/grabber_highlight-export.png-dd6e40ad689528fa7f3a566761401305.ctex"
+uid="uid://0iduq8imgj2n"
+path="res://.godot/imported/grabber.png-54376d1cca3e45b93cfad05b7f9de6af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/night_transition_screen/ordered_widget/grabber_highlight-export.png"
-dest_files=["res://.godot/imported/grabber_highlight-export.png-dd6e40ad689528fa7f3a566761401305.ctex"]
+source_file="res://themes/grabber.png"
+dest_files=["res://.godot/imported/grabber.png-54376d1cca3e45b93cfad05b7f9de6af.ctex"]
 
 [params]
 

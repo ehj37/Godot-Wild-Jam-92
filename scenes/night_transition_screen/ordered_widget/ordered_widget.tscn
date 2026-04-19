@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c4bg414myto6u" path="res://scenes/night_transition_screen/ordered_widget/ordered_widget.gd" id="1_4ojwc"]
 [ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_duf5o"]
 [ext_resource type="PackedScene" uid="uid://dfdmsr7q5s2fc" path="res://scenes/mini_coin_icon/mini_coin_icon.tscn" id="1_od6m3"]
-[ext_resource type="Texture2D" uid="uid://0iduq8imgj2n" path="res://scenes/night_transition_screen/ordered_widget/grabber.png" id="2_4ojwc"]
-[ext_resource type="Texture2D" uid="uid://dwq1tu7fdk5ly" path="res://scenes/night_transition_screen/ordered_widget/grabber_highlight.png" id="3_duf5o"]
+[ext_resource type="Texture2D" uid="uid://0iduq8imgj2n" path="res://themes/grabber.png" id="2_4ojwc"]
+[ext_resource type="Texture2D" uid="uid://dwq1tu7fdk5ly" path="res://themes/grabber_highlight.png" id="3_duf5o"]
 
 [node name="OrderedWidget" type="VBoxContainer" unique_id=1223467467]
 theme = ExtResource("1_duf5o")

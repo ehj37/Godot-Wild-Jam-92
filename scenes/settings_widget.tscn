@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c2065aah13m75"]
+
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_fq8w1"]
+[ext_resource type="Script" uid="uid://bmgpycndkxuiu" path="res://scenes/settings_widget.gd" id="2_j5r11"]
+
+[node name="SettingsWidget" type="VBoxContainer" unique_id=625611006]
+theme = ExtResource("1_fq8w1")
+theme_override_constants/separation = 8
+script = ExtResource("2_j5r11")
+
+[node name="SettingsLabel" type="Label" parent="." unique_id=1853220434]
+layout_mode = 2
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="MainVolumeContainer" type="VBoxContainer" parent="." unique_id=529306935]
+layout_mode = 2
+
+[node name="MainVolumeLabel" type="Label" parent="MainVolumeContainer" unique_id=1352837949]
+layout_mode = 2
+text = "MAIN VOLUME"
+horizontal_alignment = 1
+
+[node name="MainVolumeSlider" type="HSlider" parent="MainVolumeContainer" unique_id=1059274634]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="SFXVolumeContainer" type="VBoxContainer" parent="." unique_id=1416301477]
+layout_mode = 2
+
+[node name="SFXVolumeLabel" type="Label" parent="SFXVolumeContainer" unique_id=737498542]
+layout_mode = 2
+text = "SOUND EFFECTS VOLUME"
+horizontal_alignment = 1
+
+[node name="SFXVolumeSlider" type="HSlider" parent="SFXVolumeContainer" unique_id=1563039288]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="MusicVolumeContainer" type="VBoxContainer" parent="." unique_id=1215844001]
+layout_mode = 2
+
+[node name="MusicVolumeLabel" type="Label" parent="MusicVolumeContainer" unique_id=1969482208]
+layout_mode = 2
+text = "MUSIC VOLUME"
+horizontal_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="MusicVolumeContainer" unique_id=43705301]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[connection signal="value_changed" from="MainVolumeContainer/MainVolumeSlider" to="." method="_on_main_volume_slider_value_changed"]
+[connection signal="value_changed" from="SFXVolumeContainer/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="value_changed" from="MusicVolumeContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]

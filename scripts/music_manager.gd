@@ -1,9 +1,11 @@
 extends Node
 
+signal fade_complete
+
 enum Song { SHOP, NIGHT }
 
 const MUSIC_FADE_IN_TIME: float = 2.0
-const MUSIC_FADE_OUT_TIME: float = 6.0
+const MUSIC_FADE_OUT_TIME: float = 4.0
 
 var _song_to_audio_stream_player: Dictionary = {}
 
@@ -24,6 +26,7 @@ func fade_music_in(song: Song) -> void:
 	audio_stream_player.volume_linear = 0.0
 	var volume_tween: Tween = audio_stream_player.create_tween()
 	volume_tween.tween_property(audio_stream_player, "volume_linear", 1.0, MUSIC_FADE_IN_TIME)
+	volume_tween.finished.connect(func() -> void: fade_complete.emit())
 
 	add_child(audio_stream_player)
 	audio_stream_player.play()
@@ -38,7 +41,7 @@ func fade_music_out(song: Song) -> void:
 	var volume_tween: Tween = audio_stream_player.create_tween()
 	volume_tween.set_trans(Tween.TRANS_EXPO)
 	volume_tween.tween_property(audio_stream_player, "volume_linear", 0.0, MUSIC_FADE_OUT_TIME)
-	volume_tween.finished.connect(func() -> void: _stop_playing(song))
+	volume_tween.finished.connect(func() -> void: _stop_playing(song) ; fade_complete.emit())
 
 
 func _ready() -> void:

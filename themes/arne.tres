@@ -1,6 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://cs413tywp86m5"]
 
 [ext_resource type="FontFile" uid="uid://dxf5bfgvayfhn" path="res://fonts/arne.png" id="1_dapwq"]
+[ext_resource type="Texture2D" uid="uid://0iduq8imgj2n" path="res://themes/grabber.png" id="2_p3a7w"]
+[ext_resource type="Texture2D" uid="uid://dwq1tu7fdk5ly" path="res://themes/grabber_highlight.png" id="3_f4bdt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ibkm"]
 bg_color = Color(0.84705883, 0.62352943, 0.9372549, 1)
@@ -29,7 +31,8 @@ bg_color = Color(0.92941177, 0.827451, 0.972549, 1)
 [resource]
 Button/font_sizes/font_size = 6
 Button/fonts/font = ExtResource("1_dapwq")
-HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber = ExtResource("2_p3a7w")
+HSlider/icons/grabber_highlight = ExtResource("3_f4bdt")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_1ibkm")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_gc8vy")
 HSlider/styles/slider = SubResource("StyleBoxFlat_p3a7w")

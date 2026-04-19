@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c3n6uoapkpu5i"]
+
+[ext_resource type="Theme" uid="uid://cs413tywp86m5" path="res://themes/arne.tres" id="1_fsom3"]
+[ext_resource type="PackedScene" uid="uid://bie5bavboqaus" path="res://scenes/cauldron/cauldron.tscn" id="2_0ebjn"]
+[ext_resource type="Script" uid="uid://x4534jb7v7sn" path="res://scenes/main_menu/main_menu.gd" id="2_uqeha"]
+[ext_resource type="PackedScene" uid="uid://c2065aah13m75" path="res://scenes/settings_widget.tscn" id="3_ob46e"]
+
+[node name="MainMenu" type="CenterContainer" unique_id=473995476]
+custom_minimum_size = Vector2(320, 180)
+theme = ExtResource("1_fsom3")
+script = ExtResource("2_uqeha")
+
+[node name="MainButtons" type="VBoxContainer" parent="." unique_id=1227970982]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MainButtons" unique_id=1756054494]
+layout_mode = 2
+text = "START"
+
+[node name="SettingsButton" type="Button" parent="MainButtons" unique_id=822305085]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="Cauldron" parent="." unique_id=487662480 instance=ExtResource("2_0ebjn")]
+position = Vector2(160, 177)
+
+[node name="SettingsContainer" type="VBoxContainer" parent="." unique_id=38022103]
+layout_mode = 2
+
+[node name="SettingsWidget" parent="SettingsContainer" unique_id=625611006 instance=ExtResource("3_ob46e")]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="SettingsContainer" unique_id=198608518]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BACK"
+
+[connection signal="pressed" from="MainButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="SettingsContainer/BackButton" to="." method="_on_back_button_pressed"]

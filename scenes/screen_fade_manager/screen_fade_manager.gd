@@ -13,8 +13,8 @@ var _active_tween: Tween
 func fade_in() -> void:
 	if is_instance_valid(_active_tween):
 		_active_tween.cancel_free()
-		color_rect.color.a = 1.0
 
+	color_rect.color.a = 1.0
 	var fade_in_tween: Tween = get_tree().create_tween()
 	fade_in_tween.tween_property(color_rect, "color:a", 0.0, FADE_IN_DURATION)
 	fade_in_tween.set_trans(Tween.TRANS_QUART)
@@ -25,8 +25,8 @@ func fade_in() -> void:
 func fade_out() -> void:
 	if is_instance_valid(_active_tween):
 		_active_tween.cancel_free()
-		color_rect.color.a = 0.0
 
+	color_rect.color.a = 0.0
 	var fade_out_tween: Tween = get_tree().create_tween()
 	fade_out_tween.tween_property(color_rect, "color:a", 1.0, FADE_OUT_DURATION)
 	fade_out_tween.set_trans(Tween.TRANS_QUART)
@@ -35,5 +35,4 @@ func fade_out() -> void:
 
 
 func _ready() -> void:
-	color_rect.color.a = 1.0
-	fade_in()
+	color_rect.color.a = 0.0
